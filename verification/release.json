@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "gameVersion": "0.10.0.653173",
+  "steamBuild": "25982825",
+  "runtimeFiles": 30,
+  "nativeGameStartedForPublication": false,
+  "privateSettingsIncluded": false,
+  "installPayloadComparedToPrevious": true,
+  "differences": [
+    "core.lua version display: 1.0 -> 1.0.0"
+  ],
+  "offlineTests": {
+    "smoke": {
+      "pages": 9,
+      "clickHandlers": 211,
+      "errorLines": 0,
+      "result": "passed"
+    },
+    "reopenAndWrappedBoatArrays": {
+      "tests": 7,
+      "result": "passed"
+    }
+  },
+  "longTermGameplay": "not fully verified",
+  "nativeDllUnchanged": true
+}

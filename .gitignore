@@ -1,0 +1,9 @@
+/dist/
+/build/
+/validation/
+__pycache__/
+*.pyc
+/Warden/settings.ini
+/Warden/hotspots.tsv
+/Warden/destinations.tsv
+/tools/vendor/
