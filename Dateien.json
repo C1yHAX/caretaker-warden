@@ -125,11 +125,6 @@
     "sha256": "d935ee4b660856fb178d3116df0acc01e0ffcd11fd36ab8976d42a86102f63bb"
   },
   {
-    "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/native/MinHook-LICENSE.txt",
-    "bytes": 4365,
-    "sha256": "d5c2224982b0b95a16b098a561335fa93f3eaf4d0aa964b7843edb986df78dc8"
-  },
-  {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/native/warden_crafting.dll",
     "bytes": 155648,
     "sha256": "e2a9c34dc56d1f39ea0a7fb75ee34271caf8df61e4453d81779225dc9522564e"

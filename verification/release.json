@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "gameVersion": "0.10.0.653173",
   "steamBuild": "25982825",
-  "runtimeFiles": 30,
+  "runtimeFiles": 29,
   "nativeGameStartedForPublication": false,
   "privateSettingsIncluded": false,
   "installPayloadComparedToPrevious": true,
@@ -22,5 +22,8 @@
     }
   },
   "longTermGameplay": "not fully verified",
-  "nativeDllUnchanged": true
+  "nativeDllUnchanged": true,
+  "runtimeOnlyZip": true,
+  "licenseTexts": "repository only",
+  "runtimeBytesUnchangedForPackagingCleanup": true
 }

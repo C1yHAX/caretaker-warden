@@ -64,7 +64,7 @@ Das vollständige Caretaker-Modpack 1.0.0 enthält Warden bereits. Keine zweite 
 
 ## Prüfung
 
-Die Lua-Dateien und die native Hilfs-DLL stammen aus der vorhandenen Modpack-Fassung. Für den öffentlichen Release wurde im Laufzeitcode ausschließlich die Versionsanzeige von `1.0` auf **`1.0.0`** vereinheitlicht. Persönliche Konfigurationen und entdeckte Teleportziele wurden aus dem Download ausgeschlossen. Die Lizenztexte von Nerfus und MinHook bleiben enthalten.
+Die Lua-Dateien und die native Hilfs-DLL stammen aus der vorhandenen Modpack-Fassung. Für den öffentlichen Release wurde im Laufzeitcode ausschließlich die Versionsanzeige von `1.0` auf **`1.0.0`** vereinheitlicht. Persönliche Konfigurationen und entdeckte Teleportziele wurden aus dem Download ausgeschlossen. Die Lizenztexte von Nerfus und MinHook bleiben im Repository erhalten; sie gehören nicht zum Mod-ZIP.
 
 Die enthaltenen Offline-Tests prüfen UI-Aufbau, Klickhandler, wiederholtes Öffnen/Schließen sowie verpackte UE4SS-Rückgabewerte bei der Bootssuche. Sie verwenden Attrappen und ersetzen keinen nativen Unreal-Spieltest. Darstellung/FPS, echtes Einrasten von Motorzylindern und vollständige Herstellungsabläufe sind für diese Veröffentlichung nicht abschließend bestätigt. **Für die Veröffentlichung wurde das Spiel nicht gestartet.** Siehe [Prüfbericht](verification/release.json).
 
@@ -81,3 +81,7 @@ Warden-Code: MIT, siehe [LICENSE](LICENSE). Der Wetter-Reset und der Modul-Craft
 ## English
 
 Warden is a German-language admin menu for The Last Caretaker. Press **F1** to open/close; **Ctrl+F1** is the emergency close shortcut. Includes player options, crafting controls, item/module spawning, unlocks, teleport, boat maintenance/outfitting, world controls and a session log. Requires game 0.10.0.653173 / Steam build 25982825 and separately installed UE4SS v3.0.1-1125-g527a483b. Close the game and merge the release ZIP's `Voyage` folder into the game directory. Preserve your existing settings and saved teleport files during updates. First public release **1.0.0**; runtime validation remains limited, and offline mock tests do not prove native engine compatibility. The included Free Crafting DLL checks the supported game executable hash before enabling its hooks. No personal settings or discovered destinations are distributed.
+
+## Inhalt des Mod-Downloads
+
+Das Release-ZIP enthält ausschließlich die zum Betrieb benötigten Moddateien in der `Voyage`-Ordnerstruktur. Anleitung, Änderungslisten, Lizenztexte, Drittanbieterhinweise, Entwicklungswerkzeuge und Prüfberichte bleiben im Repository bzw. auf der Release-Seite. Sie werden nicht mit ins Mod-ZIP gepackt. Die Prüfsumme ist ein separater Download. Version bleibt **1.0.0**.
