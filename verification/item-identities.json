@@ -1,0 +1,4617 @@
+[
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_Bolt_Rifle_762.DA_Ammo_Bolt_Rifle_762",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_Bolt_Rifle_762"
+  },
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_Bolt_Sniper_127_Lux.DA_Ammo_Bolt_Sniper_127_Lux",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_Bolt_Sniper_127_Lux"
+  },
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_Bolt_Sniper_Rod.DA_Ammo_Bolt_Sniper_Rod",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_Bolt_Sniper_Rod"
+  },
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_FlexImpact.DA_Ammo_FlexImpact",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_FlexImpact"
+  },
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_ShardStorm.DA_Ammo_ShardStorm",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_ShardStorm"
+  },
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_Tracer.DA_Ammo_Tracer",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_Tracer"
+  },
+  {
+    "path": "/Game/Data/Assets/Ammo/DA_Ammo_TriComposite.DA_Ammo_TriComposite",
+    "assetType": "Item",
+    "assetName": "DA_Ammo_TriComposite"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Back_IronSight.DA_Weapon_Attachment_Back_IronSight",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Back_IronSight"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Barrel_Breacher.DA_Weapon_Attachment_Barrel_Breacher",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Barrel_Breacher"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Barrel_Extender.DA_Weapon_Attachment_Barrel_Extender",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Barrel_Extender"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Barrel_Stabilizer.DA_Weapon_Attachment_Barrel_Stabilizer",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Barrel_Stabilizer"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Barrel_Supressor.DA_Weapon_Attachment_Barrel_Supressor",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Barrel_Supressor"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Cassette_A.DA_Weapon_Attachment_Cassette_A",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Cassette_A"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Cassette_B.DA_Weapon_Attachment_Cassette_B",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Cassette_B"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_FlashLight.DA_Weapon_Attachment_FlashLight",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_FlashLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_IronSight.DA_Weapon_Attachment_IronSight",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_IronSight"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Laser.DA_Weapon_Attachment_Laser",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Laser"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Magazine_127_5.DA_Weapon_Attachment_Magazine_127_5",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Magazine_127_5"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Magazine_762_30.DA_Weapon_Attachment_Magazine_762_30",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Magazine_762_30"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Magazine_900_100.DA_Weapon_Attachment_Magazine_900_100",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Magazine_900_100"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Magazine_900_20.DA_Weapon_Attachment_Magazine_900_20",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Magazine_900_20"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Magazine_900_8.DA_Weapon_Attachment_Magazine_900_8",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Magazine_900_8"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_ResourceDisplay.DA_Weapon_Attachment_ResourceDisplay",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_ResourceDisplay"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Sight_Optical.DA_Weapon_Attachment_Sight_Optical",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Sight_Optical"
+  },
+  {
+    "path": "/Game/Data/Assets/Attachments/DA_Weapon_Attachment_Sight_RedDot.DA_Weapon_Attachment_Sight_RedDot",
+    "assetType": "WeaponAttachment",
+    "assetName": "DA_Weapon_Attachment_Sight_RedDot"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Data.DA_Cable_Data",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Data"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Electricity.DA_Cable_Electricity",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Electricity_Mounted.DA_Cable_Electricity_Mounted",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Electricity_Mounted"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Extender_Data.DA_Cable_Extender_Data",
+    "assetType": "Item",
+    "assetName": "DA_Cable_Extender_Data"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Extender_Electricity.DA_Cable_Extender_Electricity",
+    "assetType": "Item",
+    "assetName": "DA_Cable_Extender_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Extender_Fuel.DA_Cable_Extender_Fuel",
+    "assetType": "Item",
+    "assetName": "DA_Cable_Extender_Fuel"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Extender_Gas.DA_Cable_Extender_Gas",
+    "assetType": "Item",
+    "assetName": "DA_Cable_Extender_Gas"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Extender_Wall_MultipleSocket_LevelOnly.DA_Cable_Extender_Wall_MultipleSocket_LevelOnly",
+    "assetType": "Item",
+    "assetName": "DA_Cable_Extender_Wall_MultipleSocket_LevelOnly"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Extender_Water.DA_Cable_Extender_Water",
+    "assetType": "Item",
+    "assetName": "DA_Cable_Extender_Water"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Fuel.DA_Cable_Fuel",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Fuel"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Gas.DA_Cable_Gas",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Gas"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Hook.DA_Cable_Hook",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Hook"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Mooring.DA_Cable_Mooring",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Mooring"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Cable_Water.DA_Cable_Water",
+    "assetType": "Cable",
+    "assetName": "DA_Cable_Water"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Hook_Attachment.DA_Hook_Attachment",
+    "assetType": "Item",
+    "assetName": "DA_Hook_Attachment"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Item_Wall_Extender.DA_Item_Wall_Extender",
+    "assetType": "Item",
+    "assetName": "DA_Item_Wall_Extender"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_WallSocket_Electric.DA_Module_WallSocket_Electric",
+    "assetType": "Item",
+    "assetName": "DA_Module_WallSocket_Electric"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_WallSocket_Fuel.DA_Module_WallSocket_Fuel",
+    "assetType": "Item",
+    "assetName": "DA_Module_WallSocket_Fuel"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_WallSocket_Gas.DA_Module_WallSocket_Gas",
+    "assetType": "Item",
+    "assetName": "DA_Module_WallSocket_Gas"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_WallSocket_Water.DA_Module_WallSocket_Water",
+    "assetType": "Item",
+    "assetName": "DA_Module_WallSocket_Water"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_WirelessResourceTransmitter.DA_Module_WirelessResourceTransmitter",
+    "assetType": "Item",
+    "assetName": "DA_Module_WirelessResourceTransmitter"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_WirelessResourceTransmitter_Socket_Electricity.DA_Module_WirelessResourceTransmitter_Socket_Electricity",
+    "assetType": "Item",
+    "assetName": "DA_Module_WirelessResourceTransmitter_Socket_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Module_Wireless_Relay.DA_Module_Wireless_Relay",
+    "assetType": "Item",
+    "assetName": "DA_Module_Wireless_Relay"
+  },
+  {
+    "path": "/Game/Data/Assets/Cable/DA_Mooring_Socket.DA_Mooring_Socket",
+    "assetType": "Item",
+    "assetName": "DA_Mooring_Socket"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_100MDash.DA_Cartridge_100MDash",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_100MDash"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Amiga_Boing_Ball.DA_Cartridge_Amiga_Boing_Ball",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Amiga_Boing_Ball"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Javelin.DA_Cartridge_Javelin",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Javelin"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Last_Bastions.DA_Cartridge_Last_Bastions",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Last_Bastions"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Jogeir_Chiptropolis.DA_Cartridge_Mod_Jogeir_Chiptropolis",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Jogeir_Chiptropolis"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Jogeir_Guitar_Slinger.DA_Cartridge_Mod_Jogeir_Guitar_Slinger",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Jogeir_Guitar_Slinger"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Jogeir_Key.DA_Cartridge_Mod_Jogeir_Key",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Jogeir_Key"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Jogeir_Poushki.DA_Cartridge_Mod_Jogeir_Poushki",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Jogeir_Poushki"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Jogeir_TouchinTheChip.DA_Cartridge_Mod_Jogeir_TouchinTheChip",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Jogeir_TouchinTheChip"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Manifest_Chant.DA_Cartridge_Mod_Manifest_Chant",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Manifest_Chant"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_MixTape.DA_Cartridge_Mod_MixTape",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_MixTape"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_PM_Second_Reality.DA_Cartridge_Mod_PM_Second_Reality",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_PM_Second_Reality"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_PM_Starshine.DA_Cartridge_Mod_PM_Starshine",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_PM_Starshine"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_PM_Turbulence.DA_Cartridge_Mod_PM_Turbulence",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_PM_Turbulence"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Roz_roz_Angerkoski.DA_Cartridge_Mod_Roz_roz_Angerkoski",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Roz_roz_Angerkoski"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Roz_roz_Breakdown.DA_Cartridge_Mod_Roz_roz_Breakdown",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Roz_roz_Breakdown"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Roz_roz_Fluctuations.DA_Cartridge_Mod_Roz_roz_Fluctuations",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Roz_roz_Fluctuations"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Roz_roz_Lonelies.DA_Cartridge_Mod_Roz_roz_Lonelies",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Roz_roz_Lonelies"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mod_Test_1.DA_Cartridge_Mod_Test_1",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mod_Test_1"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Mosetris.DA_Cartridge_Mosetris",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Mosetris"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_Multima_XI.DA_Cartridge_Multima_XI",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_Multima_XI"
+  },
+  {
+    "path": "/Game/Data/Assets/Cartridges/DA_Cartridge_TripleJump.DA_Cartridge_TripleJump",
+    "assetType": "Cartridge",
+    "assetName": "DA_Cartridge_TripleJump"
+  },
+  {
+    "path": "/Game/Data/Assets/Consumables/DA_Consumable_Battery.DA_Consumable_Battery",
+    "assetType": "Consumable",
+    "assetName": "DA_Consumable_Battery"
+  },
+  {
+    "path": "/Game/Data/Assets/Consumables/DA_Consumable_BatteryLarge.DA_Consumable_BatteryLarge",
+    "assetType": "Consumable",
+    "assetName": "DA_Consumable_BatteryLarge"
+  },
+  {
+    "path": "/Game/Data/Assets/Consumables/DA_Consumable_BatteryMedium.DA_Consumable_BatteryMedium",
+    "assetType": "Consumable",
+    "assetName": "DA_Consumable_BatteryMedium"
+  },
+  {
+    "path": "/Game/Data/Assets/Consumables/DA_Consumable_ChargeInjector.DA_Consumable_ChargeInjector",
+    "assetType": "Consumable",
+    "assetName": "DA_Consumable_ChargeInjector"
+  },
+  {
+    "path": "/Game/Data/Assets/Consumables/DA_HumanSeed.DA_HumanSeed",
+    "assetType": "Consumable",
+    "assetName": "DA_HumanSeed"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Item_Eden_FarmingBed_Small.DA_Item_Eden_FarmingBed_Small",
+    "assetType": "Item",
+    "assetName": "DA_Item_Eden_FarmingBed_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Item_Farming_Bed.DA_Item_Farming_Bed",
+    "assetType": "Item",
+    "assetName": "DA_Item_Farming_Bed"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Item_Farming_Bed_V2.DA_Item_Farming_Bed_V2",
+    "assetType": "Item",
+    "assetName": "DA_Item_Farming_Bed_V2"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Item_SaussureaLanicep.DA_Item_SaussureaLanicep",
+    "assetType": "Item",
+    "assetName": "DA_Item_SaussureaLanicep"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Item_TreeFruit_Apple.DA_Item_TreeFruit_Apple",
+    "assetType": "Item",
+    "assetName": "DA_Item_TreeFruit_Apple"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Item_TreeFruit_Pear.DA_Item_TreeFruit_Pear",
+    "assetType": "Item",
+    "assetName": "DA_Item_TreeFruit_Pear"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Seed_Apple.DA_Seed_Apple",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Apple"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/DA_Seed_Coffee.DA_Seed_Coffee",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Coffee"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_CameraDrone.DA_CameraDrone",
+    "assetType": "Item",
+    "assetName": "DA_CameraDrone"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_DronePhoto.DA_DronePhoto",
+    "assetType": "Item",
+    "assetName": "DA_DronePhoto"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_Buoy.DA_Item_Buoy",
+    "assetType": "Item",
+    "assetName": "DA_Item_Buoy"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_Buoy_Electrical_Supplies.DA_Item_Buoy_Electrical_Supplies",
+    "assetType": "Item",
+    "assetName": "DA_Item_Buoy_Electrical_Supplies"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_Buoy_Rocket.DA_Item_Buoy_Rocket",
+    "assetType": "Item",
+    "assetName": "DA_Item_Buoy_Rocket"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_Cart.DA_Item_Cart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Cart"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ContinuityToken.DA_Item_ContinuityToken",
+    "assetType": "Item",
+    "assetName": "DA_Item_ContinuityToken"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_DieselEngineCylinder.DA_Item_DieselEngineCylinder",
+    "assetType": "Item",
+    "assetName": "DA_Item_DieselEngineCylinder"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_DieselEngineCylinder_Booster.DA_Item_DieselEngineCylinder_Booster",
+    "assetType": "Item",
+    "assetName": "DA_Item_DieselEngineCylinder_Booster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_DieselEngineCylinder_CheatBooster.DA_Item_DieselEngineCylinder_CheatBooster",
+    "assetType": "Item",
+    "assetName": "DA_Item_DieselEngineCylinder_CheatBooster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_DieselEngineCylinder_Eco.DA_Item_DieselEngineCylinder_Eco",
+    "assetType": "Item",
+    "assetName": "DA_Item_DieselEngineCylinder_Eco"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_DieselEngineCylinder_SuperBooster.DA_Item_DieselEngineCylinder_SuperBooster",
+    "assetType": "Item",
+    "assetName": "DA_Item_DieselEngineCylinder_SuperBooster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ElectricEngineCylinder.DA_Item_ElectricEngineCylinder",
+    "assetType": "Item",
+    "assetName": "DA_Item_ElectricEngineCylinder"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ElectricEngineCylinder_Booster.DA_Item_ElectricEngineCylinder_Booster",
+    "assetType": "Item",
+    "assetName": "DA_Item_ElectricEngineCylinder_Booster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ElectricEngineCylinder_CheatBooster.DA_Item_ElectricEngineCylinder_CheatBooster",
+    "assetType": "Item",
+    "assetName": "DA_Item_ElectricEngineCylinder_CheatBooster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ElectricEngineCylinder_Eco.DA_Item_ElectricEngineCylinder_Eco",
+    "assetType": "Item",
+    "assetName": "DA_Item_ElectricEngineCylinder_Eco"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ElectricEngineCylinder_SuperBooster.DA_Item_ElectricEngineCylinder_SuperBooster",
+    "assetType": "Item",
+    "assetName": "DA_Item_ElectricEngineCylinder_SuperBooster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ExplosiveBarrel.DA_Item_ExplosiveBarrel",
+    "assetType": "Item",
+    "assetName": "DA_Item_ExplosiveBarrel"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_FloorLight.DA_Item_FloorLight",
+    "assetType": "Item",
+    "assetName": "DA_Item_FloorLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_HornBuildable.DA_Item_HornBuildable",
+    "assetType": "Item",
+    "assetName": "DA_Item_HornBuildable"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_Human_Pod.DA_Item_Human_Pod",
+    "assetType": "Item",
+    "assetName": "DA_Item_Human_Pod"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_InventoryContainerSmall.DA_Item_InventoryContainerSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_InventoryContainerSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_InventoryContainerSocket.DA_Item_InventoryContainerSocket",
+    "assetType": "Item",
+    "assetName": "DA_Item_InventoryContainerSocket"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_Ladder.DA_Item_Ladder",
+    "assetType": "Item",
+    "assetName": "DA_Item_Ladder"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PetrolEngineCylinder.DA_Item_PetrolEngineCylinder",
+    "assetType": "Item",
+    "assetName": "DA_Item_PetrolEngineCylinder"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PetrolEngineCylinder_Booster.DA_Item_PetrolEngineCylinder_Booster",
+    "assetType": "Item",
+    "assetName": "DA_Item_PetrolEngineCylinder_Booster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PetrolEngineCylinder_CheatBooster.DA_Item_PetrolEngineCylinder_CheatBooster",
+    "assetType": "Item",
+    "assetName": "DA_Item_PetrolEngineCylinder_CheatBooster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PetrolEngineCylinder_Eco.DA_Item_PetrolEngineCylinder_Eco",
+    "assetType": "Item",
+    "assetName": "DA_Item_PetrolEngineCylinder_Eco"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PetrolEngineCylinder_SuperBooster.DA_Item_PetrolEngineCylinder_SuperBooster",
+    "assetType": "Item",
+    "assetName": "DA_Item_PetrolEngineCylinder_SuperBooster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PlayerBoxLarge.DA_Item_PlayerBoxLarge",
+    "assetType": "Item",
+    "assetName": "DA_Item_PlayerBoxLarge"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PlayerBoxMedium.DA_Item_PlayerBoxMedium",
+    "assetType": "Item",
+    "assetName": "DA_Item_PlayerBoxMedium"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PlayerBoxSmall.DA_Item_PlayerBoxSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_PlayerBoxSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PlayerBoxSmart.DA_Item_PlayerBoxSmart",
+    "assetType": "Item",
+    "assetName": "DA_Item_PlayerBoxSmart"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PoleLight.DA_Item_PoleLight",
+    "assetType": "Item",
+    "assetName": "DA_Item_PoleLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PoleLight_2.DA_Item_PoleLight_2",
+    "assetType": "Item",
+    "assetName": "DA_Item_PoleLight_2"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PoleLight_3.DA_Item_PoleLight_3",
+    "assetType": "Item",
+    "assetName": "DA_Item_PoleLight_3"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_PoleLight_4.DA_Item_PoleLight_4",
+    "assetType": "Item",
+    "assetName": "DA_Item_PoleLight_4"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_RocketRewardBox.DA_Item_RocketRewardBox",
+    "assetType": "Item",
+    "assetName": "DA_Item_RocketRewardBox"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_SeaMine.DA_Item_SeaMine",
+    "assetType": "Item",
+    "assetName": "DA_Item_SeaMine"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_Item_ShippingContainer.DA_Item_ShippingContainer",
+    "assetType": "Item",
+    "assetName": "DA_Item_ShippingContainer"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/DA_PhotodronePlus.DA_PhotodronePlus",
+    "assetType": "Item",
+    "assetName": "DA_PhotodronePlus"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/DA_ItemLoot_VitalStationA.DA_ItemLoot_VitalStationA",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_VitalStationA"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/DA_ItemLoot_VitalStationB.DA_ItemLoot_VitalStationB",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_VitalStationB"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Aluminium.DA_Material_Aluminium",
+    "assetType": "Material",
+    "assetName": "DA_Material_Aluminium"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_CarbonFiber.DA_Material_CarbonFiber",
+    "assetType": "Material",
+    "assetName": "DA_Material_CarbonFiber"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Cardboard.DA_Material_Cardboard",
+    "assetType": "Material",
+    "assetName": "DA_Material_Cardboard"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Copper.DA_Material_Copper",
+    "assetType": "Material",
+    "assetName": "DA_Material_Copper"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Fabric.DA_Material_Fabric",
+    "assetType": "Material",
+    "assetName": "DA_Material_Fabric"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Glass.DA_Material_Glass",
+    "assetType": "Material",
+    "assetName": "DA_Material_Glass"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Gold.DA_Material_Gold",
+    "assetType": "Material",
+    "assetName": "DA_Material_Gold"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Graphene.DA_Material_Graphene",
+    "assetType": "Material",
+    "assetName": "DA_Material_Graphene"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Iron.DA_Material_Iron",
+    "assetType": "Material",
+    "assetName": "DA_Material_Iron"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Marble.DA_Material_Marble",
+    "assetType": "Material",
+    "assetName": "DA_Material_Marble"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Nanotubes.DA_Material_Nanotubes",
+    "assetType": "Material",
+    "assetName": "DA_Material_Nanotubes"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Neutronium.DA_Material_Neutronium",
+    "assetType": "Material",
+    "assetName": "DA_Material_Neutronium"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_PlasmaGel.DA_Material_PlasmaGel",
+    "assetType": "Material",
+    "assetName": "DA_Material_PlasmaGel"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Plastic.DA_Material_Plastic",
+    "assetType": "Material",
+    "assetName": "DA_Material_Plastic"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Polycarbonate.DA_Material_Polycarbonate",
+    "assetType": "Material",
+    "assetName": "DA_Material_Polycarbonate"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Polyurethane.DA_Material_Polyurethane",
+    "assetType": "Material",
+    "assetName": "DA_Material_Polyurethane"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_QuantumCrystal.DA_Material_QuantumCrystal",
+    "assetType": "Material",
+    "assetName": "DA_Material_QuantumCrystal"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Rubber.DA_Material_Rubber",
+    "assetType": "Material",
+    "assetName": "DA_Material_Rubber"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Silicon.DA_Material_Silicon",
+    "assetType": "Material",
+    "assetName": "DA_Material_Silicon"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_StainlessSteel.DA_Material_StainlessSteel",
+    "assetType": "Material",
+    "assetName": "DA_Material_StainlessSteel"
+  },
+  {
+    "path": "/Game/Data/Assets/Materials/DA_Material_Titanium.DA_Material_Titanium",
+    "assetType": "Material",
+    "assetName": "DA_Material_Titanium"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_BioM.DA_BioM",
+    "assetType": "Item",
+    "assetName": "DA_BioM"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_Material_Bio_Dark.DA_Material_Bio_Dark",
+    "assetType": "Item",
+    "assetName": "DA_Material_Bio_Dark"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_Material_Bio_Flesh.DA_Material_Bio_Flesh",
+    "assetType": "Item",
+    "assetName": "DA_Material_Bio_Flesh"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_Material_Bio_Light.DA_Material_Bio_Light",
+    "assetType": "Item",
+    "assetName": "DA_Material_Bio_Light"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_Material_Bio_Organic.DA_Material_Bio_Organic",
+    "assetType": "Item",
+    "assetName": "DA_Material_Bio_Organic"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_Material_Bio_SeaWeed.DA_Material_Bio_SeaWeed",
+    "assetType": "Item",
+    "assetName": "DA_Material_Bio_SeaWeed"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/DA_Material_Bio_Waste.DA_Material_Bio_Waste",
+    "assetType": "Item",
+    "assetName": "DA_Material_Bio_Waste"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Anna_Reconstruction_Unit_Switch.DA_Item_Anna_Reconstruction_Unit_Switch",
+    "assetType": "Item",
+    "assetName": "DA_Item_Anna_Reconstruction_Unit_Switch"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Barge.DA_Item_Module_Barge",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Barge"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_BoatCO2Exhaust.DA_Item_Module_BoatCO2Exhaust",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_BoatCO2Exhaust"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_BoatSolarPanel.DA_Item_Module_BoatSolarPanel",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_BoatSolarPanel"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Boat_Stabilizer.DA_Item_Module_Boat_Stabilizer",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Boat_Stabilizer"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_CareTaker.DA_Item_Module_CareTaker",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_CareTaker"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Clonebay.DA_Item_Module_Clonebay",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Clonebay"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_CO2Tank_Large.DA_Item_Module_CO2Tank_Large",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_CO2Tank_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_CO2tank_Small.DA_Item_Module_CO2tank_Small",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_CO2tank_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Compost.DA_Item_Module_Compost",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Compost"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Compost_Mark2.DA_Item_Module_Compost_Mark2",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Compost_Mark2"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Dehumidifier.DA_Item_Module_Dehumidifier",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Dehumidifier"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_DieselEngine.DA_Item_Module_DieselEngine",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_DieselEngine"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_DieselGenerator.DA_Item_Module_DieselGenerator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_DieselGenerator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_DistillationTower.DA_Item_Module_DistillationTower",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_DistillationTower"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_DoorConsole.DA_Item_Module_DoorConsole",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_DoorConsole"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Drone_Charger.DA_Item_Module_Drone_Charger",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Drone_Charger"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Dumpster.DA_Item_Module_Dumpster",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Dumpster"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_EdenFrame.DA_Item_Module_EdenFrame",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_EdenFrame"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_ElectricEngine.DA_Item_Module_ElectricEngine",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_ElectricEngine"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_ElectricGenerator.DA_Item_Module_ElectricGenerator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_ElectricGenerator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_ExtraLargeDieselTank.DA_Item_Module_ExtraLargeDieselTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_ExtraLargeDieselTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_ExtraLargePetrolTank.DA_Item_Module_ExtraLargePetrolTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_ExtraLargePetrolTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Fabricator.DA_Item_Module_Fabricator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Fabricator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_FillStation.DA_Item_Module_FillStation",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_FillStation"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_FoodProcessor.DA_Item_Module_FoodProcessor",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_FoodProcessor"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Forklift.DA_Item_Module_Forklift",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Forklift"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_GridScan.DA_Item_Module_GridScan",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_GridScan"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_GroundRecycler.DA_Item_Module_GroundRecycler",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_GroundRecycler"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_GroundSolarPanel.DA_Item_Module_GroundSolarPanel",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_GroundSolarPanel"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_GyroCopter.DA_Item_Module_GyroCopter",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_GyroCopter"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Heal_Station.DA_Item_Module_Heal_Station",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Heal_Station"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_HydroTurbine.DA_Item_Module_HydroTurbine",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_HydroTurbine"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_JetSki.DA_Item_Module_JetSki",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_JetSki"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeBattery.DA_Item_Module_LargeBattery",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeBattery"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeDieselTank.DA_Item_Module_LargeDieselTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeDieselTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeMethaneTank.DA_Item_Module_LargeMethaneTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeMethaneTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeO2tank.DA_Item_Module_LargeO2tank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeO2tank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeOilTank.DA_Item_Module_LargeOilTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeOilTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargePetrolTank.DA_Item_Module_LargePetrolTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargePetrolTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargePetrol_Reserve.DA_Item_Module_LargePetrol_Reserve",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargePetrol_Reserve"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeSaltWaterTank.DA_Item_Module_LargeSaltWaterTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeSaltWaterTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeWaterTank.DA_Item_Module_LargeWaterTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LargeWaterTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LazarusRack_Location_Only.DA_Item_Module_LazarusRack_Location_Only",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LazarusRack_Location_Only"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Lightning_Rod.DA_Item_Module_Lightning_Rod",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Lightning_Rod"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Lightswitch.DA_Item_Module_Lightswitch",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Lightswitch"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Lightswitch_Maze.DA_Item_Module_Lightswitch_Maze",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Lightswitch_Maze"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Loudspeaker.DA_Item_Module_Loudspeaker",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Loudspeaker"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_LoudspeakerWithScreen.DA_Item_Module_LoudspeakerWithScreen",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_LoudspeakerWithScreen"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_MediumBattery.DA_Item_Module_MediumBattery",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_MediumBattery"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_MethaneExtractor.DA_Item_Module_MethaneExtractor",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_MethaneExtractor"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_MovingPlatform.DA_Item_Module_MovingPlatform",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_MovingPlatform"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_O2Generator.DA_Item_Module_O2Generator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_O2Generator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_OilPump.DA_Item_Module_OilPump",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_OilPump"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PECOTerminal.DA_Item_Module_PECOTerminal",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PECOTerminal"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PoleSolarPanel.DA_Item_Module_PoleSolarPanel",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PoleSolarPanel"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PoleSolarPaneltier3.DA_Item_Module_PoleSolarPaneltier3",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PoleSolarPaneltier3"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableBattery.DA_Item_Module_PortableBattery",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableBattery"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableCO2Tank.DA_Item_Module_PortableCO2Tank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableCO2Tank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableCompost.DA_Item_Module_PortableCompost",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableCompost"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableDieselTank.DA_Item_Module_PortableDieselTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableDieselTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableElectricGenerator.DA_Item_Module_PortableElectricGenerator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableElectricGenerator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableMethaneTank.DA_Item_Module_PortableMethaneTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableMethaneTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableO2Generator.DA_Item_Module_PortableO2Generator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableO2Generator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableO2tank.DA_Item_Module_PortableO2tank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableO2tank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableOilTank.DA_Item_Module_PortableOilTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableOilTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortablePetrolGenerator.DA_Item_Module_PortablePetrolGenerator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortablePetrolGenerator"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortablePetrolTank.DA_Item_Module_PortablePetrolTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortablePetrolTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableSaltWaterTank.DA_Item_Module_PortableSaltWaterTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableSaltWaterTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableWaterTank.DA_Item_Module_PortableWaterTank",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortableWaterTank"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortalBattery.DA_Item_Module_PortalBattery",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortalBattery"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortalBattery_Testing.DA_Item_Module_PortalBattery_Testing",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortalBattery_Testing"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortalConsole.DA_Item_Module_PortalConsole",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_PortalConsole"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Recycler.DA_Item_Module_Recycler",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Recycler"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Rocket.DA_Item_Module_Rocket",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Rocket"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_RoomOutlet.DA_Item_Module_RoomOutlet",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_RoomOutlet"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_RoomOutlet_Starting_Hangar.DA_Item_Module_RoomOutlet_Starting_Hangar",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_RoomOutlet_Starting_Hangar"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Scoreboard.DA_Item_Module_Scoreboard",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Scoreboard"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Security_Camera.DA_Item_Module_Security_Camera",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Security_Camera"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Sonar.DA_Item_Module_Sonar",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Sonar"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Uplink.DA_Item_Module_Uplink",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Uplink"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Vacuum.DA_Item_Module_Vacuum",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Vacuum"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_WaterPump.DA_Item_Module_WaterPump",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_WaterPump"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_WaterPump_Left.DA_Item_Module_WaterPump_Left",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_WaterPump_Left"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_WaterPurifier.DA_Item_Module_WaterPurifier",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_WaterPurifier"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_WindTurbine.DA_Item_Module_WindTurbine",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_WindTurbine"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_WindTurbineMedium.DA_Item_Module_WindTurbineMedium",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_WindTurbineMedium"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_WindTurbine_Small.DA_Item_Module_WindTurbine_Small",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_WindTurbine_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_Module_Workbench.DA_Item_Module_Workbench",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Workbench"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/DA_Item_RocketCapsule.DA_Item_RocketCapsule",
+    "assetType": "Item",
+    "assetName": "DA_Item_RocketCapsule"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Grenade_Ignition_Electric.DA_Grenade_Ignition_Electric",
+    "assetType": "Item",
+    "assetName": "DA_Grenade_Ignition_Electric"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Grenade_Ignition_O2.DA_Grenade_Ignition_O2",
+    "assetType": "Item",
+    "assetName": "DA_Grenade_Ignition_O2"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Grenade_Ignition_Petrol.DA_Grenade_Ignition_Petrol",
+    "assetType": "Item",
+    "assetName": "DA_Grenade_Ignition_Petrol"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_ItemLoot_RollerbabyShell.DA_ItemLoot_RollerbabyShell",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_RollerbabyShell"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_ItemLoot_RollerbabyShell_Scanitem.DA_ItemLoot_RollerbabyShell_Scanitem",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_RollerbabyShell_Scanitem"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_AdvancedAlloyMesh.DA_Part_AdvancedAlloyMesh",
+    "assetType": "Part",
+    "assetName": "DA_Part_AdvancedAlloyMesh"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_AI.DA_Part_AI",
+    "assetType": "Part",
+    "assetName": "DA_Part_AI"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_AlloyFrame.DA_Part_AlloyFrame",
+    "assetType": "Part",
+    "assetName": "DA_Part_AlloyFrame"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_BatteryCell.DA_Part_BatteryCell",
+    "assetType": "Part",
+    "assetName": "DA_Part_BatteryCell"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_CompressionPump.DA_Part_CompressionPump",
+    "assetType": "Part",
+    "assetName": "DA_Part_CompressionPump"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_ConduitWiring.DA_Part_ConduitWiring",
+    "assetType": "Part",
+    "assetName": "DA_Part_ConduitWiring"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_ConnectorPorts.DA_Part_ConnectorPorts",
+    "assetType": "Part",
+    "assetName": "DA_Part_ConnectorPorts"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_ControlKnobsButtons.DA_Part_ControlKnobsButtons",
+    "assetType": "Part",
+    "assetName": "DA_Part_ControlKnobsButtons"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_CoolingRadiator.DA_Part_CoolingRadiator",
+    "assetType": "Part",
+    "assetName": "DA_Part_CoolingRadiator"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_CoolingSystem.DA_Part_CoolingSystem",
+    "assetType": "Part",
+    "assetName": "DA_Part_CoolingSystem"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_DataStorageChip.DA_Part_DataStorageChip",
+    "assetType": "Part",
+    "assetName": "DA_Part_DataStorageChip"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_DisplayScreen.DA_Part_DisplayScreen",
+    "assetType": "Part",
+    "assetName": "DA_Part_DisplayScreen"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_DurablePlasticCasing.DA_Part_DurablePlasticCasing",
+    "assetType": "Part",
+    "assetName": "DA_Part_DurablePlasticCasing"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_FilteringSystem.DA_Part_FilteringSystem",
+    "assetType": "Part",
+    "assetName": "DA_Part_FilteringSystem"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_Grenade_Ignition.DA_Part_Grenade_Ignition",
+    "assetType": "Item",
+    "assetName": "DA_Part_Grenade_Ignition"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_IsotopeStabilizer.DA_Part_IsotopeStabilizer",
+    "assetType": "Part",
+    "assetName": "DA_Part_IsotopeStabilizer"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_LogicChip.DA_Part_LogicChip",
+    "assetType": "Part",
+    "assetName": "DA_Part_LogicChip"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_MagneticCoil.DA_Part_MagneticCoil",
+    "assetType": "Part",
+    "assetName": "DA_Part_MagneticCoil"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_NanoFabricMesh.DA_Part_NanoFabricMesh",
+    "assetType": "Part",
+    "assetName": "DA_Part_NanoFabricMesh"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_OpticalLens.DA_Part_OpticalLens",
+    "assetType": "Part",
+    "assetName": "DA_Part_OpticalLens"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_PowerCore.DA_Part_PowerCore",
+    "assetType": "Part",
+    "assetName": "DA_Part_PowerCore"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_ReactiveCore.DA_Part_ReactiveCore",
+    "assetType": "Part",
+    "assetName": "DA_Part_ReactiveCore"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_SolarCells.DA_Part_SolarCells",
+    "assetType": "Part",
+    "assetName": "DA_Part_SolarCells"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_StorageCylinder.DA_Part_StorageCylinder",
+    "assetType": "Part",
+    "assetName": "DA_Part_StorageCylinder"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_StorageMatrix.DA_Part_StorageMatrix",
+    "assetType": "Part",
+    "assetName": "DA_Part_StorageMatrix"
+  },
+  {
+    "path": "/Game/Data/Assets/Parts/DA_Part_TurbineBlade.DA_Part_TurbineBlade",
+    "assetType": "Part",
+    "assetName": "DA_Part_TurbineBlade"
+  },
+  {
+    "path": "/Game/Data/Assets/Pigments/DA_Pigment_Carbon_Black.DA_Pigment_Carbon_Black",
+    "assetType": "Item",
+    "assetName": "DA_Pigment_Carbon_Black"
+  },
+  {
+    "path": "/Game/Data/Assets/Pigments/DA_Pigment_Chromium_Oxide_Green.DA_Pigment_Chromium_Oxide_Green",
+    "assetType": "Item",
+    "assetName": "DA_Pigment_Chromium_Oxide_Green"
+  },
+  {
+    "path": "/Game/Data/Assets/Pigments/DA_Pigment_Cobalt_Aluminate_Blue.DA_Pigment_Cobalt_Aluminate_Blue",
+    "assetType": "Item",
+    "assetName": "DA_Pigment_Cobalt_Aluminate_Blue"
+  },
+  {
+    "path": "/Game/Data/Assets/Pigments/DA_Pigment_Iron_Oxide_Red.DA_Pigment_Iron_Oxide_Red",
+    "assetType": "Item",
+    "assetName": "DA_Pigment_Iron_Oxide_Red"
+  },
+  {
+    "path": "/Game/Data/Assets/Pigments/DA_Pigment_Titanium_Dioxide_White.DA_Pigment_Titanium_Dioxide_White",
+    "assetType": "Item",
+    "assetName": "DA_Pigment_Titanium_Dioxide_White"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Aluminium_Plate.DA_Prop_Aluminium_Plate",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Aluminium_Plate"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Boom_Box.DA_Prop_Boom_Box",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Boom_Box"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Brass_Pipe.DA_Prop_Brass_Pipe",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Brass_Pipe"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Broken_Display.DA_Prop_Broken_Display",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Broken_Display"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Ceramic_Container.DA_Prop_Ceramic_Container",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Ceramic_Container"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Iron_Plate_Large.DA_Prop_Iron_Plate_Large",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Iron_Plate_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_LargeCrate.DA_Prop_LargeCrate",
+    "assetType": "Item",
+    "assetName": "DA_Prop_LargeCrate"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Rocket_Nozzle.DA_Prop_Rocket_Nozzle",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Rocket_Nozzle"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_SmallBox.DA_Prop_SmallBox",
+    "assetType": "Item",
+    "assetName": "DA_Prop_SmallBox"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Tire_Large.DA_Prop_Tire_Large",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Tire_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_Tire_Small.DA_Prop_Tire_Small",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Tire_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_VentilationPlate_ExtraSmall.DA_Prop_VentilationPlate_ExtraSmall",
+    "assetType": "Item",
+    "assetName": "DA_Prop_VentilationPlate_ExtraSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/DA_Prop_VentilationPlate_Small.DA_Prop_VentilationPlate_Small",
+    "assetType": "Item",
+    "assetName": "DA_Prop_VentilationPlate_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Item_Equipment_Abyss_Glow.DA_Item_Equipment_Abyss_Glow",
+    "assetType": "Equipment",
+    "assetName": "DA_Item_Equipment_Abyss_Glow"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Item_Equipment_DepthGlow.DA_Item_Equipment_DepthGlow",
+    "assetType": "Equipment",
+    "assetName": "DA_Item_Equipment_DepthGlow"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Item_Equipment_Glowstick.DA_Item_Equipment_Glowstick",
+    "assetType": "Equipment",
+    "assetName": "DA_Item_Equipment_Glowstick"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_BoltGun.DA_Weapon_BoltGun",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_BoltGun"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_BoltGun_Pistol.DA_Weapon_BoltGun_Pistol",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_BoltGun_Pistol"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_BoltGun_Sniper.DA_Weapon_BoltGun_Sniper",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_BoltGun_Sniper"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_ElectricPistol.DA_Weapon_ElectricPistol",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_ElectricPistol"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_ElectricRifle.DA_Weapon_ElectricRifle",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_ElectricRifle"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_Flamethrower.DA_Weapon_Flamethrower",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_Flamethrower"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_FlamethrowerPistol.DA_Weapon_FlamethrowerPistol",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_FlamethrowerPistol"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_GrenadeElectric.DA_Weapon_GrenadeElectric",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_GrenadeElectric"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_GrenadeElectricBig.DA_Weapon_GrenadeElectricBig",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_GrenadeElectricBig"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_GrenadeOxygen.DA_Weapon_GrenadeOxygen",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_GrenadeOxygen"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_GrenadeOxygenBig.DA_Weapon_GrenadeOxygenBig",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_GrenadeOxygenBig"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_GrenadePetrol.DA_Weapon_GrenadePetrol",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_GrenadePetrol"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_GrenadePetrolBig.DA_Weapon_GrenadePetrolBig",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_GrenadePetrolBig"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_Grenade_Decoy.DA_Weapon_Grenade_Decoy",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_Grenade_Decoy"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_Grenade_Swarm_Sweetheart.DA_Weapon_Grenade_Swarm_Sweetheart",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_Grenade_Swarm_Sweetheart"
+  },
+  {
+    "path": "/Game/Data/Assets/Weapon/DA_Weapon_Petrol_Grinder.DA_Weapon_Petrol_Grinder",
+    "assetType": "Equipment",
+    "assetName": "DA_Weapon_Petrol_Grinder"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Frame_Small.DA_Building_Eden_Frame_Small",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Frame_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Extender_4x2.DA_Building_Eden_Tile_Extender_4x2",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Extender_4x2"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Floor_8x8_Beam.DA_Building_Eden_Tile_Floor_8x8_Beam",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Floor_8x8_Beam"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Floor_8x8_Beam_Farm.DA_Building_Eden_Tile_Floor_8x8_Beam_Farm",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Floor_8x8_Beam_Farm"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Floor_8x8_Beam_Pillar.DA_Building_Eden_Tile_Floor_8x8_Beam_Pillar",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Floor_8x8_Beam_Pillar"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Floor_8x8_Beam_Pillar_Farm.DA_Building_Eden_Tile_Floor_8x8_Beam_Pillar_Farm",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Floor_8x8_Beam_Pillar_Farm"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Floor_8x8_Corner.DA_Building_Eden_Tile_Floor_8x8_Corner",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Floor_8x8_Corner"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Floor_8x8_Corner_Farm.DA_Building_Eden_Tile_Floor_8x8_Corner_Farm",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Floor_8x8_Corner_Farm"
+  },
+  {
+    "path": "/Game/Data/Assets/Buildings/Eden/DA_Building_Eden_Tile_Stair_Extension.DA_Building_Eden_Tile_Stair_Extension",
+    "assetType": "Item",
+    "assetName": "DA_Building_Eden_Tile_Stair_Extension"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Back/DA_Equipment_Back_Battery_Large.DA_Equipment_Back_Battery_Large",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Back_Battery_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Back/DA_Equipment_Back_Battery_Medium.DA_Equipment_Back_Battery_Medium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Back_Battery_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Back/DA_Equipment_Back_Battery_Small.DA_Equipment_Back_Battery_Small",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Back_Battery_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Back/DA_Equipment_Back_Petrol_Large.DA_Equipment_Back_Petrol_Large",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Back_Petrol_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Back/DA_Equipment_Back_Petrol_Medium.DA_Equipment_Back_Petrol_Medium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Back_Petrol_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Back/DA_Equipment_Back_Petrol_Small.DA_Equipment_Back_Petrol_Small",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Back_Petrol_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_ArmorChestHeavy.DA_Equipment_ArmorChestHeavy",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorChestHeavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_ArmorChestLight.DA_Equipment_ArmorChestLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorChestLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_ArmorChestMedium.DA_Equipment_ArmorChestMedium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorChestMedium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_Armor_Chest_Heavy.DA_Equipment_Armor_Chest_Heavy",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Chest_Heavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_Armor_Chest_Light.DA_Equipment_Armor_Chest_Light",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Chest_Light"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_Armor_Chest_Medium.DA_Equipment_Armor_Chest_Medium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Chest_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Chest/DA_Equipment_Armor_Chest_Reinforced.DA_Equipment_Armor_Chest_Reinforced",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Chest_Reinforced"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_Binoculars.DA_Equipment_Binoculars",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Binoculars"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_BotController.DA_Equipment_BotController",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_BotController"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_DismantleTool.DA_Equipment_DismantleTool",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_DismantleTool"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_FarmingTool.DA_Equipment_FarmingTool",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_FarmingTool"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_Flashlight.DA_Equipment_Flashlight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Flashlight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_RepairTool.DA_Equipment_RepairTool",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_RepairTool"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_ScanTool.DA_Equipment_ScanTool",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ScanTool"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_Telescope.DA_Equipment_Telescope",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Telescope"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_WaterJet.DA_Equipment_WaterJet",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_WaterJet"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Hands/DA_Equipment_WaterJet_V2.DA_Equipment_WaterJet_V2",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_WaterJet_V2"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_ArmorHeadHeavy.DA_Equipment_ArmorHeadHeavy",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorHeadHeavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_ArmorHeadLight.DA_Equipment_ArmorHeadLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorHeadLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_ArmorHeadMedium.DA_Equipment_ArmorHeadMedium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorHeadMedium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Armor_Head.DA_Equipment_Armor_Head",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Head"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Armor_Head_Heavy.DA_Equipment_Armor_Head_Heavy",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Head_Heavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Armor_Head_Light.DA_Equipment_Armor_Head_Light",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Head_Light"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Armor_Head_Medium.DA_Equipment_Armor_Head_Medium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Head_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Armor_Head_Reinforced.DA_Equipment_Armor_Head_Reinforced",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Head_Reinforced"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Eclipse_HeadLight.DA_Equipment_Eclipse_HeadLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Eclipse_HeadLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_HeadLight.DA_Equipment_HeadLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_HeadLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_LightLancer_HeadLight.DA_Equipment_LightLancer_HeadLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_LightLancer_HeadLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_Nebula_HeadLight.DA_Equipment_Nebula_HeadLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Nebula_HeadLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_NightVision.DA_Equipment_NightVision",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_NightVision"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_UVLightVision.DA_Equipment_UVLightVision",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_UVLightVision"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Head/DA_Equipment_UV_HeadLight.DA_Equipment_UV_HeadLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_UV_HeadLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_ArmorLegsHeavy.DA_Equipment_ArmorLegsHeavy",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorLegsHeavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_ArmorLegsLight.DA_Equipment_ArmorLegsLight",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorLegsLight"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_ArmorLegsMedium.DA_Equipment_ArmorLegsMedium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_ArmorLegsMedium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_Armor_Legs_BugStompers.DA_Equipment_Armor_Legs_BugStompers",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Legs_BugStompers"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_Armor_Legs_Heavy.DA_Equipment_Armor_Legs_Heavy",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Legs_Heavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_Armor_Legs_Light.DA_Equipment_Armor_Legs_Light",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Legs_Light"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_Armor_Legs_Medium.DA_Equipment_Armor_Legs_Medium",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Legs_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Legs/DA_Equipment_Armor_Legs_Reinforced.DA_Equipment_Armor_Legs_Reinforced",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Legs_Reinforced"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Shoulder/DA_Equipment_Armor_Shoulder.DA_Equipment_Armor_Shoulder",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Armor_Shoulder"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Shoulder/DA_Equipment_Body_Light.DA_Equipment_Body_Light",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Body_Light"
+  },
+  {
+    "path": "/Game/Data/Assets/Equipment/Waist/DA_Equipment_Recovery_Generator.DA_Equipment_Recovery_Generator",
+    "assetType": "Equipment",
+    "assetName": "DA_Equipment_Recovery_Generator"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/Eden_Trees/DA_Seed_AleppoPine.DA_Seed_AleppoPine",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_AleppoPine"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/Eden_Trees/DA_Seed_Bamboo.DA_Seed_Bamboo",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Bamboo"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/Eden_Trees/DA_Seed_Birch.DA_Seed_Birch",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Birch"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/Eden_Trees/DA_Seed_CherryTree.DA_Seed_CherryTree",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_CherryTree"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/Eden_Trees/DA_Seed_Pine.DA_Seed_Pine",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Pine"
+  },
+  {
+    "path": "/Game/Data/Assets/Farming/Eden_Trees/DA_Seed_RoseBush.DA_Seed_RoseBush",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_RoseBush"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Bone-Fortify.DA_Food_Bone-Fortify",
+    "assetType": "Item",
+    "assetName": "DA_Food_Bone-Fortify"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Digestive_Overdrive.DA_Food_Digestive_Overdrive",
+    "assetType": "Item",
+    "assetName": "DA_Food_Digestive_Overdrive"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Endura-Growth.DA_Food_Endura-Growth",
+    "assetType": "Item",
+    "assetName": "DA_Food_Endura-Growth"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Genesis_Prime.DA_Food_Genesis_Prime",
+    "assetType": "Item",
+    "assetName": "DA_Food_Genesis_Prime"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_High-FatEnergy.DA_Food_High-FatEnergy",
+    "assetType": "Item",
+    "assetName": "DA_Food_High-FatEnergy"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Hyper-Evolution.DA_Food_Hyper-Evolution",
+    "assetType": "Item",
+    "assetName": "DA_Food_Hyper-Evolution"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_ImmuneBoost.DA_Food_ImmuneBoost",
+    "assetType": "Item",
+    "assetName": "DA_Food_ImmuneBoost"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_MegaFat.DA_Food_MegaFat",
+    "assetType": "Item",
+    "assetName": "DA_Food_MegaFat"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Mind_Surge.DA_Food_Mind_Surge",
+    "assetType": "Item",
+    "assetName": "DA_Food_Mind_Surge"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_MitochondrialSurge.DA_Food_MitochondrialSurge",
+    "assetType": "Item",
+    "assetName": "DA_Food_MitochondrialSurge"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_MuscleFortification.DA_Food_MuscleFortification",
+    "assetType": "Item",
+    "assetName": "DA_Food_MuscleFortification"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_NaniteInfusion.DA_Food_NaniteInfusion",
+    "assetType": "Item",
+    "assetName": "DA_Food_NaniteInfusion"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Neuro-Boost.DA_Food_Neuro-Boost",
+    "assetType": "Item",
+    "assetName": "DA_Food_Neuro-Boost"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_Nutri-Core.DA_Food_Nutri-Core",
+    "assetType": "Item",
+    "assetName": "DA_Food_Nutri-Core"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Food/DA_Food_PhysiqueFuel.DA_Food_PhysiqueFuel",
+    "assetType": "Item",
+    "assetName": "DA_Food_PhysiqueFuel"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_ItemLoot_Teddy_01.DA_ItemLoot_Teddy_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Teddy_01"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_ItemLoot_Teddy_02.DA_ItemLoot_Teddy_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Teddy_02"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Anna_Echo.DA_Memory_Anna_Echo",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Anna_Echo"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Aron.DA_Memory_Aron",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Aron"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_AshNotebook.DA_Memory_AshNotebook",
+    "assetType": "Item",
+    "assetName": "DA_Memory_AshNotebook"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_BasketBall.DA_Memory_BasketBall",
+    "assetType": "Item",
+    "assetName": "DA_Memory_BasketBall"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_BasketBall_Blue.DA_Memory_BasketBall_Blue",
+    "assetType": "Item",
+    "assetName": "DA_Memory_BasketBall_Blue"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_Encyclopedia.DA_Memory_Books_Encyclopedia",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_Encyclopedia"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_FirstAid.DA_Memory_Books_FirstAid",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_FirstAid"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_Meditation.DA_Memory_Books_Meditation",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_Meditation"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_Programming.DA_Memory_Books_Programming",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_Programming"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_Sudoku.DA_Memory_Books_Sudoku",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_Sudoku"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_SunTzu.DA_Memory_Books_SunTzu",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_SunTzu"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Books_Tommy.DA_Memory_Books_Tommy",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Books_Tommy"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_BowlingBall.DA_Memory_BowlingBall",
+    "assetType": "Item",
+    "assetName": "DA_Memory_BowlingBall"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_BowlingPin.DA_Memory_BowlingPin",
+    "assetType": "Item",
+    "assetName": "DA_Memory_BowlingPin"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Camera.DA_Memory_Camera",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Camera"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_CareDirective.DA_Memory_CareDirective",
+    "assetType": "Item",
+    "assetName": "DA_Memory_CareDirective"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Compass.DA_Memory_Compass",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Compass"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Crayon.DA_Memory_Crayon",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Crayon"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Dolly.DA_Memory_Dolly",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Dolly"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Guitar.DA_Memory_Guitar",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Guitar"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_LifeJacket.DA_Memory_LifeJacket",
+    "assetType": "Item",
+    "assetName": "DA_Memory_LifeJacket"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Mirror.DA_Memory_Mirror",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Mirror"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_MysteryBox.DA_Memory_MysteryBox",
+    "assetType": "Item",
+    "assetName": "DA_Memory_MysteryBox"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_PigHorn.DA_Memory_PigHorn",
+    "assetType": "Item",
+    "assetName": "DA_Memory_PigHorn"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_RecycleMe.DA_Memory_RecycleMe",
+    "assetType": "Item",
+    "assetName": "DA_Memory_RecycleMe"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Shoes.DA_Memory_Shoes",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Shoes"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_SmallTree2.DA_Memory_SmallTree2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_SmallTree2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_StarChildMemory.DA_Memory_StarChildMemory",
+    "assetType": "Item",
+    "assetName": "DA_Memory_StarChildMemory"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Stopwatch.DA_Memory_Stopwatch",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Stopwatch"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/DA_Memory_Toy.DA_Memory_Toy",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Toy"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Seeds/DA_Seed_Apple_Old.DA_Seed_Apple_Old",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Apple_Old"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Seeds/DA_Seed_Corn.DA_Seed_Corn",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Corn"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Seeds/DA_Seed_Potato.DA_Seed_Potato",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Potato"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Seeds/DA_Seed_Truffle.DA_Seed_Truffle",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Truffle"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Seeds/DA_Seed_Wheat.DA_Seed_Wheat",
+    "assetType": "FoodSeed",
+    "assetName": "DA_Seed_Wheat"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Conservation_Coil.DA_Item_Module_Enhancer_Conservation_Coil",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Conservation_Coil"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Efficiency_Matrix.DA_Item_Module_Enhancer_Efficiency_Matrix",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Efficiency_Matrix"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Entanglement_Lens.DA_Item_Module_Enhancer_Entanglement_Lens",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Entanglement_Lens"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Flash_Array.DA_Item_Module_Enhancer_Flash_Array",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Flash_Array"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Pulse_Timing_Regulator.DA_Item_Module_Enhancer_Pulse_Timing_Regulator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Pulse_Timing_Regulator"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Quantum_Duplicator.DA_Item_Module_Enhancer_Quantum_Duplicator",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Quantum_Duplicator"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Resource_Optimizer.DA_Item_Module_Enhancer_Resource_Optimizer",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Resource_Optimizer"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Enhancer_Voltage_Minimizer.DA_Item_Module_Enhancer_Voltage_Minimizer",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Enhancer_Voltage_Minimizer"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/ModuleEnhancers/DA_Item_Module_Sonar_Upgrade_V1.DA_Item_Module_Sonar_Upgrade_V1",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Sonar_Upgrade_V1"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Canada.DA_Paint_Canada",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Canada"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Catalonia.DA_Paint_Catalonia",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Catalonia"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Circus.DA_Paint_Circus",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Circus"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_ComicMonster.DA_Paint_ComicMonster",
+    "assetType": "Item",
+    "assetName": "DA_Paint_ComicMonster"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_DinoNite.DA_Paint_DinoNite",
+    "assetType": "Item",
+    "assetName": "DA_Paint_DinoNite"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Dragon.DA_Paint_Dragon",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Dragon"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Electric.DA_Paint_Electric",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Electric"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_ExoBuilt.DA_Paint_ExoBuilt",
+    "assetType": "Item",
+    "assetName": "DA_Paint_ExoBuilt"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Flames.DA_Paint_Flames",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Flames"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Flower.DA_Paint_Flower",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Flower"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Fossil.DA_Paint_Fossil",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Fossil"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_France.DA_Paint_France",
+    "assetType": "Item",
+    "assetName": "DA_Paint_France"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_FutureNow.DA_Paint_FutureNow",
+    "assetType": "Item",
+    "assetName": "DA_Paint_FutureNow"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Gaudi.DA_Paint_Gaudi",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Gaudi"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Holland.DA_Paint_Holland",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Holland"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Italy.DA_Paint_Italy",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Italy"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Jungle.DA_Paint_Jungle",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Jungle"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Kids.DA_Paint_Kids",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Kids"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_LifeGuard.DA_Paint_LifeGuard",
+    "assetType": "Item",
+    "assetName": "DA_Paint_LifeGuard"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Mermaid.DA_Paint_Mermaid",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Mermaid"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Moses.DA_Paint_Moses",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Moses"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Octopus.DA_Paint_Octopus",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Octopus"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Octopus2.DA_Paint_Octopus2",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Octopus2"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_OldTimey.DA_Paint_OldTimey",
+    "assetType": "Item",
+    "assetName": "DA_Paint_OldTimey"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Pirate.DA_Paint_Pirate",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Pirate"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Psychodelia.DA_Paint_Psychodelia",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Psychodelia"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Puzzle.DA_Paint_Puzzle",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Puzzle"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Razzle.DA_Paint_Razzle",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Razzle"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Rebel.DA_Paint_Rebel",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Rebel"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_RustGraffiti.DA_Paint_RustGraffiti",
+    "assetType": "Item",
+    "assetName": "DA_Paint_RustGraffiti"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Sandman.DA_Paint_Sandman",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Sandman"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Skull.DA_Paint_Skull",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Skull"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Skull2.DA_Paint_Skull2",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Skull2"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Suomi.DA_Paint_Suomi",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Suomi"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Undersea.DA_Paint_Undersea",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Undersea"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_Viking.DA_Paint_Viking",
+    "assetType": "Item",
+    "assetName": "DA_Paint_Viking"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/DA_Paint_WallArt.DA_Paint_WallArt",
+    "assetType": "Item",
+    "assetName": "DA_Paint_WallArt"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_FlexImpact.DA_AmmoBox_FlexImpact",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_FlexImpact"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_HeavyDutySlammers.DA_AmmoBox_HeavyDutySlammers",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_HeavyDutySlammers"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_LuxCorePenetrators.DA_AmmoBox_LuxCorePenetrators",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_LuxCorePenetrators"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_ShardStorm.DA_AmmoBox_ShardStorm",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_ShardStorm"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_TheRod.DA_AmmoBox_TheRod",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_TheRod"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_Tracer.DA_AmmoBox_Tracer",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_Tracer"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/AmmoBoxes/DA_AmmoBox_TriComposite.DA_AmmoBox_TriComposite",
+    "assetType": "Item",
+    "assetName": "DA_AmmoBox_TriComposite"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Cardboard_Boxes/DA_SeamineCore.DA_SeamineCore",
+    "assetType": "Item",
+    "assetName": "DA_SeamineCore"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Cardboard_Boxes/DA_Trash_CardboardBoxA_01.DA_Trash_CardboardBoxA_01",
+    "assetType": "Item",
+    "assetName": "DA_Trash_CardboardBoxA_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Cardboard_Boxes/DA_Trash_CardboardBoxA_02.DA_Trash_CardboardBoxA_02",
+    "assetType": "Item",
+    "assetName": "DA_Trash_CardboardBoxA_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Cardboard_Boxes/DA_Trash_CardboardBoxA_03.DA_Trash_CardboardBoxA_03",
+    "assetType": "Item",
+    "assetName": "DA_Trash_CardboardBoxA_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Cardboard_Boxes/DA_Trash_CardboardBoxA_04.DA_Trash_CardboardBoxA_04",
+    "assetType": "Item",
+    "assetName": "DA_Trash_CardboardBoxA_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Old_Dismantables/DA_ItemLoot_DisplayBrokenA.DA_ItemLoot_DisplayBrokenA",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_DisplayBrokenA"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Old_Dismantables/DA_ItemLoot_DisplayBrokenB.DA_ItemLoot_DisplayBrokenB",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_DisplayBrokenB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Old_Dismantables/DA_ItemLoot_MechanicalLightBrokenA.DA_ItemLoot_MechanicalLightBrokenA",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_MechanicalLightBrokenA"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Old_Dismantables/DA_ItemLoot_MechanicalLightBrokenB.DA_ItemLoot_MechanicalLightBrokenB",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_MechanicalLightBrokenB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/Old_Dismantables/DA_ItemLoot_SaveStation_Broken.DA_ItemLoot_SaveStation_Broken",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_SaveStation_Broken"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level1/DA_Material_Food_Carbohydrate.DA_Material_Food_Carbohydrate",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Carbohydrate"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level1/DA_Material_Food_Fat.DA_Material_Food_Fat",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Fat"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level1/DA_Material_Food_Protein.DA_Material_Food_Protein",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Protein"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level2/DA_Material_Food_Calcium.DA_Material_Food_Calcium",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Calcium"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level2/DA_Material_Food_Omega-3.DA_Material_Food_Omega-3",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Omega-3"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level2/DA_Material_Food_Vitamind.DA_Material_Food_Vitamind",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Vitamind"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level3/DA_Material_Food_Bioregulator.DA_Material_Food_Bioregulator",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Bioregulator"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level3/DA_Material_Food_Human_Growth_Hormone.DA_Material_Food_Human_Growth_Hormone",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Human_Growth_Hormone"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level3/DA_Material_Food_MitochondrialAmplifier.DA_Material_Food_MitochondrialAmplifier",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_MitochondrialAmplifier"
+  },
+  {
+    "path": "/Game/Data/Assets/MaterialsFood/Level3/DA_Material_Food_Nanite_Nutrient.DA_Material_Food_Nanite_Nutrient",
+    "assetType": "Material",
+    "assetName": "DA_Material_Food_Nanite_Nutrient"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/BoatExtensions/DA_Item_BoatExtension_HeliPad.DA_Item_BoatExtension_HeliPad",
+    "assetType": "Item",
+    "assetName": "DA_Item_BoatExtension_HeliPad"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Array_1_DamagedPart.DA_Item_Module_Array_1_DamagedPart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Array_1_DamagedPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Array_2_DamagedPart.DA_Item_Module_Array_2_DamagedPart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Array_2_DamagedPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Array_3_DamagedPart.DA_Item_Module_Array_3_DamagedPart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Array_3_DamagedPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Array_4_DamagedPart.DA_Item_Module_Array_4_DamagedPart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Array_4_DamagedPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Biological_Survey_Tower_DamagedPart.DA_Item_Module_Biological_Survey_Tower_DamagedPart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Biological_Survey_Tower_DamagedPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Communications_Array_DamagedPart.DA_Item_Module_Communications_Array_DamagedPart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Communications_Array_DamagedPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Damaged/DA_Item_Module_Door_PowerBox_DamagePart.DA_Item_Module_Door_PowerBox_DamagePart",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Door_PowerBox_DamagePart"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Heating/DA_Item_Module_Boiler.DA_Item_Module_Boiler",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Boiler"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Heating/DA_Item_Module_Boiler_Large.DA_Item_Module_Boiler_Large",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Boiler_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Heating/DA_Item_Module_Heater.DA_Item_Module_Heater",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Heater"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Heating/DA_Item_Module_Heater_Large.DA_Item_Module_Heater_Large",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Heater_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Heating/DA_Item_Module_Heater_Medium.DA_Item_Module_Heater_Medium",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Heater_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Heating/DA_Item_Module_Heater_Small.DA_Item_Module_Heater_Small",
+    "assetType": "Item",
+    "assetName": "DA_Item_Module_Heater_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Actuator_Electricity.DA_Module_Actuator_Electricity",
+    "assetType": "Item",
+    "assetName": "DA_Module_Actuator_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Actuator_Signal.DA_Module_Actuator_Signal",
+    "assetType": "Item",
+    "assetName": "DA_Module_Actuator_Signal"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Data_Port.DA_Module_Data_Port",
+    "assetType": "Item",
+    "assetName": "DA_Module_Data_Port"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Gate_Electricity.DA_Module_Gate_Electricity",
+    "assetType": "Item",
+    "assetName": "DA_Module_Gate_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Level_Sensor_Electricity.DA_Module_Level_Sensor_Electricity",
+    "assetType": "Item",
+    "assetName": "DA_Module_Level_Sensor_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Logic_Gate_Electricity.DA_Module_Logic_Gate_Electricity",
+    "assetType": "Item",
+    "assetName": "DA_Module_Logic_Gate_Electricity"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Signal_Display.DA_Module_Signal_Display",
+    "assetType": "Item",
+    "assetName": "DA_Module_Signal_Display"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Signal_Filter.DA_Module_Signal_Filter",
+    "assetType": "Item",
+    "assetName": "DA_Module_Signal_Filter"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Signal_Processor.DA_Module_Signal_Processor",
+    "assetType": "Item",
+    "assetName": "DA_Module_Signal_Processor"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Signal_Switch.DA_Module_Signal_Switch",
+    "assetType": "Item",
+    "assetName": "DA_Module_Signal_Switch"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/Signaling/DA_Module_Signal_Timer.DA_Module_Signal_Timer",
+    "assetType": "Item",
+    "assetName": "DA_Module_Signal_Timer"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/DA_Item_SUModule_BatterySmall.DA_Item_SUModule_BatterySmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_SUModule_BatterySmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/DA_Item_SUModule_DieselSmall.DA_Item_SUModule_DieselSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_SUModule_DieselSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/DA_Item_SUModule_FreshWaterSmall.DA_Item_SUModule_FreshWaterSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_SUModule_FreshWaterSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/DA_Item_SUModule_MethaneSmall.DA_Item_SUModule_MethaneSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_SUModule_MethaneSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/DA_Item_SUModule_OxygenSmall.DA_Item_SUModule_OxygenSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_SUModule_OxygenSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/DA_Item_SUModule_PetrolSmall.DA_Item_SUModule_PetrolSmall",
+    "assetType": "Item",
+    "assetName": "DA_Item_SUModule_PetrolSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Props/Scannable/Scannable_Statue_Moses.Scannable_Statue_Moses",
+    "assetType": "Item",
+    "assetName": "Scannable_Statue_Moses"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_00.DA_Metal_Trash_00",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_01.DA_Metal_Trash_01",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_02.DA_Metal_Trash_02",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_03.DA_Metal_Trash_03",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_04.DA_Metal_Trash_04",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_05.DA_Metal_Trash_05",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_06.DA_Metal_Trash_06",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_06"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_07.DA_Metal_Trash_07",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_07"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_08.DA_Metal_Trash_08",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_08"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_09.DA_Metal_Trash_09",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_09"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_10.DA_Metal_Trash_10",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_10"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_11.DA_Metal_Trash_11",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_11"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_12.DA_Metal_Trash_12",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_12"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_13.DA_Metal_Trash_13",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_13"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_14.DA_Metal_Trash_14",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_14"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_15.DA_Metal_Trash_15",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_15"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_16.DA_Metal_Trash_16",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_16"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_17.DA_Metal_Trash_17",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_17"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_18.DA_Metal_Trash_18",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_18"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_19.DA_Metal_Trash_19",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_19"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_20.DA_Metal_Trash_20",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_20"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_21.DA_Metal_Trash_21",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_21"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_22.DA_Metal_Trash_22",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_22"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Metal/DA_Metal_Trash_23.DA_Metal_Trash_23",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Trash_23"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Chromite_Nugget.DA_Chromite_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Chromite_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Cobalt_Nugget.DA_Cobalt_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Cobalt_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Copper_Nugget.DA_Copper_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Copper_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Gold_Nugget.DA_Gold_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Gold_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Graphite_Nugget.DA_Graphite_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Graphite_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Hematite_Nugget.DA_Hematite_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Hematite_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Iron_Nugget.DA_Iron_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Iron_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Quantum_Crystal_Nugget.DA_Quantum_Crystal_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Quantum_Crystal_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Rutile_Nugget.DA_Rutile_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Rutile_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Nugget/DA_Titanium_Nugget.DA_Titanium_Nugget",
+    "assetType": "Item",
+    "assetName": "DA_Titanium_Nugget"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Aluminium_Scraps.DA_Aluminium_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Aluminium_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Cash_Fabric_Scraps.DA_Cash_Fabric_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Cash_Fabric_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Cash_Plastic_Scraps.DA_Cash_Plastic_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Cash_Plastic_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Copper_Scraps.DA_Copper_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Copper_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Fabric_Scraps.DA_Fabric_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Fabric_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Glass_Scraps.DA_Glass_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Glass_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_HiTech_Scraps.DA_HiTech_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_HiTech_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Metal_Scraps.DA_Metal_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Metal_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Plastic_Scraps.DA_Plastic_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Plastic_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Rubber_Scraps.DA_Rubber_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Rubber_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Tech_Scraps.DA_Tech_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Tech_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Ultra_Tech_Scrap.DA_Ultra_Tech_Scrap",
+    "assetType": "Item",
+    "assetName": "DA_Ultra_Tech_Scrap"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/RandomScraps/DA_Wire_Scraps.DA_Wire_Scraps",
+    "assetType": "Item",
+    "assetName": "DA_Wire_Scraps"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Scifi/DA_Trash_GlassTrash.DA_Trash_GlassTrash",
+    "assetType": "Item",
+    "assetName": "DA_Trash_GlassTrash"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/SUModule/DA_Trash_SUModule_Battery_Small.DA_Trash_SUModule_Battery_Small",
+    "assetType": "Item",
+    "assetName": "DA_Trash_SUModule_Battery_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/SUModule/DA_Trash_SUModule_Diesel_Small.DA_Trash_SUModule_Diesel_Small",
+    "assetType": "Item",
+    "assetName": "DA_Trash_SUModule_Diesel_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/SUModule/DA_Trash_SUModule_FreshWater_Small.DA_Trash_SUModule_FreshWater_Small",
+    "assetType": "Item",
+    "assetName": "DA_Trash_SUModule_FreshWater_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/SUModule/DA_Trash_SUModule_Methane_Small.DA_Trash_SUModule_Methane_Small",
+    "assetType": "Item",
+    "assetName": "DA_Trash_SUModule_Methane_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/SUModule/DA_Trash_SUModule_Oxygen_Small.DA_Trash_SUModule_Oxygen_Small",
+    "assetType": "Item",
+    "assetName": "DA_Trash_SUModule_Oxygen_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/SUModule/DA_Trash_SUModule_Petrol_Small.DA_Trash_SUModule_Petrol_Small",
+    "assetType": "Item",
+    "assetName": "DA_Trash_SUModule_Petrol_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Tech/DA_Trash_ElectronicParts.DA_Trash_ElectronicParts",
+    "assetType": "Item",
+    "assetName": "DA_Trash_ElectronicParts"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Tech/DA_Trash_Tech_00.DA_Trash_Tech_00",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Tech_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Tech/DA_Trash_Tech_01.DA_Trash_Tech_01",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Tech_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Tech/DA_Trash_Tech_02.DA_Trash_Tech_02",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Tech_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Tech/DA_Trash_Tech_05.DA_Trash_Tech_05",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Tech_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/Tech/DA_Trash_Tech_06.DA_Trash_Tech_06",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Tech_06"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_DiscardedFabrics.DA_Trash_DiscardedFabrics",
+    "assetType": "Item",
+    "assetName": "DA_Trash_DiscardedFabrics"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_00.DA_Trash_Trash_00",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_01.DA_Trash_Trash_01",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_02.DA_Trash_Trash_02",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_03.DA_Trash_Trash_03",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_04.DA_Trash_Trash_04",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_05.DA_Trash_Trash_05",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_06.DA_Trash_Trash_06",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_06"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_07.DA_Trash_Trash_07",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_07"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_08.DA_Trash_Trash_08",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_08"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_09.DA_Trash_Trash_09",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_09"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_10.DA_Trash_Trash_10",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_10"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_11.DA_Trash_Trash_11",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_11"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Trash_13.DA_Trash_Trash_13",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Trash_13"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_Wires.DA_Trash_Wires",
+    "assetType": "Item",
+    "assetName": "DA_Trash_Wires"
+  },
+  {
+    "path": "/Game/Data/Assets/Trash/TrashTrash/DA_Trash_WrappedGeneralTrash.DA_Trash_WrappedGeneralTrash",
+    "assetType": "Item",
+    "assetName": "DA_Trash_WrappedGeneralTrash"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Biology.DA_Memory_Drawings_Biology",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Biology"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Blueprints.DA_Memory_Drawings_Blueprints",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Blueprints"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Cards.DA_Memory_Drawings_Cards",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Cards"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Diagrams.DA_Memory_Drawings_Diagrams",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Diagrams"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Kids.DA_Memory_Drawings_Kids",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Kids"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Letters.DA_Memory_Drawings_Letters",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Letters"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Logs.DA_Memory_Drawings_Logs",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Logs"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Maps.DA_Memory_Drawings_Maps",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Maps"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_MCogni.DA_Memory_Drawings_MCogni",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_MCogni"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_MSurvival.DA_Memory_Drawings_MSurvival",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_MSurvival"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Music.DA_Memory_Drawings_Music",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Music"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Notes.DA_Memory_Drawings_Notes",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Notes"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/Drawings/DA_Memory_Drawings_Plans.DA_Memory_Drawings_Plans",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Plans"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Leader_sound_maker2.DA_Leader_sound_maker2",
+    "assetType": "Item",
+    "assetName": "DA_Leader_sound_maker2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Board_Game2.DA_Memory_Board_Game2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Board_Game2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Calculator.DA_Memory_Calculator",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Calculator"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_CoordinatePainter.DA_Memory_CoordinatePainter",
+    "assetType": "Item",
+    "assetName": "DA_Memory_CoordinatePainter"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Drawings_Newspapers.DA_Memory_Drawings_Newspapers",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Newspapers"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Drawings_Photos.DA_Memory_Drawings_Photos",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_Photos"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Drawings_SPhotos.DA_Memory_Drawings_SPhotos",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Drawings_SPhotos"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Encyclopedia2.DA_Memory_Encyclopedia2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Encyclopedia2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Family_Photos.DA_Memory_Family_Photos",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Family_Photos"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_LP_Record.DA_Memory_LP_Record",
+    "assetType": "Item",
+    "assetName": "DA_Memory_LP_Record"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_MagnetVHS2.DA_Memory_MagnetVHS2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_MagnetVHS2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Piano2.DA_Memory_Piano2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Piano2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Plushy_Shark2.DA_Memory_Plushy_Shark2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Plushy_Shark2"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_SheetMusic.DA_Memory_SheetMusic",
+    "assetType": "Item",
+    "assetName": "DA_Memory_SheetMusic"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Survival_photos.DA_Memory_Survival_photos",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Survival_photos"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Toy_3.DA_Memory_Toy_3",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Toy_3"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Training_Cassete.DA_Memory_Training_Cassete",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Training_Cassete"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_VHS_Tape.DA_Memory_VHS_Tape",
+    "assetType": "Item",
+    "assetName": "DA_Memory_VHS_Tape"
+  },
+  {
+    "path": "/Game/Data/Assets/HumanGrow/Memories/NotUsed/DA_Memory_Workshop_Manual2.DA_Memory_Workshop_Manual2",
+    "assetType": "Item",
+    "assetName": "DA_Memory_Workshop_Manual2"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/Test/DA_Test_Paint_1.DA_Test_Paint_1",
+    "assetType": "Item",
+    "assetName": "DA_Test_Paint_1"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/Test/DA_Test_Paint_2.DA_Test_Paint_2",
+    "assetType": "Item",
+    "assetName": "DA_Test_Paint_2"
+  },
+  {
+    "path": "/Game/Data/Assets/Items/Paints/Test/DA_Test_Paint_3.DA_Test_Paint_3",
+    "assetType": "Item",
+    "assetName": "DA_Test_Paint_3"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Item_Adaptability_Module.DA_Item_Adaptability_Module",
+    "assetType": "Item",
+    "assetName": "DA_Item_Adaptability_Module"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Item_Communication_Module.DA_Item_Communication_Module",
+    "assetType": "Item",
+    "assetName": "DA_Item_Communication_Module"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Item_Creativity_Module.DA_Item_Creativity_Module",
+    "assetType": "Item",
+    "assetName": "DA_Item_Creativity_Module"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Item_Empathy_Module.DA_Item_Empathy_Module",
+    "assetType": "Item",
+    "assetName": "DA_Item_Empathy_Module"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Item_Leadership_Module.DA_Item_Leadership_Module",
+    "assetType": "Item",
+    "assetName": "DA_Item_Leadership_Module"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Item_Wisdom_Module.DA_Item_Wisdom_Module",
+    "assetType": "Item",
+    "assetName": "DA_Item_Wisdom_Module"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_AdaptabilityModule_Scannable.DA_Prop_AdaptabilityModule_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_AdaptabilityModule_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_Communication_Module_Scannable.DA_Prop_Communication_Module_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Communication_Module_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_Continuity_Token_Scannable.DA_Prop_Continuity_Token_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Continuity_Token_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_Creativity_Module_Scannable.DA_Prop_Creativity_Module_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Creativity_Module_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_Empathy_Module_Scannable.DA_Prop_Empathy_Module_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Empathy_Module_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_Leadership_Module_Scannable.DA_Prop_Leadership_Module_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Leadership_Module_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Blueprints/DA_Prop_Wisdom_Module_Scannable.DA_Prop_Wisdom_Module_Scannable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Wisdom_Module_Scannable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Eggsack.DA_ItemLoot_Eggsack",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Eggsack"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_LaserBob.DA_ItemLoot_LaserBob",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_LaserBob"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Robot_Angel_00.DA_ItemLoot_Robot_Angel_00",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_Angel_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Robot_Angel_01.DA_ItemLoot_Robot_Angel_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_Angel_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Robot_Mosquito_00.DA_ItemLoot_Robot_Mosquito_00",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_Mosquito_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Robot_Mosquito_01.DA_ItemLoot_Robot_Mosquito_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_Mosquito_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Rollerboi.DA_ItemLoot_Rollerboi",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Rollerboi"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_RottenShark.DA_ItemLoot_RottenShark",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_RottenShark"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Shark.DA_ItemLoot_Shark",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Shark"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Swarm_Default.DA_ItemLoot_Swarm_Default",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Swarm_Default"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Swarm_Electric.DA_ItemLoot_Swarm_Electric",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Swarm_Electric"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Enemies/DA_ItemLoot_Swarm_Night.DA_ItemLoot_Swarm_Night",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Swarm_Night"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_01.DA_ItemLoot_Robot_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_02.DA_ItemLoot_Robot_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_03.DA_ItemLoot_Robot_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_04.DA_ItemLoot_Robot_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_05.DA_ItemLoot_Robot_05",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_06.DA_ItemLoot_Robot_06",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_06"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_07.DA_ItemLoot_Robot_07",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_07"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_08.DA_ItemLoot_Robot_08",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_08"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_09.DA_ItemLoot_Robot_09",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_09"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_10.DA_ItemLoot_Robot_10",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_10"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_11.DA_ItemLoot_Robot_11",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_11"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_12.DA_ItemLoot_Robot_12",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_12"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_13.DA_ItemLoot_Robot_13",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_13"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_14.DA_ItemLoot_Robot_14",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_14"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_15.DA_ItemLoot_Robot_15",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_15"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_16.DA_ItemLoot_Robot_16",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_16"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_17.DA_ItemLoot_Robot_17",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_17"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_18.DA_ItemLoot_Robot_18",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_18"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_19.DA_ItemLoot_Robot_19",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_19"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_20.DA_ItemLoot_Robot_20",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_20"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_21.DA_ItemLoot_Robot_21",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_21"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_22.DA_ItemLoot_Robot_22",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_22"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_23.DA_ItemLoot_Robot_23",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_23"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_24.DA_ItemLoot_Robot_24",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_24"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_25.DA_ItemLoot_Robot_25",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_25"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_26.DA_ItemLoot_Robot_26",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_26"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_27.DA_ItemLoot_Robot_27",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_27"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_28.DA_ItemLoot_Robot_28",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_28"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_29.DA_ItemLoot_Robot_29",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_29"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_30.DA_ItemLoot_Robot_30",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_30"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_31.DA_ItemLoot_Robot_31",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_31"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_32.DA_ItemLoot_Robot_32",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_32"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_33.DA_ItemLoot_Robot_33",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_33"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_34.DA_ItemLoot_Robot_34",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_34"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_35.DA_ItemLoot_Robot_35",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_35"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_36.DA_ItemLoot_Robot_36",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_36"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_37.DA_ItemLoot_Robot_37",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_37"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_38.DA_ItemLoot_Robot_38",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_38"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_39.DA_ItemLoot_Robot_39",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_39"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_40.DA_ItemLoot_Robot_40",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_40"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_41.DA_ItemLoot_Robot_41",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_41"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_42.DA_ItemLoot_Robot_42",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_42"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_43.DA_ItemLoot_Robot_43",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_43"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_44.DA_ItemLoot_Robot_44",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_44"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_45.DA_ItemLoot_Robot_45",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_45"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_46.DA_ItemLoot_Robot_46",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_46"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_Full.DA_ItemLoot_Robot_Full",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_Full"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Robot_New.DA_ItemLoot_Robot_New",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Robot_New"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/HI-Tech/DA_ItemLoot_Scifi_01.DA_ItemLoot_Scifi_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Scifi_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Lazarus_Tech/DA_ItemLoot_Lazarus_Tech_1.DA_ItemLoot_Lazarus_Tech_1",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Lazarus_Tech_1"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Lazarus_Tech/DA_ItemLoot_Lazarus_Tech_2.DA_ItemLoot_Lazarus_Tech_2",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Lazarus_Tech_2"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Lazarus_Tech/DA_ItemLoot_Lazarus_Tech_3.DA_ItemLoot_Lazarus_Tech_3",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Lazarus_Tech_3"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Lazarus_Tech/DA_ItemLoot_Lazarus_Tech_4.DA_ItemLoot_Lazarus_Tech_4",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Lazarus_Tech_4"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_CrateLarge.DA_ItemLoot_CrateLarge",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_CrateLarge"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_CrateLarge_Heavy.DA_ItemLoot_CrateLarge_Heavy",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_CrateLarge_Heavy"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_CrateSmall.DA_ItemLoot_CrateSmall",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_CrateSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_GasBoilerPart.DA_ItemLoot_GasBoilerPart",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_GasBoilerPart"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_00.DA_ItemLoot_Metal_00",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_02.DA_ItemLoot_Metal_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_03.DA_ItemLoot_Metal_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_04.DA_ItemLoot_Metal_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_05.DA_ItemLoot_Metal_05",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_06.DA_ItemLoot_Metal_06",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_06"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_07.DA_ItemLoot_Metal_07",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_07"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_Stair_012.DA_ItemLoot_Metal_Stair_012",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_Stair_012"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Metal_Stair_02.DA_ItemLoot_Metal_Stair_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Metal_Stair_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_SteelTubeA_New.DA_ItemLoot_SteelTubeA_New",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_SteelTubeA_New"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_SteelTubeB.DA_ItemLoot_SteelTubeB",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_SteelTubeB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_StudyPlate.DA_ItemLoot_StudyPlate",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_StudyPlate"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Depleted_Decoy.DA_ItemLoot_Trash_Depleted_Decoy",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Depleted_Decoy"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Beam_03.DA_ItemLoot_Trash_Metal_Beam_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Beam_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Beam_04.DA_ItemLoot_Trash_Metal_Beam_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Beam_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Box_01.DA_ItemLoot_Trash_Metal_Box_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Box_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Box_02.DA_ItemLoot_Trash_Metal_Box_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Box_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Cylinder_01.DA_ItemLoot_Trash_Metal_Cylinder_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Cylinder_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Cylinder_02.DA_ItemLoot_Trash_Metal_Cylinder_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Cylinder_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Cylinder_03.DA_ItemLoot_Trash_Metal_Cylinder_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Cylinder_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Cylinder_04.DA_ItemLoot_Trash_Metal_Cylinder_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Cylinder_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Cylinder_05.DA_ItemLoot_Trash_Metal_Cylinder_05",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Cylinder_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Plate_01.DA_ItemLoot_Trash_Metal_Plate_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Plate_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Stack_01.DA_ItemLoot_Trash_Metal_Stack_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Stack_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Stack_02.DA_ItemLoot_Trash_Metal_Stack_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Stack_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Trash_Metal_Underwater_Scrap.DA_ItemLoot_Trash_Metal_Underwater_Scrap",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Metal_Underwater_Scrap"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_ItemLoot_Wheelbarrow.DA_ItemLoot_Wheelbarrow",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Wheelbarrow"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_BarrelMetal.DA_Prop_BarrelMetal",
+    "assetType": "Item",
+    "assetName": "DA_Prop_BarrelMetal"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_BarrelMetal_B.DA_Prop_BarrelMetal_B",
+    "assetType": "Item",
+    "assetName": "DA_Prop_BarrelMetal_B"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_BarrelMetal_Rusty_A.DA_Prop_BarrelMetal_Rusty_A",
+    "assetType": "Item",
+    "assetName": "DA_Prop_BarrelMetal_Rusty_A"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_BarrelMetal_Rusty_B.DA_Prop_BarrelMetal_Rusty_B",
+    "assetType": "Item",
+    "assetName": "DA_Prop_BarrelMetal_Rusty_B"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_Hammer.DA_Prop_Hammer",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Hammer"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_Iron_Beam_Long.DA_Prop_Iron_Beam_Long",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Iron_Beam_Long"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_Iron_Beam_Medium.DA_Prop_Iron_Beam_Medium",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Iron_Beam_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/DA_Prop_OilCan.DA_Prop_OilCan",
+    "assetType": "Item",
+    "assetName": "DA_Prop_OilCan"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Chromite.DA_ItemLoot_Trash_Ore_Chromite",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Chromite"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Cobalt.DA_ItemLoot_Trash_Ore_Cobalt",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Cobalt"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Copper.DA_ItemLoot_Trash_Ore_Copper",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Copper"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_CopperLarge.DA_ItemLoot_Trash_Ore_CopperLarge",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_CopperLarge"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Gold.DA_ItemLoot_Trash_Ore_Gold",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Gold"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Gold_Large.DA_ItemLoot_Trash_Ore_Gold_Large",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Gold_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Graphite.DA_ItemLoot_Trash_Ore_Graphite",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Graphite"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Hematite.DA_ItemLoot_Trash_Ore_Hematite",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Hematite"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Iron.DA_ItemLoot_Trash_Ore_Iron",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Iron"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Iron_Large.DA_ItemLoot_Trash_Ore_Iron_Large",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Iron_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Quantum_Crystal.DA_ItemLoot_Trash_Ore_Quantum_Crystal",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Quantum_Crystal"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Quantum_Crystal_Large.DA_ItemLoot_Trash_Ore_Quantum_Crystal_Large",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Quantum_Crystal_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Rutile.DA_ItemLoot_Trash_Ore_Rutile",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Rutile"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Titanium.DA_ItemLoot_Trash_Ore_Titanium",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Titanium"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Ore/DA_ItemLoot_Trash_Ore_Titanium_Large.DA_ItemLoot_Trash_Ore_Titanium_Large",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Ore_Titanium_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Paintings/DA_ItemLoot_Painting_A.DA_ItemLoot_Painting_A",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Painting_A"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Augustus_Small.DA_ItemLoot_Statue_Augustus_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Augustus_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Comedy_Small.DA_ItemLoot_Statue_Comedy_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Comedy_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Dancing_Small.DA_ItemLoot_Statue_Dancing_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Dancing_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Hope_Small.DA_ItemLoot_Statue_Hope_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Hope_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Moses_Small.DA_ItemLoot_Statue_Moses_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Moses_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Sebastiano_Small.DA_ItemLoot_Statue_Sebastiano_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Sebastiano_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Statue/DA_ItemLoot_Statue_Vulcan_Small.DA_ItemLoot_Statue_Vulcan_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Statue_Vulcan_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Car.DA_ItemLoot_Car",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Car"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Car_Door.DA_ItemLoot_Car_Door",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Car_Door"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_DisplayBroken_New.DA_ItemLoot_DisplayBroken_New",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_DisplayBroken_New"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_DisplayBroken_Small.DA_ItemLoot_DisplayBroken_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_DisplayBroken_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_SaveStation.DA_ItemLoot_SaveStation",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_SaveStation"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_00.DA_ItemLoot_Tech_00",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_00"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_01.DA_ItemLoot_Tech_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_02.DA_ItemLoot_Tech_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_03.DA_ItemLoot_Tech_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_04.DA_ItemLoot_Tech_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_05.DA_ItemLoot_Tech_05",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_05"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_06.DA_ItemLoot_Tech_06",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_06"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_07.DA_ItemLoot_Tech_07",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_07"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_08.DA_ItemLoot_Tech_08",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_08"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_09.DA_ItemLoot_Tech_09",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_09"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_10.DA_ItemLoot_Tech_10",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_10"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_11.DA_ItemLoot_Tech_11",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_11"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_12.DA_ItemLoot_Tech_12",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_12"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_13.DA_ItemLoot_Tech_13",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_13"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_14.DA_ItemLoot_Tech_14",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_14"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_15.DA_ItemLoot_Tech_15",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_15"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_16.DA_ItemLoot_Tech_16",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_16"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_17.DA_ItemLoot_Tech_17",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_17"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_18.DA_ItemLoot_Tech_18",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_18"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Tech/DA_ItemLoot_Tech_Bed.DA_ItemLoot_Tech_Bed",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tech_Bed"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_HousePlant_01.DA_ItemLoot_HousePlant_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_HousePlant_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_SeaPole_A.DA_ItemLoot_SeaPole_A",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_SeaPole_A"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_SmallBuoy.DA_ItemLoot_SmallBuoy",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_SmallBuoy"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TireA.DA_ItemLoot_TireA",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TireA"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TireB.DA_ItemLoot_TireB",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TireB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Tire_Small.DA_ItemLoot_Tire_Small",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Tire_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashbinBio.DA_ItemLoot_TrashbinBio",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashbinBio"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashbinGlass.DA_ItemLoot_TrashbinGlass",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashbinGlass"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashbinPlastic.DA_ItemLoot_TrashbinPlastic",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashbinPlastic"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash.DA_ItemLoot_TrashTrash",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash1.DA_ItemLoot_TrashTrash1",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash1"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash10.DA_ItemLoot_TrashTrash10",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash10"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash11.DA_ItemLoot_TrashTrash11",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash11"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash12.DA_ItemLoot_TrashTrash12",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash12"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash13.DA_ItemLoot_TrashTrash13",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash13"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash14.DA_ItemLoot_TrashTrash14",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash14"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash15.DA_ItemLoot_TrashTrash15",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash15"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash16.DA_ItemLoot_TrashTrash16",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash16"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash18.DA_ItemLoot_TrashTrash18",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash18"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash19.DA_ItemLoot_TrashTrash19",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash19"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash2.DA_ItemLoot_TrashTrash2",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash2"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash20.DA_ItemLoot_TrashTrash20",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash20"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash21.DA_ItemLoot_TrashTrash21",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash21"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash22.DA_ItemLoot_TrashTrash22",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash22"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash23.DA_ItemLoot_TrashTrash23",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash23"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash24.DA_ItemLoot_TrashTrash24",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash24"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash25.DA_ItemLoot_TrashTrash25",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash25"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash3.DA_ItemLoot_TrashTrash3",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash3"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash4.DA_ItemLoot_TrashTrash4",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash4"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash5.DA_ItemLoot_TrashTrash5",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash5"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash6.DA_ItemLoot_TrashTrash6",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash6"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash7.DA_ItemLoot_TrashTrash7",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash7"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash8.DA_ItemLoot_TrashTrash8",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash8"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_TrashTrash9.DA_ItemLoot_TrashTrash9",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_TrashTrash9"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_BunkBed_01.DA_ItemLoot_Trash_BunkBed_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_BunkBed_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_BunkBed_02.DA_ItemLoot_Trash_BunkBed_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_BunkBed_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_BunkBed_Bunker_01.DA_ItemLoot_Trash_BunkBed_Bunker_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_BunkBed_Bunker_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_BunkBed_Bunker_02.DA_ItemLoot_Trash_BunkBed_Bunker_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_BunkBed_Bunker_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Cabinet.DA_ItemLoot_Trash_Cabinet",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Cabinet"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Couch_03.DA_ItemLoot_Trash_Couch_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Couch_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Couch_04.DA_ItemLoot_Trash_Couch_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Couch_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_KitchenStove.DA_ItemLoot_Trash_KitchenStove",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_KitchenStove"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_KitchenTable.DA_ItemLoot_Trash_KitchenTable",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_KitchenTable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_RoomDivider_1m.DA_ItemLoot_Trash_RoomDivider_1m",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_RoomDivider_1m"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_RoomDivider_2m.DA_ItemLoot_Trash_RoomDivider_2m",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_RoomDivider_2m"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Shelf_01.DA_ItemLoot_Trash_Shelf_01",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Shelf_01"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Shelf_02.DA_ItemLoot_Trash_Shelf_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Shelf_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Shelf_03.DA_ItemLoot_Trash_Shelf_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Shelf_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_SmallTable_02.DA_ItemLoot_Trash_SmallTable_02",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_SmallTable_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_SmallTable_03.DA_ItemLoot_Trash_SmallTable_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_SmallTable_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_SmallTable_04.DA_ItemLoot_Trash_SmallTable_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_SmallTable_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_SofaChair_03.DA_ItemLoot_Trash_SofaChair_03",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_SofaChair_03"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_SofaChair_04.DA_ItemLoot_Trash_SofaChair_04",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_SofaChair_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_ItemLoot_Trash_Washer.DA_ItemLoot_Trash_Washer",
+    "assetType": "Item",
+    "assetName": "DA_ItemLoot_Trash_Washer"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Bollard.DA_Prop_Bollard",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Bollard"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Bollard_Slippery.DA_Prop_Bollard_Slippery",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Bollard_Slippery"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Bollard_Traffic.DA_Prop_Bollard_Traffic",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Bollard_Traffic"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_BulkPrototypeBlueprint.DA_Prop_BulkPrototypeBlueprint",
+    "assetType": "Item",
+    "assetName": "DA_Prop_BulkPrototypeBlueprint"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Coffee_Kettle.DA_Prop_Coffee_Kettle",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Coffee_Kettle"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_ControlRoom_Table_02.DA_Prop_ControlRoom_Table_02",
+    "assetType": "Item",
+    "assetName": "DA_Prop_ControlRoom_Table_02"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_ControlRoom_Table_04.DA_Prop_ControlRoom_Table_04",
+    "assetType": "Item",
+    "assetName": "DA_Prop_ControlRoom_Table_04"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_EdenModel.DA_Prop_EdenModel",
+    "assetType": "Item",
+    "assetName": "DA_Prop_EdenModel"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_ForkliftPallet.DA_Prop_ForkliftPallet",
+    "assetType": "Item",
+    "assetName": "DA_Prop_ForkliftPallet"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Fryingpan.DA_Prop_Fryingpan",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Fryingpan"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_GyroBlueprintA.DA_Prop_GyroBlueprintA",
+    "assetType": "Item",
+    "assetName": "DA_Prop_GyroBlueprintA"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_GyroBlueprintB.DA_Prop_GyroBlueprintB",
+    "assetType": "Item",
+    "assetName": "DA_Prop_GyroBlueprintB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_GyroBlueprintC.DA_Prop_GyroBlueprintC",
+    "assetType": "Item",
+    "assetName": "DA_Prop_GyroBlueprintC"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Gyropad_BoatExtensionBP.DA_Prop_Gyropad_BoatExtensionBP",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Gyropad_BoatExtensionBP"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Gyropad_Dumpster_Blades_BP.DA_Prop_Gyropad_Dumpster_Blades_BP",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Gyropad_Dumpster_Blades_BP"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Gyropad_Dumpster_Body_BP.DA_Prop_Gyropad_Dumpster_Body_BP",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Gyropad_Dumpster_Body_BP"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Kettle.DA_Prop_Kettle",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Kettle"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Nixie_Tube_VarA.DA_Prop_Nixie_Tube_VarA",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Nixie_Tube_VarA"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Nixie_Tube_VarB.DA_Prop_Nixie_Tube_VarB",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Nixie_Tube_VarB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Nixie_Tube_VarC.DA_Prop_Nixie_Tube_VarC",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Nixie_Tube_VarC"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Nixie_Tube_VarD.DA_Prop_Nixie_Tube_VarD",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Nixie_Tube_VarD"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_OldLamp.DA_Prop_OldLamp",
+    "assetType": "Item",
+    "assetName": "DA_Prop_OldLamp"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Pan.DA_Prop_Pan",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Pan"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PhotodronePlus.DA_Prop_PhotodronePlus",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PhotodronePlus"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PLasticDinnerTable.DA_Prop_PLasticDinnerTable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PLasticDinnerTable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PlasticPallet.DA_Prop_PlasticPallet",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PlasticPallet"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PlasticPalletB.DA_Prop_PlasticPalletB",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PlasticPalletB"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PLasticWoodenBench.DA_Prop_PLasticWoodenBench",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PLasticWoodenBench"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PLasticWoodenChair.DA_Prop_PLasticWoodenChair",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PLasticWoodenChair"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PLasticWoodenTable.DA_Prop_PLasticWoodenTable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PLasticWoodenTable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PLasticWoodenTableSmall.DA_Prop_PLasticWoodenTableSmall",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PLasticWoodenTableSmall"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_PortableContainerBlueprint.DA_Prop_PortableContainerBlueprint",
+    "assetType": "Item",
+    "assetName": "DA_Prop_PortableContainerBlueprint"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Pot.DA_Prop_Pot",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Pot"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_Shelf_Wall_Small.DA_Prop_Shelf_Wall_Small",
+    "assetType": "Item",
+    "assetName": "DA_Prop_Shelf_Wall_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Prop_WorkTable.DA_Prop_WorkTable",
+    "assetType": "Item",
+    "assetName": "DA_Prop_WorkTable"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Extra_Large.DA_Rock_Single_Extra_Large",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Extra_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Extra_Large2.DA_Rock_Single_Extra_Large2",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Extra_Large2"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Extra_Large3.DA_Rock_Single_Extra_Large3",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Extra_Large3"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Large.DA_Rock_Single_Large",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Large"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Medium.DA_Rock_Single_Medium",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Medium"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Small.DA_Rock_Single_Small",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Small"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/TrashTrash/DA_Rock_Single_Tiny.DA_Rock_Single_Tiny",
+    "assetType": "Item",
+    "assetName": "DA_Rock_Single_Tiny"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/Lids/DA_Item_SU_Module_BatteryLid.DA_Item_SU_Module_BatteryLid",
+    "assetType": "Item",
+    "assetName": "DA_Item_SU_Module_BatteryLid"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/Lids/DA_Item_SU_Module_DieselLid.DA_Item_SU_Module_DieselLid",
+    "assetType": "Item",
+    "assetName": "DA_Item_SU_Module_DieselLid"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/Lids/DA_Item_SU_Module_FreshWaterLid.DA_Item_SU_Module_FreshWaterLid",
+    "assetType": "Item",
+    "assetName": "DA_Item_SU_Module_FreshWaterLid"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/Lids/DA_Item_SU_Module_OxygenLid.DA_Item_SU_Module_OxygenLid",
+    "assetType": "Item",
+    "assetName": "DA_Item_SU_Module_OxygenLid"
+  },
+  {
+    "path": "/Game/Data/Assets/Modules/SingleUse/Lids/DA_Item_SU_Module_PetrolLid.DA_Item_SU_Module_PetrolLid",
+    "assetType": "Item",
+    "assetName": "DA_Item_SU_Module_PetrolLid"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_A.DA_Item_Shipping_Container_A",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_A"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_A_Angle.DA_Item_Shipping_Container_A_Angle",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_A_Angle"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_A_Vert.DA_Item_Shipping_Container_A_Vert",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_A_Vert"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_B.DA_Item_Shipping_Container_B",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_B"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_B_Angle.DA_Item_Shipping_Container_B_Angle",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_B_Angle"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_B_Vert.DA_Item_Shipping_Container_B_Vert",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_B_Vert"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_C.DA_Item_Shipping_Container_C",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_C"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_C_Angle.DA_Item_Shipping_Container_C_Angle",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_C_Angle"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_C_Vert.DA_Item_Shipping_Container_C_Vert",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_C_Vert"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_D.DA_Item_Shipping_Container_D",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_D"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_D_Angle.DA_Item_Shipping_Container_D_Angle",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_D_Angle"
+  },
+  {
+    "path": "/Game/Data/Assets/Loot/New/Metal/Shipping_Containers/DA_Item_Shipping_Container_D_Vert.DA_Item_Shipping_Container_D_Vert",
+    "assetType": "Item",
+    "assetName": "DA_Item_Shipping_Container_D_Vert"
+  }
+]

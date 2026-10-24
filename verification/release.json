@@ -2,28 +2,40 @@
   "version": "1.0.0",
   "gameVersion": "0.10.0.653173",
   "steamBuild": "25982825",
-  "runtimeFiles": 29,
+  "build": "20261024-item-loader",
+  "runtimeFiles": 32,
+  "runtimeOnlyZip": true,
   "nativeGameStartedForPublication": false,
   "privateSettingsIncluded": false,
-  "installPayloadComparedToPrevious": true,
-  "differences": [
-    "core.lua version display: 1.0 -> 1.0.0"
-  ],
+  "nativeDllUnchanged": true,
   "offlineTests": {
+    "publicSuite": {
+      "testsRun": 103,
+      "result": "passed",
+      "optionalReflectionGroupsSkipped": 1
+    },
+    "developmentSuite": {
+      "testsRun": 226,
+      "result": "passed",
+      "optionalChecksSkipped": 13
+    },
     "smoke": {
       "pages": 9,
       "clickHandlers": 211,
       "errorLines": 0,
       "result": "passed"
     },
-    "reopenAndWrappedBoatArrays": {
-      "tests": 7,
-      "result": "passed"
+    "itemMetadata": {
+      "verifiedIdentities": 923
     }
   },
-  "longTermGameplay": "not fully verified",
-  "nativeDllUnchanged": true,
-  "runtimeOnlyZip": true,
-  "licenseTexts": "repository only",
-  "runtimeBytesUnchangedForPackagingCleanup": true
+  "corrections": [
+    "Localized item names and German/English search aliases",
+    "Search resets a stale category filter",
+    "Retry missing item assets with bounded work",
+    "Discover newly registered mod items through GetAssetsByClass",
+    "Native loader fallback using verified PrimaryAssetId",
+    "Ship item_names.lua, item_registry.lua and data/item_types.lua"
+  ],
+  "runtimeLimitations": "Offline tests use controlled engine substitutes. Native item delivery and long-term gameplay were not retested for this packaging update."
 }

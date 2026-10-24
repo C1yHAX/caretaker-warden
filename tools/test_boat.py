@@ -545,6 +545,8 @@ class ReflectionContract(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         path = Path(os.environ.get("WARDEN_JMAP", str(ROOT / "reference/Voyage-0.10.0.653173.jmap.gz")))
+        if not path.exists() and "WARDEN_JMAP" not in os.environ:
+            raise unittest.SkipTest("Optional game reflection dump absent; set WARDEN_JMAP to run ABI checks")
         if path.suffix == ".pkl":
             # Only opt into the explicitly provided trusted local pickle.
             with path.open("rb") as handle:

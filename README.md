@@ -12,7 +12,7 @@
 | Herstellung | Free Crafting, Instant Craft und Instant Build; unbegrenztes Inventargewicht und Superstärke |
 | Waffen | Munition, Waffenressourcen, Überhitzung und Nachladen konfigurieren |
 | Freischalten | Skills und Baupläne, Enhancer, Proben, Karteneinträge und Questfortschritt bearbeiten |
-| Spawnen | Suchbarer Gegenstands- und Modulkatalog, Mengenwahl und Materialpakete; Module werden über den nativen Crafter angelegt |
+| Spawnen | Deutsche/englische Gegenstandssuche, dynamischer Mod-Katalog, Mengenwahl und Materialpakete; Module werden über den nativen Crafter angelegt |
 | Teleport | Zum Boot, zur letzten Position und zu bekannten Spielorten; eigene Punkte speichern |
 | Boot | Zielboot auswählen, reparieren, Tanks/Batterien auffüllen, Tempo, Anker, Aufrichten und Steuerung; Motoranschlüsse prüfen und passende Zylinder ausrüsten |
 | Welt | Tageszeit, Wetter zurücksetzen, Produktions- und Spieltempo, Bauauftragsdiagnose und Trägerroboter |
@@ -60,13 +60,13 @@ Das vollständige Caretaker-Modpack 1.0.0 enthält Warden bereits. Keine zweite 
 - **Boot ausrüsten** benötigt ein ausgewähltes Boot und erkannte passende Motoranschlüsse. „Motoranschlüsse prüfen“ liefert eine Diagnose, ohne umzubauen. Fehlgeschlagene oder unbestätigte Anschlüsse werden im Log gemeldet.
 - Teleportziele werden aus bekannten Spielorten und selbst gespeicherten Punkten aufgebaut. Ein frisches Profil enthält keine aus einer fremden Sitzung übernommenen Reiseziele.
 - Free Crafting bis zum Abschluss der betreffenden Warteschlangenaufträge eingeschaltet lassen. Abschalten stellt die normale Materialprüfung wieder her.
-- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung bleibt `20261023-ui-boat`.
+- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung bleibt `20261024-item-loader`.
 
 ## Prüfung
 
-Die Lua-Dateien und die native Hilfs-DLL stammen aus der vorhandenen Modpack-Fassung. Für den öffentlichen Release wurde im Laufzeitcode ausschließlich die Versionsanzeige von `1.0` auf **`1.0.0`** vereinheitlicht. Persönliche Konfigurationen und entdeckte Teleportziele wurden aus dem Download ausgeschlossen. Die Lizenztexte von Nerfus und MinHook bleiben im Repository erhalten; sie gehören nicht zum Mod-ZIP.
+Die Lua-Dateien enthalten den aktuellen Gegenstandskatalog aus der installierten Modpack-Fassung. Suchbegriffe wie „Stoff“, „Fabric“ und „Cloth“ finden denselben Gegenstand. Neue Suchbegriffe setzen einen vorherigen Kategorienfilter zurück. Fehlgeschlagene Asset-Ladungen werden begrenzt erneut versucht; registrierte neue Mod-Gegenstände können nachträglich in den Katalog aufgenommen werden. Falls der reguläre Loader ein bekanntes Item nicht liefert, wird der native Loader anhand seiner überprüften PrimaryAssetId verwendet. Fertige Katalogeinträge werden wiederverwendet. Die native Hilfs-DLL bleibt unverändert; Version **1.0.0** bleibt erhalten. Persönliche Konfigurationen und entdeckte Teleportziele wurden aus dem Download ausgeschlossen. Die Lizenztexte von Nerfus und MinHook bleiben im Repository erhalten; sie gehören nicht zum Mod-ZIP.
 
-Die enthaltenen Offline-Tests prüfen UI-Aufbau, Klickhandler, wiederholtes Öffnen/Schließen sowie verpackte UE4SS-Rückgabewerte bei der Bootssuche. Sie verwenden Attrappen und ersetzen keinen nativen Unreal-Spieltest. Darstellung/FPS, echtes Einrasten von Motorzylindern und vollständige Herstellungsabläufe sind für diese Veröffentlichung nicht abschließend bestätigt. **Für die Veröffentlichung wurde das Spiel nicht gestartet.** Siehe [Prüfbericht](verification/release.json).
+Die enthaltenen Offline-Tests prüfen zusätzlich Gegenstandssuche, fehlende und später registrierte Assets, begrenzte Wiederholungen, native Lade-Rückgaben und die Ausgabe in Materialpakete. Außerdem werden UI-Aufbau, Klickhandler, wiederholtes Öffnen/Schließen sowie verpackte UE4SS-Rückgabewerte bei der Bootssuche geprüft. Sie verwenden Attrappen und ersetzen keinen nativen Unreal-Spieltest. Darstellung/FPS, echtes Einrasten von Motorzylindern und vollständige Herstellungsabläufe sind für diese Veröffentlichung nicht abschließend bestätigt. **Für die Veröffentlichung wurde das Spiel nicht gestartet.** Siehe [Prüfbericht](verification/release.json).
 
 ## Entfernen
 

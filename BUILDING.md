@@ -11,7 +11,10 @@ Python 3 installieren und im Repository `python tools/package_release.py` ausfü
 ```text
 python tools/smoke_test.py
 python tools/test_release_100_reopen_boat.py
+python -m unittest discover -s tools -p "test_*.py"
 ```
+
+Die Gegenstandsprüfungen verwenden die enthaltenen Metadaten unter `verification/item-identities.json`. Für zusätzliche ABI-Prüfungen kann `WARDEN_JMAP` auf einen vertrauenswürdigen lokalen Reflection-Dump des unterstützten Spielbuilds zeigen. Ohne diesen optionalen Dump wird nur diese Prüfgruppe ausdrücklich übersprungen; die Lua-Tests laufen trotzdem.
 
 Die Attrappen unter `tools/mock/` bilden nur die benötigten API-Oberflächen nach. Kein Test startet das Spiel. Native Grafik, Physik und ABI-Kompatibilität werden damit nicht bestätigt. Historische Testdateinamen kennzeichnen interne Entwicklungsstände, keine zusätzlichen öffentlichen Releases.
 

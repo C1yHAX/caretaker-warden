@@ -19,7 +19,7 @@ local M = {}
 
 -- Public release version. Earlier 1.x labels identify internal test snapshots only.
 M.VERSION = "1.0.0"
-M.BUILD = "20261023-ui-boat"
+M.BUILD = "20261024-item-loader"
 M.NAME = "Warden"
 
 ------------------------------------------------------------------------------------------
@@ -100,6 +100,7 @@ M.LIB = {
     subsystem = "/Script/Engine.Default__SubsystemBlueprintLibrary",
     gameplayV = "/Script/Voyage.Default__VoyageGameplayBlueprintFunctionLibrary",
     voyage    = "/Script/Voyage.Default__VoyageBlueprintLibrary",
+    blueprintUI = "/Script/Voyage.Default__VoyageBlueprintUIFunctionLibrary",
     misc      = "/Script/Voyage.Default__VoyageMiscBlueprintFunctionLibrary",
     teleport  = "/Script/Voyage.Default__VoyageTeleportAsyncAction",
 }

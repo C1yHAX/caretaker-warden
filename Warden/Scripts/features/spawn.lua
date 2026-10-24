@@ -16,6 +16,7 @@
 
 local core = require("core")
 local packages = require("features.packages")
+local names = require("item_names")
 
 local M = {}
 
@@ -293,7 +294,7 @@ function M.page(ui)
     local section=1
     local tabs = ui.segmented(page.left, { "Module", "Gegenstände", "Pakete" }, function(i)
         section=i
-        if i==2 then M.collectItems();M.refreshItems(true) end
+        if i==2 then catalog.refresh();M.collectItems();M.refreshItems(true) end
         for j, s in ipairs(sections) do
             ui.setVisible(s, j == i)
         end
@@ -372,11 +373,12 @@ function M.page(ui)
     ui.segmented(rightCtl, { "Inventar", "Lager" }, function(i) target = i;M.refreshItems(true) end).set(1)
     local itemSearch = ui.searchBox(itemCard, "Gegenstand suchen ...")
     local itemGroup = 1
-    ui.segmented(itemCard, { "Alle", "Material", "Teile", "Ausrüstung", "Waffen", "Nahrung", "Module", "Sonst." },
+    local itemFilters=ui.segmented(itemCard, { "Alle", "Material", "Teile", "Ausrüstung", "Waffen", "Nahrung", "Module", "Sonst." },
         function(i)
             itemGroup = i
             M.refreshItems(true)
-        end, 8).set(1)
+        end, 8)
+    itemFilters.set(1)
     local pager = ui.hbox()
     ui.add(itemCard, pager, { pad = { 0, 4 } })
     local pageInfo = ui.text("", ui.F.small, ui.C.text2)
@@ -406,7 +408,10 @@ function M.page(ui)
         if items == nil then
             M.collectItems()
         end
-        local q = itemSearch.get():lower()
+        local q = names.normalize(itemSearch.get())
+        -- Starting a new search must not hide materials behind the previously
+        -- selected weapon/part category. Explicit filter clicks still narrow it.
+        if q~="" and q~=lastItemQuery then itemGroup=1;itemFilters.set(1) end
         lastItemQuery = q
         if resetPage then
             pageNo = 1
@@ -414,7 +419,7 @@ function M.page(ui)
         filtered = {}
         for _, it in ipairs(items) do
             if ((target==1 and it.player) or (target==2 and it.vault)) and (itemGroup == 1 or it.group == itemGroup)
-                and (q == "" or it.lname:find(q, 1, true) or it.path:lower():find(q, 1, true)) then
+                and names.matches(it,q) then
                 filtered[#filtered + 1] = it
             end
         end
@@ -495,7 +500,7 @@ function M.page(ui)
                 M.collectItems()
                 M.refreshItems(false)
             end
-            local iq = itemSearch.get():lower()
+            local iq = names.normalize(itemSearch.get())
             if iq ~= lastItemQuery then
                 M.refreshItems(true)
             end
@@ -506,8 +511,9 @@ function M.page(ui)
         if modules == nil or #modules == 0 then
             M.refreshModules()
         end
-        if section==2 and items == nil then
-            M.refreshItems(true)
+        if section==2 then
+            catalog.refresh()
+            if items == nil then M.refreshItems(true) end
         end
     end
 

@@ -11,7 +11,7 @@ local function field(o, p)
     return ok and v or nil
 end
 local function each(array, fn)
-    if type(array) == "table" then for _, v in ipairs(array) do fn(v) end
+    if type(array) == "table" then for _, v in ipairs(array) do fn(type(v)=="userdata" and core.unwrap(v) or v) end
     elseif array ~= nil then pcall(function() array:ForEach(function(_, v) fn(core.unwrap(v)) end) end) end
 end
 function M.eligible(item, target)
@@ -24,17 +24,40 @@ function M.eligible(item, target)
     each(field(item, "BlockedInventoryTypes"), function(v) if v == target then blocked = true end end)
     return not blocked
 end
+local function loadById(path)
+    local ok,types=pcall(require,"data.item_types")
+    local kind=require("item_registry").assetType(path) or (ok and types[path])
+    if not kind or not FName then return nil end
+    local lib=core.lib("blueprintUI")
+    if not lib then return nil end
+    local objects=core.outList("item primary asset loader",function()
+        return lib:LoadDataAssetsById({{
+            PrimaryAssetType={Name=FName(kind,1)},
+            PrimaryAssetName=FName(path:match("%.([^%.]+)$"),1),
+        }})
+    end)
+    for _,object in ipairs(objects) do
+        if core.isValid(object) and pathOf(object)==path then return object end
+    end
+    return core.find(path)
+end
 function M.load(path)
     local item = core.find(path)
+    local detail
     if item == nil and LoadAsset then
-        local ok, loaded = pcall(LoadAsset, path)
+        local ok, loaded, found, didLoad = pcall(LoadAsset, path)
         item = ok and core.isValid(loaded) and loaded or core.find(path)
+        if not item then detail=ok and ("Registry: gefunden="..tostring(found)..", geladen="..tostring(didLoad)) or tostring(loaded) end
     end
-    if not core.isValid(item) then return nil, "load" end
+    -- UE4SS LoadAsset depends on its registry bridge. The game's own loader
+    -- resolves the verified PrimaryAssetId and loads its path natively (32-byte
+    -- parameter block). No Lua SoftObjectPtr marshalling or invented asset types.
+    if not core.isValid(item) then item=loadById(path) end
+    if not core.isValid(item) then return nil, "load", detail or "Kein Asset geladen" end
     local cls = core.find("/Script/Voyage.VoyageItem")
     local ok, isItem = pcall(function() return item:IsA(cls) end)
     if ok and isItem == true then return item end
-    return nil, "type"
+    return nil, "type", "VoyageItem-Typ nicht bestaetigt"
 end
 function M.give(item, amount, target)
     target = target or 1
@@ -64,16 +87,7 @@ function M.paths()
             seen[p] = true; paths[#paths + 1] = p
         end
     end
-    local helper = core.find("/Script/AssetRegistry.Default__AssetRegistryHelpers")
-    if helper then
-        local rows = core.outList("inventory asset registry", function(h)
-            return helper:GetDerivedClassAssetData({ { PackageName = FName("/Script/Voyage"), AssetName = FName("VoyageItem") } }, h)
-        end, "OutDerivedClassAssetData")
-        for _, row in ipairs(rows) do
-            local pkg, name = core.str(field(row, "PackageName")), core.str(field(row, "AssetName"))
-            if pkg and name and name ~= "None" then add(pkg .. "." .. name) end
-        end
-    end
+    for _,p in ipairs(require("item_registry").paths()) do add(p) end
     -- Shipped package list from the installed game also covers assets not yet
     -- loaded by a save, and the legacy UE4SS build's incomplete registry exposure.
     local ok, manifest = pcall(require, "data.item_paths")
@@ -96,7 +110,7 @@ function M.start(kind, amount, notify)
     job = { kind = kind, amount = math.max(1, math.min(500, math.floor(amount))), index = 1,
         phase = "catalog", candidates = {}, components = {}, selected = {}, seen = {}, given = 0, units = 0, partial = 0,
         failures = 0, unloaded = 0, pc = core.address(core.pc()), inventory = core.address(core.inventory(1)), notify = notify }
-    require("features.catalog").start()
+    require("features.catalog").start(false,true,true)
     status = "Katalog wird geprüft …"
     return true, status
 end

@@ -20,7 +20,7 @@ def main():
     args = parser.parse_args()
     rows = json.loads((ROOT/'Dateien.json').read_text(encoding='utf-8'))
     expected = {row['path'] for row in rows}
-    assert len(rows) == len(expected) == 29, 'Unexpected runtime manifest'
+    assert len(rows) == len(expected) == 32, 'Unexpected runtime manifest'
     files = {}
     for row in rows:
         name = row['path']

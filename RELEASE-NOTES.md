@@ -10,6 +10,8 @@ Den benannten Mod-ZIP-Anhang herunterladen, vollständig entpacken und bei gesch
 
 Warden benötigt den in der Anleitung verlinkten UE4SS-Build. F1 öffnet das Menü. Eigene Einstellungen und Teleportpunkte beim Aktualisieren behalten. Die enthaltene native Hilfs-DLL bleibt gegenüber der Modpack-Fassung unverändert; die Versionsanzeige lautet nun 1.0.0. Keine persönlichen Dateien enthalten. Offline-Tests ersetzen keinen nativen Spieltest.
 
+Enthält die korrigierte deutsche/englische Gegenstandssuche, das Nachladen zunächst fehlender Gegenstände, die Erkennung neuer registrierter Mod-Items und den nativen Item-Loader. Die drei dafür benötigten Lua-Module sind vollständig im Download enthalten. Bestehende Einstellungen bleiben erhalten.
+
 Für diese Veröffentlichung wurde das Spiel nicht gestartet.
 
 ## Inhalt des Mod-Downloads
