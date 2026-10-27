@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 -- All writes run on the game thread. Keep original values per character, never
 -- treat a value written by Warden as a new multiplier base.
 local core = require("core")
@@ -124,7 +125,7 @@ local function frame()
     local yaw = read(rot, "Yaw") or read(rot, "yaw")
     assert(type(pitch) == "number" and pitch == pitch and math.abs(pitch) < math.huge
         and type(yaw) == "number" and yaw == yaw and math.abs(yaw) < math.huge,
-        "Blickrichtung nicht lesbar; Flug beendet")
+        tr("Blickrichtung nicht lesbar; Flug beendet"))
     yaw, pitch = math.rad(yaw), math.rad(pitch)
     -- Validate the camera BEFORE suspending native movement. Hover while idle,
     -- but restore normal movement if any part of this frame subsequently fails.
@@ -163,7 +164,7 @@ function M.frame()
         saved = nil
         if loop and CancelDelayedAction then pcall(CancelDelayedAction, loop) end
         loop = nil
-        core.log("Flug sicher beendet: " .. tostring(err))
+        core.log(tr("Flug sicher beendet: ") .. tostring(err))
     end
     return ok
 end

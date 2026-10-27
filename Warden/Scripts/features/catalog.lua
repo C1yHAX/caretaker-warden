@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 -- One catalogue for item search and every package. Metadata only survives ticks.
 -- Asset loading is opt-in and bounded; opening the menu never starts this scan.
 local core=require("core")
@@ -7,7 +8,7 @@ local scan,rows,components=nil,{},{}
 local missing,seen={},{}
 local known,lastDiscovery={},-math.huge
 local revision,ready,unloaded=0,false,0
-local state="Noch nicht geladen"
+local state=tr("Noch nicht geladen")
 local function read(o,k) local ok,v=pcall(function() return o[k] end);if ok then return v end end
 local function path(o) return core.fullName(o):match("^%S+%s+(/.+)$") end
 local function visit(item,seen,depth)
@@ -54,7 +55,7 @@ function M.start(force,retryMissing,discoverNew)
     ready=false
     scan={paths=paths,index=1,seen=seen,failed={},attempt=1,pc=core.address(core.pc())}
     revision=revision+1
-    state="Katalog wird geladen …"
+    state=tr("Katalog wird geladen …")
 end
 function M.refresh() M.start(false,true,true) end
 function M.tick()
@@ -66,28 +67,28 @@ function M.tick()
         if not p then
             if #scan.failed>0 and scan.attempt==1 then
                 scan.paths=scan.failed;scan.failed={};scan.index=1;scan.attempt=2
-                state=string.format("%d fehlende Assets werden erneut geladen",#scan.paths)
-                revision=revision+1;core.log("Katalog: "..state);return
+                state=string.format(tr("%d fehlende Assets werden erneut geladen"),#scan.paths)
+                revision=revision+1;core.log(tr("Katalog: ")..state);return
             end
             table.sort(rows,function(a,b) if a.lname==b.lname then return a.path<b.path end;return a.lname<b.lname end)
             missing=scan.failed
-            state=string.format("%d inventarfaehige Arten; %d nicht geladen",#rows,#missing)
-            unloaded=#missing;ready=true;scan=nil;revision=revision+1;core.log("Katalog: "..state);return
+            state=string.format(tr("%d inventarfaehige Arten; %d nicht geladen"),#rows,#missing)
+            unloaded=#missing;ready=true;scan=nil;revision=revision+1;core.log(tr("Katalog: ")..state);return
         end
         local item,why,detail=require("features.packages").load(p)
         if item then visit(item,scan.seen,0) else
             scan.failed[#scan.failed+1]=p
             -- Bounded diagnostics: enough to identify missing assets without flooding the log.
             if scan.attempt==2 and #scan.failed<=10 then
-                core.log("Katalog: Asset fehlt: "..p.." ("..tostring(why).."; "..tostring(detail)..")","Warnung")
+                core.log(tr("Katalog: Asset fehlt: ")..p.." ("..tostring(why).."; "..tostring(detail)..")",tr("Warnung"))
             end
         end
         scan.index=scan.index+1
         if os.clock()-started>=0.003 then break end
     end
-    state=string.format("Katalog: %d / %d, %d Arten",scan.index-1,#scan.paths,#rows)
+    state=string.format(tr("Katalog: %d / %d, %d Arten"),scan.index-1,#scan.paths,#rows)
     revision=revision+1
 end
 function M.snapshot() return rows,components,ready,revision,state,unloaded end
-function M.reset() scan=nil;rows={};components={};missing={};seen={};known={};lastDiscovery=-math.huge;ready=false;unloaded=0;revision=revision+1;state="Noch nicht geladen" end
+function M.reset() scan=nil;rows={};components={};missing={};seen={};known={};lastDiscovery=-math.huge;ready=false;unloaded=0;revision=revision+1;state=tr("Noch nicht geladen") end
 return M

@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     features/spawn.lua - modules, items and starter packages.
 
@@ -23,74 +24,74 @@ local M = {}
 local CRAFTER = "/Game/Blueprints/Tests/Eric/BP_Module_Crafter.BP_Module_Crafter_C"
 local CRAFT_ENUM = "/Game/Blueprints/Tests/Eric/CraftableObjectList.CraftableObjectList"
 
--- German names for the craftable list. Anything missing shows the game's own name.
+-- Localized Warden labels for the craftable list. Unknown entries use the game's name.
 local MODULE_DE = {
-    ["Small Battery"] = "Kleine Batterie",
-    ["Medium Battery"] = "Mittlere Batterie",
-    ["Large Battery"] = "Große Batterie",
-    ["Petrol Barrel"] = "Benzinfass",
-    ["Petrol Tank"] = "Benzintank",
-    ["Oil Barrel"] = "Ölfass",
-    ["Oil Tank"] = "Öltank",
-    ["Water Barrel"] = "Wasserfass",
-    ["Water Tank"] = "Wassertank",
-    ["Methane Canister"] = "Methankanister",
-    ["Methane Tank"] = "Methantank",
-    ["Oxygen Canister"] = "Sauerstoffkanister",
-    ["Oxygen Tank"] = "Sauerstofftank",
-    ["Electric Generator Small"] = "Stromgenerator klein",
-    ["Electric Generator"] = "Stromgenerator",
-    ["Distillation Tower"] = "Destillationsturm",
-    ["Water Purifier"] = "Wasseraufbereiter",
-    ["Water Pump Large"] = "Wasserpumpe groß",
-    ["Solar Panel Ground"] = "Solarpanel (Boden)",
-    ["Solar Panel Standing"] = "Solarpanel (stehend)",
-    ["Wind Turbine"] = "Windturbine",
-    ["Steam Turbine"] = "Dampfturbine",
-    ["Gas Boiler"] = "Gasboiler",
-    ["Nuclear Reactor"] = "Kernreaktor",
-    ["Farming Module"] = "Farm-Modul",
-    ["Soil Manufacturer"] = "Erdproduktion",
-    ["Petrol Manufacturer Small"] = "Benzinproduktion klein",
-    ["Raw Oil Manufacturer"] = "Rohölproduktion",
-    ["Oxygen Manufacturer Small"] = "Sauerstoffproduktion klein",
-    ["Sabatier Reactor"] = "Sabatier-Reaktor",
-    ["Small Container"] = "Kleiner Container",
-    ["Medium Container"] = "Mittlerer Container",
-    ["Crafting Container"] = "Crafting-Container",
-    ["Shipping Container"] = "Schiffscontainer",
-    ["Crane"] = "Kran",
-    ["Electric Engine"] = "Elektromotor",
-    ["Petrol Engine"] = "Benzinmotor",
-    ["Diesel Engine Cylinder"] = "Dieselmotor-Zylinder",
-    ["Standing Light"] = "Stehlampe",
-    ["Ground Light"] = "Bodenlampe",
-    ["Small Boat"] = "Kleines Boot",
-    ["Fabricator"] = "Fabrikator",
+    ["Small Battery"] = tr("Kleine Batterie"),
+    ["Medium Battery"] = tr("Mittlere Batterie"),
+    ["Large Battery"] = tr("Große Batterie"),
+    ["Petrol Barrel"] = tr("Benzinfass"),
+    ["Petrol Tank"] = tr("Benzintank"),
+    ["Oil Barrel"] = tr("Ölfass"),
+    ["Oil Tank"] = tr("Öltank"),
+    ["Water Barrel"] = tr("Wasserfass"),
+    ["Water Tank"] = tr("Wassertank"),
+    ["Methane Canister"] = tr("Methankanister"),
+    ["Methane Tank"] = tr("Methantank"),
+    ["Oxygen Canister"] = tr("Sauerstoffkanister"),
+    ["Oxygen Tank"] = tr("Sauerstofftank"),
+    ["Electric Generator Small"] = tr("Stromgenerator klein"),
+    ["Electric Generator"] = tr("Stromgenerator"),
+    ["Distillation Tower"] = tr("Destillationsturm"),
+    ["Water Purifier"] = tr("Wasseraufbereiter"),
+    ["Water Pump Large"] = tr("Wasserpumpe groß"),
+    ["Solar Panel Ground"] = tr("Solarpanel (Boden)"),
+    ["Solar Panel Standing"] = tr("Solarpanel (stehend)"),
+    ["Wind Turbine"] = tr("Windturbine"),
+    ["Steam Turbine"] = tr("Dampfturbine"),
+    ["Gas Boiler"] = tr("Gasboiler"),
+    ["Nuclear Reactor"] = tr("Kernreaktor"),
+    ["Farming Module"] = tr("Farm-Modul"),
+    ["Soil Manufacturer"] = tr("Erdproduktion"),
+    ["Petrol Manufacturer Small"] = tr("Benzinproduktion klein"),
+    ["Raw Oil Manufacturer"] = tr("Rohölproduktion"),
+    ["Oxygen Manufacturer Small"] = tr("Sauerstoffproduktion klein"),
+    ["Sabatier Reactor"] = tr("Sabatier-Reaktor"),
+    ["Small Container"] = tr("Kleiner Container"),
+    ["Medium Container"] = tr("Mittlerer Container"),
+    ["Crafting Container"] = tr("Crafting-Container"),
+    ["Shipping Container"] = tr("Schiffscontainer"),
+    ["Crane"] = tr("Kran"),
+    ["Electric Engine"] = tr("Elektromotor"),
+    ["Petrol Engine"] = tr("Benzinmotor"),
+    ["Diesel Engine Cylinder"] = tr("Dieselmotor-Zylinder"),
+    ["Standing Light"] = tr("Stehlampe"),
+    ["Ground Light"] = tr("Bodenlampe"),
+    ["Small Boat"] = tr("Kleines Boot"),
+    ["Fabricator"] = tr("Fabrikator"),
     ["Recycler"] = "Recycler",
-    ["Fill Station"] = "Füllstation",
-    ["Portable Farming Pod"] = "Tragbare Farm-Kapsel",
-    ["Player Container"] = "Spieler-Container",
-    ["Electric Engine Cylinder"] = "Elektromotor-Zylinder",
-    ["Lazarus Pod"] = "Lazarus-Kapsel",
-    ["Human Seed"] = "Menschensamen",
-    ["Carbon Dioxide Canister"] = "CO\u{2082}-Kanister",
-    ["Carbon Dioxide Tank"] = "CO\u{2082}-Tank",
-    ["Salt Water Barrel"] = "Salzwasserfass",
-    ["Salt Water Tank"] = "Salzwassertank",
-    ["Diesel Barrel"] = "Dieselfass",
-    ["Diesel Tank"] = "Dieseltank",
-    ["Single Use Battery"] = "Einweg-Batterie",
-    ["Single Use Diesel Tank"] = "Einweg-Dieseltank",
-    ["Single Use Petrol Tank"] = "Einweg-Benzintank",
-    ["Single Use Fresh Water Tank"] = "Einweg-Frischwassertank",
-    ["Single Use Oxygen Tank"] = "Einweg-Sauerstofftank",
-    ["Diesel Engine Cylinder Booster"] = "Dieselzylinder Booster",
-    ["Diesel Engine Cylinder Eco"] = "Dieselzylinder Eco",
-    ["Diesel Engine Cylinder Super Booster"] = "Dieselzylinder Super-Booster",
-    ["Electric Engine Cylinder Booster"] = "Elektrozylinder Booster",
-    ["Electric Engine Cylinder Eco"] = "Elektrozylinder Eco",
-    ["Electric Engine Cylinder Super Booster"] = "Elektrozylinder Super-Booster",
+    ["Fill Station"] = tr("Füllstation"),
+    ["Portable Farming Pod"] = tr("Tragbare Farm-Kapsel"),
+    ["Player Container"] = tr("Spieler-Container"),
+    ["Electric Engine Cylinder"] = tr("Elektromotor-Zylinder"),
+    ["Lazarus Pod"] = tr("Lazarus-Kapsel"),
+    ["Human Seed"] = tr("Menschensamen"),
+    ["Carbon Dioxide Canister"] = tr("CO\u{2082}-Kanister"),
+    ["Carbon Dioxide Tank"] = tr("CO\u{2082}-Tank"),
+    ["Salt Water Barrel"] = tr("Salzwasserfass"),
+    ["Salt Water Tank"] = tr("Salzwassertank"),
+    ["Diesel Barrel"] = tr("Dieselfass"),
+    ["Diesel Tank"] = tr("Dieseltank"),
+    ["Single Use Battery"] = tr("Einweg-Batterie"),
+    ["Single Use Diesel Tank"] = tr("Einweg-Dieseltank"),
+    ["Single Use Petrol Tank"] = tr("Einweg-Benzintank"),
+    ["Single Use Fresh Water Tank"] = tr("Einweg-Frischwassertank"),
+    ["Single Use Oxygen Tank"] = tr("Einweg-Sauerstofftank"),
+    ["Diesel Engine Cylinder Booster"] = tr("Dieselzylinder Booster"),
+    ["Diesel Engine Cylinder Eco"] = tr("Dieselzylinder Eco"),
+    ["Diesel Engine Cylinder Super Booster"] = tr("Dieselzylinder Super-Booster"),
+    ["Electric Engine Cylinder Booster"] = tr("Elektrozylinder Booster"),
+    ["Electric Engine Cylinder Eco"] = tr("Elektrozylinder Eco"),
+    ["Electric Engine Cylinder Super Booster"] = tr("Elektrozylinder Super-Booster"),
 }
 
 -- Module groups by craftable name, for the filter row.
@@ -180,15 +181,15 @@ function M.craft(mod, atTransform, parent)
     local pc = core.pc()
     local gs = core.lib("gameplay")
     if pc == nil or gs == nil then
-        return false, "Kein Spieler"
+        return false, tr("Kein Spieler")
     end
     local crafter = core.loadClass(CRAFTER)
     if crafter == nil then
-        return false, "Crafter des Spiels nicht verfügbar"
+        return false, tr("Crafter des Spiels nicht verfügbar")
     end
     local transform = atTransform or spawnTransform()
     if transform == nil then
-        return false, "Position vor dem Spieler nicht bestimmbar"
+        return false, tr("Position vor dem Spieler nicht bestimmbar")
     end
     local actor
     local ok, err = pcall(function()
@@ -196,23 +197,23 @@ function M.craft(mod, atTransform, parent)
         actor = gs:BeginDeferredActorSpawnFromClass(pc, crafter, transform, 1, nil, 1)
     end)
     if not ok or not core.isValid(actor) then
-        return false, "Crafter konnte nicht platziert werden: " .. tostring(err)
+        return false, tr("Crafter konnte nicht platziert werden: ") .. tostring(err)
     end
     -- A half spawned actor is worse than none, so this always runs.
     local finished=pcall(function() gs:FinishSpawningActor(actor, transform, 1) end)
-    if not finished then return false,"Crafter konnte nicht initialisiert werden" end
+    if not finished then return false,tr("Crafter konnte nicht initialisiert werden") end
     if parent then
         local attached,yes=pcall(function() return actor:K2_AttachToActor(parent,FName("None"),1,1,1,false) end)
         if not attached or yes~=true then
             pcall(function() actor:K2_DestroyActor() end)
-            return false,"Crafter konnte dem Motor nicht zugeordnet werden"
+            return false,tr("Crafter konnte dem Motor nicht zugeordnet werden")
         end
     end
     ok, err = pcall(function() actor:StartCrafting(mod.value) end)
     if not ok then
-        return false, "StartCrafting fehlgeschlagen: " .. tostring(err)
+        return false, tr("StartCrafting fehlgeschlagen: ") .. tostring(err)
     end
-    return true, mod.label .. " wird gebaut",actor
+    return true, mod.label .. tr(" wird gebaut"),actor
 end
 
 ------------------------------------------------------------------------------------------
@@ -237,11 +238,11 @@ local CATEGORY_GROUP = {
     [18] = 7,                      -- Module
 }
 local CATEGORY_NAME = {
-    [1] = "Samen", [2] = "Waffe", [5] = "Organisch", [6] = "Zutat", [9] = "Munition", [11] = "Granate",
-    [12] = "Rüstung", [13] = "Kabel", [14] = "Verbrauch", [15] = "Rucksack", [16] = "Gegenstand",
-    [17] = "Magazin", [18] = "Modul", [19] = "Teil", [20] = "Ausrüstung", [21] = "Aufsatz",
-    [22] = "Material", [23] = "Behälter", [24] = "Nahrung", [25] = "Erinnerung", [26] = "Farbe",
-    [27] = "Deko", [28] = "Schrott", [29] = "Kassette", [30] = "Quest",
+    [1] = tr("Samen"), [2] = tr("Waffe"), [5] = tr("Organisch"), [6] = tr("Zutat"), [9] = tr("Munition"), [11] = tr("Granate"),
+    [12] = tr("Rüstung"), [13] = tr("Kabel"), [14] = tr("Verbrauch"), [15] = tr("Rucksack"), [16] = tr("Gegenstand"),
+    [17] = tr("Magazin"), [18] = tr("Modul"), [19] = tr("Teil"), [20] = tr("Ausrüstung"), [21] = tr("Aufsatz"),
+    [22] = "Material", [23] = tr("Behälter"), [24] = tr("Nahrung"), [25] = tr("Erinnerung"), [26] = tr("Farbe"),
+    [27] = tr("Deko"), [28] = tr("Schrott"), [29] = tr("Kassette"), [30] = "Quest",
 }
 
 local items = nil
@@ -269,9 +270,9 @@ local target = 1   -- 1 = inventory, 2 = vault
 
 function M.give(entry, amount)
     local item = packages.load(entry.path)
-    if not item then return false, entry.name .. ": Asset nicht geladen" end
+    if not item then return false, entry.name .. tr(": Asset nicht geladen") end
     local added, reason = packages.give(item, amount, target)
-    local msg = string.format("%d / %d × %s → %s", added, amount, entry.name, target == 2 and "Lager" or "Inventar")
+    local msg = string.format("%d / %d × %s → %s", added, amount, entry.name, target == 2 and tr("Lager") or tr("Inventar"))
     return added == amount, msg .. (reason and (" – " .. reason) or "")
 end
 M.tick=packages.tick
@@ -288,11 +289,11 @@ end
 local PAGE_SIZE = 12
 
 function M.page(ui)
-    local page = ui.newPage("Spawnen", 1)
+    local page = ui.newPage(tr("Spawnen"), 1)
 
     local sections = {}
     local section=1
-    local tabs = ui.segmented(page.left, { "Module", "Gegenstände", "Pakete" }, function(i)
+    local tabs = ui.segmented(page.left, { tr("Module"), tr("Gegenstände"), tr("Pakete") }, function(i)
         section=i
         if i==2 then catalog.refresh();M.collectItems();M.refreshItems(true) end
         for j, s in ipairs(sections) do
@@ -304,16 +305,16 @@ function M.page(ui)
     local modWrap = ui.vbox()
     ui.add(page.left, modWrap, { pad = { 0, 6, 0, 0 } })
     sections[1] = modWrap
-    local modCard = ui.card(modWrap, "Module bauen", "über den Crafter des Spiels")
-    ui.stepperRow(page, modCard, "Abstand vor dir", {
+    local modCard = ui.card(modWrap, tr("Module bauen"), tr("über den Crafter des Spiels"))
+    ui.stepperRow(page, modCard, tr("Abstand vor dir"), {
         values = DISTANCES,
         format = function(v) return string.format("%.1f m", v / 100) end,
         index = function() return spawnDistance end,
         set = function(i) spawnDistance = i end,
     })
-    local modSearch = ui.searchBox(modCard, "Modul suchen ...")
+    local modSearch = ui.searchBox(modCard, tr("Modul suchen ..."))
     local modGroup = 1
-    ui.segmented(modCard, { "Alle", "Energie", "Lager", "Boot", "Produktion" }, function(i)
+    ui.segmented(modCard, { tr("Alle"), tr("Energie"), tr("Lager"), tr("Boot"), tr("Produktion") }, function(i)
         modGroup = i
         M.refreshModules()
     end).set(1)
@@ -321,8 +322,8 @@ function M.page(ui)
     local modCount=ui.text("",ui.F.small,ui.C.text2)
     ui.add(modCard,modCount)
     ui.buttonGrid(modCard,2,{
-        {"Module zurueck",function() modPage=math.max(1,modPage-1);M.refreshModules() end},
-        {"Module weiter",function() modPage=modPage+1;M.refreshModules() end},
+        {tr("Module zurueck"),function() modPage=math.max(1,modPage-1);M.refreshModules() end},
+        {tr("Module weiter"),function() modPage=modPage+1;M.refreshModules() end},
     })
     local modPool = ui.listPool(modCard, PAGE_SIZE, false)
     local lastModQuery = nil
@@ -350,30 +351,30 @@ function M.page(ui)
         local visible={}
         for n=(modPage-1)*PAGE_SIZE+1,math.min(#shown,modPage*PAGE_SIZE) do visible[#visible+1]=shown[n] end
         modPool.set(visible)
-        ui.setText(modCount,string.format("%d Module | Seite %d / %d",#shown,modPage,pages))
+        ui.setText(modCount,string.format(tr("%d Module | Seite %d / %d"),#shown,modPage,pages))
     end
 
     --- Items ---------------------------------------------------------------------------
     local itemWrap = ui.vbox()
     ui.add(page.left, itemWrap, { pad = { 0, 6, 0, 0 } })
     sections[2] = itemWrap
-    local itemCard = ui.card(itemWrap, "Gegenstände", "Klick = hinzufügen")
+    local itemCard = ui.card(itemWrap, tr("Gegenstände"), tr("Klick = hinzufügen"))
     local controls = ui.hbox()
     ui.add(itemCard, controls)
     local leftCtl = ui.vbox()
     local rightCtl = ui.vbox()
     ui.add(controls, leftCtl, { fill = true, pad = { 0, 0, 8, 0 } })
     ui.add(controls, rightCtl, { fill = true, pad = { 8, 0, 0, 0 } })
-    ui.stepperRow(page, leftCtl, "Menge", {
+    ui.stepperRow(page, leftCtl, tr("Menge"), {
         values = AMOUNTS,
         format = function(v) return v .. "\u{00D7}" end,
         index = function() return amountIdx end,
         set = function(i) amountIdx = i end,
     })
-    ui.segmented(rightCtl, { "Inventar", "Lager" }, function(i) target = i;M.refreshItems(true) end).set(1)
-    local itemSearch = ui.searchBox(itemCard, "Gegenstand suchen ...")
+    ui.segmented(rightCtl, { tr("Inventar"), tr("Lager") }, function(i) target = i;M.refreshItems(true) end).set(1)
+    local itemSearch = ui.searchBox(itemCard, tr("Gegenstand suchen ..."))
     local itemGroup = 1
-    local itemFilters=ui.segmented(itemCard, { "Alle", "Material", "Teile", "Ausrüstung", "Waffen", "Nahrung", "Module", "Sonst." },
+    local itemFilters=ui.segmented(itemCard, { tr("Alle"), "Material", tr("Teile"), tr("Ausrüstung"), tr("Waffen"), tr("Nahrung"), tr("Module"), tr("Sonst.") },
         function(i)
             itemGroup = i
             M.refreshItems(true)
@@ -385,18 +386,18 @@ function M.page(ui)
     local pageNo = 1
     local filtered = {}
     ui.add(pager, pageInfo, { fill = true, v = ui.CENTER, pad = { 6, 0 } })
-    ui.button(pager, "\u{2039} Zurück", "chip", function()
+    ui.button(pager, tr("\u{2039} Zurück"), "chip", function()
         pageNo = math.max(1, pageNo - 1)
         M.refreshItems(false)
     end, { pad = { 8, 3 }, slot = { v = ui.CENTER, pad = { 0, 0, 4, 0 } } })
-    ui.button(pager, "Weiter \u{203A}", "chip", function()
+    ui.button(pager, tr("Weiter \u{203A}"), "chip", function()
         pageNo = pageNo + 1
         M.refreshItems(false)
     end, { pad = { 8, 3 }, slot = { v = ui.CENTER } })
     ui.button(pager, "\u{21BB}", "chip", function()
         M.collectItems(true)
         M.refreshItems(true)
-        ui.toast("Katalog wird im Hintergrund geladen", "good")
+        ui.toast(tr("Katalog wird im Hintergrund geladen"), "good")
     end, { pad = { 8, 3 }, slot = { v = ui.CENTER, pad = { 4, 0, 0, 0 } } })
     local itemPool = ui.listPool(itemCard, PAGE_SIZE, true)
     local lastItemQuery = nil
@@ -444,22 +445,22 @@ function M.page(ui)
             }
         end
         itemPool.set(shown)
-        ui.setText(pageInfo, string.format("%d Treffer  \u{2022}  Seite %d / %d", #filtered, pageNo, pages))
+        ui.setText(pageInfo, string.format(tr("%d Treffer  \u{2022}  Seite %d / %d"), #filtered, pageNo, pages))
     end
 
     --- Packages ------------------------------------------------------------------------
     local packWrap = ui.vbox()
     ui.add(page.left, packWrap, { pad = { 0, 6, 0, 0 } })
     sections[3] = packWrap
-    local packCard = ui.card(packWrap, "Pakete", "Direkt ins Spielerinventar; Ausgabe mit Fortschritt")
+    local packCard = ui.card(packWrap, tr("Pakete"), tr("Direkt ins Spielerinventar; Ausgabe mit Fortschritt"))
     local function cheat(fn, done)
         return function()
             local ok, err = core.cheat(fn)
-            ui.toast(ok and done or ("Fehlgeschlagen: " .. tostring(err)), ok and "good" or "bad")
+            ui.toast(ok and done or (tr("Fehlgeschlagen: ") .. tostring(err)), ok and "good" or "bad")
         end
     end
-    ui.button(packCard, "Grundausstattung (Werkzeuge, Kabel, Waffen, Material)", "primary",
-        cheat("GiveEssentials", "Grundausstattung erhalten"))
+    ui.button(packCard, tr("Grundausstattung (Werkzeuge, Kabel, Waffen, Material)"), "primary",
+        cheat("GiveEssentials", tr("Grundausstattung erhalten")))
     local function packageRow(label, kind, defaultIndex)
         local row, amount = ui.hbox(), defaultIndex
         ui.add(packCard, row, { pad = { 0, 4 } })
@@ -472,16 +473,16 @@ function M.page(ui)
         ui.add(row, button, { fill = true, v = ui.CENTER })
         local control = ui.vbox()
         ui.add(row, control, { pad = { 10, 0, 0, 0 }, v = ui.CENTER })
-        ui.stepperRow(page, control, "je Art", { values = AMOUNTS, width = 48,
+        ui.stepperRow(page, control, tr("je Art"), { values = AMOUNTS, width = 48,
             index = function() return amount end, set = function(i) amount = i end })
     end
-    packageRow("Alle Gegenstände", "all", 1)
-    packageRow("Alle Bauteile", "parts", 5)
-    packageRow("Schrott-Paket", "trash", 5)
-    ui.add(packCard, ui.paragraph("Alle Bauteile enthält Teile, Materialien und Zutaten aus Herstellungsrezepten. "
-        .. "Der Katalog wird beim Start des Pakets geprüft. Bei großen Paketen zuerst unbegrenztes Inventargewicht aktivieren."), { pad = { 2, 5 } })
-    ui.infoRow(page, packCard, "Fortschritt", packages.status)
-    ui.button(packCard, "Paket abbrechen", "action", function()
+    packageRow(tr("Alle Gegenstände"), "all", 1)
+    packageRow(tr("Alle Bauteile"), "parts", 5)
+    packageRow(tr("Schrott-Paket"), "trash", 5)
+    ui.add(packCard, ui.paragraph(tr("Alle Bauteile enthält Teile, Materialien und Zutaten aus Herstellungsrezepten. ")
+        .. tr("Der Katalog wird beim Start des Pakets geprüft. Bei großen Paketen zuerst unbegrenztes Inventargewicht aktivieren.")), { pad = { 2, 5 } })
+    ui.infoRow(page, packCard, tr("Fortschritt"), packages.status)
+    ui.button(packCard, tr("Paket abbrechen"), "action", function()
         packages.cancel()
         ui.toast(packages.status(), "warn")
     end)

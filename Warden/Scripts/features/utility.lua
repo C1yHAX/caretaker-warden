@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     Session utilities for TLC 0.10.0.653173 / UE5.8.2. NOT tested in the game.
     Integration (caller owns the game-thread scheduler):
@@ -45,7 +46,7 @@ local CL = {
 local grab, inventory, carry, context = nil, nil, nil, nil
 local carryKey
 local neutralCarry = {}
-local message = "Aus"
+local message = tr("Aus")
 
 local function report(text)
     message = text
@@ -218,8 +219,8 @@ function M.onWorldChanged()
     strength.tick(nil, false)
     grab, inventory = restoreScalar(grab), restoreScalar(inventory)
     carry = restoreCarry(carry)
-    report((grab or inventory or carry) and "Weltwechsel: Änderungen werden zurückgesetzt"
-        or "Weltwechsel: Optionen aus; vorhandene Objekte wiederhergestellt")
+    report((grab or inventory or carry) and tr("Weltwechsel: Änderungen werden zurückgesetzt")
+        or tr("Weltwechsel: Optionen aus; vorhandene Objekte wiederhergestellt"))
 end
 
 function M.tick()
@@ -275,7 +276,7 @@ function M.tick()
         S.strength = false
         strength.tick(nil, false)
         grab = restoreScalar(grab)
-        report("Superstärke konnte nicht aktiviert werden; Änderungen werden zurückgesetzt")
+        report(tr("Superstärke konnte nicht aktiviert werden; Änderungen werden zurückgesetzt"))
     end
     inventory, ok = scalarTick(inventory, inv, CL.inventory, {
         { prop = "bAllowBeyondWeightLimit", target = true },
@@ -286,7 +287,7 @@ function M.tick()
         S.weight = false
         inventory = restoreScalar(inventory)
         carry = restoreCarry(carry)
-        report("Gewichtslimit konnte nicht aufgehoben werden; Änderungen werden zurückgesetzt")
+        report(tr("Gewichtslimit konnte nicht aufgehoben werden; Änderungen werden zurückgesetzt"))
     end
 end
 
@@ -304,24 +305,24 @@ function M.status()
 end
 
 function M.addToPage(ui, page, parent)
-    local card = ui.card(parent or page.right, "Tragen & Herstellen", "Sitzung")
-    ui.toggleRow(page, card, "Superstärke beim Greifen", function() return S.strength end,
-        M.setSuperStrength, "Schwere lose Objekte tragen; normale Kraft, kein Gegenimpuls")
-    ui.toggleRow(page, card, "Unbegrenztes Inventargewicht", function() return S.weight end,
-        M.setUnlimitedWeight, "Sehr hohes Gewichtslimit und Tragfähigkeit; Slots bleiben")
-    ui.toggleRow(page, card, "Free Crafting ohne Materialien", function() return crafting.status().enabled end,
-        M.setFreeCrafting, "Nur Materialkosten; Recycling und Zerlegen bleiben unverändert")
-    ui.infoRow(page, card, "Herstellung", function() return crafting.status().message end)
+    local card = ui.card(parent or page.right, tr("Tragen & Herstellen"), tr("Sitzung"))
+    ui.toggleRow(page, card, tr("Superstärke beim Greifen"), function() return S.strength end,
+        M.setSuperStrength, tr("Schwere lose Objekte tragen; normale Kraft, kein Gegenimpuls"))
+    ui.toggleRow(page, card, tr("Unbegrenztes Inventargewicht"), function() return S.weight end,
+        M.setUnlimitedWeight, tr("Sehr hohes Gewichtslimit und Tragfähigkeit; Slots bleiben"))
+    ui.toggleRow(page, card, tr("Free Crafting ohne Materialien"), function() return crafting.status().enabled end,
+        M.setFreeCrafting, tr("Nur Materialkosten; Recycling und Zerlegen bleiben unverändert"))
+    ui.infoRow(page, card, tr("Herstellung"), function() return crafting.status().message end)
     require("features.instant").addToPage(ui,page,card)
     ui.infoRow(page, card, "Status", function()
-        if not context and (S.strength or S.weight or S.crafting) then return "Warte auf Spielwelt" end
+        if not context and (S.strength or S.weight or S.crafting) then return tr("Warte auf Spielwelt") end
         if not (S.strength or S.weight or S.crafting) then
-            return M.status().restoring and "Ausschalten wird abgeschlossen" or "Aus"
+            return M.status().restoring and tr("Ausschalten wird abgeschlossen") or tr("Aus")
         end
         return ((S.strength and not grab) or (S.weight and not inventory))
-            and "Warte auf Spielfigur" or "Aktiv"
+            and tr("Warte auf Spielfigur") or tr("Aktiv")
     end)
-    ui.infoRow(page, card, "Letzter Hinweis", function() return message end)
+    ui.infoRow(page, card, tr("Letzter Hinweis"), function() return message end)
     return card
 end
 

@@ -1,8 +1,9 @@
+local tr = require("i18n").t
 -- Inventory packages use real assets + AddItem counts, not the obsolete cheat
 -- widget's GiveParts/GiveTrash arrays. No UObject survives a world transition.
 local core = require("core")
 local M = {}
-local job, status = nil, "Bereit"
+local job, status = nil, tr("Bereit")
 local function pathOf(o)
     return core.fullName(o):match("^%S+%s+(/.+)$")
 end
@@ -47,23 +48,23 @@ function M.load(path)
     if item == nil and LoadAsset then
         local ok, loaded, found, didLoad = pcall(LoadAsset, path)
         item = ok and core.isValid(loaded) and loaded or core.find(path)
-        if not item then detail=ok and ("Registry: gefunden="..tostring(found)..", geladen="..tostring(didLoad)) or tostring(loaded) end
+        if not item then detail=ok and (tr("Registry: gefunden=")..tostring(found)..tr(", geladen=")..tostring(didLoad)) or tostring(loaded) end
     end
     -- UE4SS LoadAsset depends on its registry bridge. The game's own loader
     -- resolves the verified PrimaryAssetId and loads its path natively (32-byte
     -- parameter block). No Lua SoftObjectPtr marshalling or invented asset types.
     if not core.isValid(item) then item=loadById(path) end
-    if not core.isValid(item) then return nil, "load", detail or "Kein Asset geladen" end
+    if not core.isValid(item) then return nil, "load", detail or tr("Kein Asset geladen") end
     local cls = core.find("/Script/Voyage.VoyageItem")
     local ok, isItem = pcall(function() return item:IsA(cls) end)
     if ok and isItem == true then return item end
-    return nil, "type", "VoyageItem-Typ nicht bestaetigt"
+    return nil, "type", tr("VoyageItem-Typ nicht bestaetigt")
 end
 function M.give(item, amount, target)
     target = target or 1
-    if not M.eligible(item, target) then return 0, "nicht inventarfähig" end
+    if not M.eligible(item, target) then return 0, tr("nicht inventarfähig") end
     local inv = core.inventory(target)
-    if not inv then return 0, "Inventar fehlt" end
+    if not inv then return 0, tr("Inventar fehlt") end
     amount = math.max(1, math.min(500, math.floor(amount)))
     local okBefore, before = pcall(function() return inv:GetNumItems(item) end)
     local ok, added = pcall(function()
@@ -75,10 +76,10 @@ function M.give(item, amount, target)
     if okBefore and okAfter and type(before) == "number" and type(after) == "number" then
         added = math.max(0, after - before)
     end
-    if type(added) ~= "number" then return 0, "Ausgabe nicht bestätigt" end
+    if type(added) ~= "number" then return 0, tr("Ausgabe nicht bestätigt") end
     added = math.min(amount, math.max(0, math.floor(added)))
     if added==amount then return added end
-    return added,"Inventar voll oder Mengenlimit erreicht"
+    return added,tr("Inventar voll oder Mengenlimit erreicht")
 end
 function M.paths()
     local paths, seen = {}, {}
@@ -104,21 +105,21 @@ function M.paths()
     return paths
 end
 function M.start(kind, amount, notify)
-    if job then return false, "Ein Paket wird bereits ausgegeben" end
-    if not core.inventory(1) then return false, "Kein Spielerinventar" end
-    if kind ~= "all" and kind ~= "parts" and kind ~= "trash" then return false, "Unbekanntes Paket" end
+    if job then return false, tr("Ein Paket wird bereits ausgegeben") end
+    if not core.inventory(1) then return false, tr("Kein Spielerinventar") end
+    if kind ~= "all" and kind ~= "parts" and kind ~= "trash" then return false, tr("Unbekanntes Paket") end
     job = { kind = kind, amount = math.max(1, math.min(500, math.floor(amount))), index = 1,
         phase = "catalog", candidates = {}, components = {}, selected = {}, seen = {}, given = 0, units = 0, partial = 0,
         failures = 0, unloaded = 0, pc = core.address(core.pc()), inventory = core.address(core.inventory(1)), notify = notify }
     require("features.catalog").start(false,true,true)
-    status = "Katalog wird geprüft …"
+    status = tr("Katalog wird geprüft …")
     return true, status
 end
 function M.tick()
     local j = job
     if not j then return end
     if not core.pc() or core.address(core.pc()) ~= j.pc or not core.inventory(1) or core.address(core.inventory(1)) ~= j.inventory then
-        M.cancel("Paket wegen Spielerwechsel abgebrochen"); return
+        M.cancel(tr("Paket wegen Spielerwechsel abgebrochen")); return
     end
     if j.phase=="catalog" then
         local catalogue=require("features.catalog")
@@ -139,32 +140,32 @@ function M.tick()
     for _ = 1, 8 do
             local entry = j.selected[j.index]
             if not entry then
-                status = string.format("%d / %d Arten, %d Stück; %d unvollständig, %d fehlgeschlagen", j.given, #j.selected, j.units, j.partial, j.failures)
-                if j.unloaded > 0 then status = status .. string.format("; %d Assets nicht geladen", j.unloaded) end
+                status = string.format(tr("%d / %d Arten, %d Stück; %d unvollständig, %d fehlgeschlagen"), j.given, #j.selected, j.units, j.partial, j.failures)
+                if j.unloaded > 0 then status = status .. string.format(tr("; %d Assets nicht geladen"), j.unloaded) end
                 core.log("package " .. j.kind .. ": " .. status)
                 job = nil
                 if j.notify then j.notify(status, j.given > 0 and j.partial == 0 and j.failures == 0 and j.unloaded == 0) end
                 return
             end
             local item = M.load(entry.path)
-            local added, reason = 0, "Asset nicht geladen"
+            local added, reason = 0, tr("Asset nicht geladen")
             if item then added, reason = M.give(item, j.amount, 1) end
             if added > 0 then j.given = j.given + 1; j.units = j.units + added end
             if added == 0 then j.failures = j.failures + 1
             elseif added < j.amount then j.partial = j.partial + 1 end
             if reason then core.log("package " .. entry.path .. ": " .. added .. "/" .. j.amount .. " " .. reason) end
             j.index = j.index + 1
-            status = string.format("Ausgabe: %d / %d Arten (%d Stück)", j.index - 1, #j.selected, j.units)
+            status = string.format(tr("Ausgabe: %d / %d Arten (%d Stück)"), j.index - 1, #j.selected, j.units)
         if os.clock()-started>=0.003 then break end
     end
 end
 function M.cancel(reason)
     if job then
-        status = (reason or "Abgebrochen") .. string.format(" (%d Stück bereits ausgegeben)", job.units)
+        status = (reason or tr("Abgebrochen")) .. string.format(tr(" (%d Stück bereits ausgegeben)"), job.units)
         job = nil
     end
 end
 function M.status() return status end
 function M.busy() return job ~= nil end
-function M.onWorldChanged() M.cancel("Spielstand gewechselt") end
+function M.onWorldChanged() M.cancel(tr("Spielstand gewechselt")) end
 return M

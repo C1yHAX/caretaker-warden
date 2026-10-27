@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     features/teleport.lua - the game's teleport destinations, saved positions and
     quick jumps.
@@ -21,7 +22,7 @@ local CAT_ENUM = "/Game/Blueprints/TeleportLocationCategory.TeleportLocationCate
 local BOAT_CLASS = "/Script/Voyage.VoyageBoatPawn"
 
 local CATEGORIES = {
-    [0] = "Ohne Kategorie", "Sanctuary Docks", "Lazarus Complex", "Seed Vaults", "Exodus Station",
+    [0] = tr("Ohne Kategorie"), "Sanctuary Docks", "Lazarus Complex", "Seed Vaults", "Exodus Station",
     "Navigational Beacons", "Refuel Stations", "Helios Reserves", "Black Vein Stations", "Sectors",
     "Underwater Ruins", "Slums", "Seed Reserve", "Caves", "Growth Containers", "Quarantine Stacks",
     "Mazes", "Star Child", "Robot Factory", "Shark Bays", "Statue Spire", "Gyrocopter Platforms",
@@ -85,7 +86,7 @@ end
 function M.teleport(x, y, z, yaw, label)
     local pc, pawn = core.pc(), core.pawn()
     if pc == nil or pawn == nil then
-        return false, "Kein Spieler"
+        return false, tr("Kein Spieler")
     end
     local bx, by, bz = core.location(pawn)
     if bx ~= nil then
@@ -103,7 +104,7 @@ function M.teleport(x, y, z, yaw, label)
     if not started then
         local ok = pcall(function() pawn:K2_TeleportTo(loc, rot) end)
         if not ok then
-            return false, "Teleport fehlgeschlagen"
+            return false, tr("Teleport fehlgeschlagen")
         end
     end
     pcall(function() pc:SetControlRotation(rot) end)
@@ -164,41 +165,41 @@ function M.toBoat()
         end
     end
     if best == nil then
-        return false, "Kein Boot in der geladenen Welt gefunden"
+        return false, tr("Kein Boot in der geladenen Welt gefunden")
     end
-    return M.teleport(best.x, best.y, best.z + 350, best.yaw, "Boot")
+    return M.teleport(best.x, best.y, best.z + 350, best.yaw, tr("Boot"))
 end
 
 function M.relative(forward, up)
     local pawn = core.pawn()
     local x, y, z = core.location(pawn)
     if x == nil then
-        return false, "Kein Spieler"
+        return false, tr("Kein Spieler")
     end
     local yaw = core.yaw(pawn)
     local r = math.rad(yaw)
     return M.teleport(x + math.cos(r) * forward, y + math.sin(r) * forward, z + up, yaw,
-        forward ~= 0 and string.format("%d m vorwärts", forward // 100) or string.format("%d m hoch", up // 100))
+        forward ~= 0 and string.format(tr("%d m vorwärts"), forward // 100) or string.format(tr("%d m hoch"), up // 100))
 end
 
 function M.goBack()
     if back == nil then
-        return false, "Noch keine vorherige Position"
+        return false, tr("Noch keine vorherige Position")
     end
     local b = back
-    return M.teleport(b.x, b.y, b.z, b.yaw, "zurück")
+    return M.teleport(b.x, b.y, b.z, b.yaw, tr("zurück"))
 end
 
 function M.saveHere()
     local pawn = core.pawn()
     local x, y, z = core.location(pawn)
     if x == nil then
-        return false, "Kein Spieler"
+        return false, tr("Kein Spieler")
     end
-    local name = string.format("Punkt %d", #hotspots + 1)
+    local name = string.format(tr("Punkt %d"), #hotspots + 1)
     hotspots[#hotspots + 1] = { name = name, x = x, y = y, z = z, yaw = core.yaw(pawn) }
     saveHotspots()
-    return true, name .. " gespeichert"
+    return true, name .. tr(" gespeichert")
 end
 
 ------------------------------------------------------------------------------------------
@@ -218,15 +219,15 @@ function M.page(ui)
         end
     end
 
-    local quick = ui.card(page.left, "Schnell")
+    local quick = ui.card(page.left, tr("Schnell"))
     ui.buttonGrid(quick, 2, {
-        { "Zum Boot", run(M.toBoat) },
-        { "Zurück", run(M.goBack) },
-        { "10 m vorwärts", run(M.relative, 1000, 0) },
-        { "25 m hoch", run(M.relative, 0, 2500) },
+        { tr("Zum Boot"), run(M.toBoat) },
+        { tr("Zurück"), run(M.goBack) },
+        { tr("10 m vorwärts"), run(M.relative, 1000, 0) },
+        { tr("25 m hoch"), run(M.relative, 0, 2500) },
     })
 
-    local saved = ui.card(page.left, "Gespeicherte Punkte")
+    local saved = ui.card(page.left, tr("Gespeicherte Punkte"))
     local deleteMode = false
     local hotPool
     local function refreshHotspots()
@@ -241,7 +242,7 @@ function M.page(ui)
                         table.remove(hotspots, i)
                         saveHotspots()
                         refreshHotspots()
-                        ui.toast(h.name .. " gelöscht", "warn")
+                        ui.toast(h.name .. tr(" gelöscht"), "warn")
                     else
                         local ok, msg = M.teleport(h.x, h.y, h.z, h.yaw, h.name)
                         ui.toast(msg, ok and "good" or "bad")
@@ -251,19 +252,19 @@ function M.page(ui)
         end
         hotPool.set(shown)
     end
-    ui.button(saved, "Aktuelle Position speichern", "primary", function()
+    ui.button(saved, tr("Aktuelle Position speichern"), "primary", function()
         local ok, msg = M.saveHere()
         ui.toast(msg, ok and "good" or "bad")
         refreshHotspots()
     end, { slot = { pad = { 0, 0, 0, 4 } } })
-    ui.toggleRow(page, saved, "Löschmodus", function() return deleteMode end, function(on)
+    ui.toggleRow(page, saved, tr("Löschmodus"), function() return deleteMode end, function(on)
         deleteMode = on
         refreshHotspots()
-    end, "Klick auf einen Punkt löscht ihn")
+    end, tr("Klick auf einen Punkt löscht ihn"))
     hotPool = ui.listPool(saved, 16, false)
     refreshHotspots()
 
-    local places = ui.card(page.right, "Orte", "aus dem Spiel")
+    local places = ui.card(page.right, tr("Orte"), tr("aus dem Spiel"))
     local catIndex = 1   -- 1 = all, n = category n-2 ... built below
     local catValues = { -1 }
     for v = 0, #CATEGORIES do
@@ -301,15 +302,15 @@ function M.page(ui)
             }
         end
         destPool.set(shown)
-        countInfo.text = string.format("Seite %d / %d | %d von %d", destPage,pageCount,#list, (function()
+        countInfo.text = string.format(tr("Seite %d / %d | %d von %d"), destPage,pageCount,#list, (function()
             local n = 0
             for _ in pairs(destinations) do n = n + 1 end
             return n
         end)())
     end
-    ui.stepperRow(page, places, "Kategorie", {
+    ui.stepperRow(page, places, tr("Kategorie"), {
         values = catValues, wrap = true, width = 150,
-        format = function(v) return v == -1 and "Alle" or (CATEGORIES[v] or ("#" .. v)) end,
+        format = function(v) return v == -1 and tr("Alle") or (CATEGORIES[v] or ("#" .. v)) end,
         index = function() return catIndex end,
         set = function(i)
             catIndex = i
@@ -317,15 +318,15 @@ function M.page(ui)
             refreshDestinations()
         end,
     })
-    ui.infoRow(page, places, "Bekannte Orte", function() return countInfo.text end)
-    ui.button(places, "Geladene Welt nach Orten durchsuchen", "action", function()
+    ui.infoRow(page, places, tr("Bekannte Orte"), function() return countInfo.text end)
+    ui.button(places, tr("Geladene Welt nach Orten durchsuchen"), "action", function()
         local found, added = M.scan()
         refreshDestinations()
-        ui.toast(string.format("%d Orte geladen, %d neu", found, added), added > 0 and "good" or nil)
+        ui.toast(string.format(tr("%d Orte geladen, %d neu"), found, added), added > 0 and "good" or nil)
     end, { slot = { pad = { 0, 2, 0, 6 } } })
     ui.buttonGrid(places,2,{
-        {"Orte zurueck",function() destPage=math.max(1,destPage-1);refreshDestinations() end},
-        {"Orte weiter",function() destPage=destPage+1;refreshDestinations() end},
+        {tr("Orte zurueck"),function() destPage=math.max(1,destPage-1);refreshDestinations() end},
+        {tr("Orte weiter"),function() destPage=destPage+1;refreshDestinations() end},
     })
     destPool = ui.listPool(places, 12, false)
 

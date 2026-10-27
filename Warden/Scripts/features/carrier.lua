@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 local core=require("core")
 local M={}
 local CLASS="/Game/Blueprints/AI/Characters/CarrierBot/CarrierBot.CarrierBot_C"
@@ -5,7 +6,7 @@ local CLASS="/Game/Blueprints/AI/Characters/CarrierBot/CarrierBot.CarrierBot_C"
 -- One explicit click, no polling; keep the action within 100 m of this player.
 function M.follow(on)
     local pawn=core.pawn();local x,y,z=core.location(pawn)
-    if not x then return false,"Kein Spieler" end
+    if not x then return false,tr("Kein Spieler") end
     local best,target=10000^2,nil
     for _,bot in ipairs(core.actorsOf(CLASS)) do
         local a,b,c=core.location(bot)
@@ -14,18 +15,18 @@ function M.follow(on)
             if d<best then target,best=bot,d end
         end
     end
-    if not target then return false,"Kein Traegerroboter innerhalb von 100 m" end
+    if not target then return false,tr("Kein Traegerroboter innerhalb von 100 m") end
     local ok,yes=pcall(function()
         if not target:HasAuthority() or target:IsActorBeingDestroyed() then return false end
         local state=on and 4 or 0
         target:SetState(state,nil,core.vec(0,0,0))
         return target.State==state or target.QueuedState==state
     end)
-    return ok and yes==true,ok and yes==true and (on and "Traegerroboter folgt" or "Traegerroboter angehalten") or "Roboterbefehl nicht bestaetigt"
+    return ok and yes==true,ok and yes==true and (on and tr("Traegerroboter folgt") or tr("Traegerroboter angehalten")) or tr("Roboterbefehl nicht bestaetigt")
 end
 function M.addToPage(ui,page,parent)
-    local card=ui.card(parent,"Traegerroboter","Naechster Roboter bis 100 m")
+    local card=ui.card(parent,tr("Traegerroboter"),tr("Naechster Roboter bis 100 m"))
     local function run(on) return function() local ok,msg=M.follow(on);ui.toast(msg,ok and "good" or "warn") end end
-    ui.buttonGrid(card,2,{{"Folgen",run(true)},{"Anhalten",run(false)}})
+    ui.buttonGrid(card,2,{{tr("Folgen"),run(true)},{tr("Anhalten"),run(false)}})
 end
 return M

@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     ui.lua - a small widget toolkit that builds the Warden window out of real UMG
     widgets at runtime.
@@ -506,7 +507,7 @@ end
 -- A button with a centred caption. kind: "action", "primary", "chip", "danger", "ghost".
 function M.button(parent, caption, kind, onClick, opts)
     local w = M.clickable(kind or "action", onClick and function()
-        core.log("Aktion: "..caption)
+        core.log(tr("Aktion: ")..caption)
         onClick()
     end)
     local color = (kind == "primary") and C.accentInk or C.text
@@ -578,7 +579,7 @@ function M.toggleRow(page, parent, label, get, set, note)
     end
     M.onClick(w, function()
         local ok, on = pcall(get)
-        core.log("Schalter: "..label.." -> "..((ok and on) and "Aus" or "Ein"))
+        core.log(tr("Schalter: ")..label.." -> "..((ok and on) and tr("Aus") or tr("Ein")))
         set(not (ok and on))
         row.refresh()
     end)
@@ -627,7 +628,7 @@ function M.stepperRow(page, parent, label, opts)
             i = math.max(1, math.min(n, i))
         end
         opts.set(i)
-        core.log("Einstellung: "..label.." -> "..tostring(opts.format and opts.format(opts.values[i]) or opts.values[i]))
+        core.log(tr("Einstellung: ")..label.." -> "..tostring(opts.format and opts.format(opts.values[i]) or opts.values[i]))
     end
     local minus = M.button(nil, "\u{2039}", "chip", function() step(-1) end, { pad = { 7, 3 } })
     M.add(hb, minus, { v = CENTER })
@@ -681,7 +682,7 @@ function M.searchBox(parent, hint)
     M.add(hb, M.text("\u{2315}", F.label, C.text2), { v = CENTER, pad = { 0, 0, 6, 0 } })
     local field = M.new("EditableText")
     try("search font", function() field:SetFont(fontInfo(F.label, false)) end)
-    try("search hint", function() field:SetHintText(core.text(hint or "Suchen ...")) end)
+    try("search hint", function() field:SetHintText(core.text(hint or tr("Suchen ..."))) end)
     try("search color", function() field.WidgetStyle.ColorAndOpacity = slateColor(C.text) end)
     M.add(hb, field, { fill = true, v = CENTER })
     M.add(parent, frame, { pad = { 0, 2, 0, 6 } })
@@ -723,7 +724,7 @@ function M.listPool(parent, size, withIcons)
         local row = { widget = w, name = name, meta = meta, img = img, item = nil }
         M.onClick(w, function()
             if row.item ~= nil and row.item.onClick ~= nil then
-                core.log("Auswahl: "..tostring(row.item.name or "Eintrag"))
+                core.log(tr("Auswahl: ")..tostring(row.item.name or tr("Eintrag")))
                 row.item.onClick(row.item)
             end
         end)
@@ -822,7 +823,7 @@ end
 
 -- Shows msg in the footer for a few seconds. kind: "good", "bad", "warn" or nil.
 function M.toast(msg, kind)
-    core.log(msg,kind=="bad" and "Fehler" or kind=="warn" and "Warnung" or "Status")
+    core.log(msg,kind=="bad" and tr("Fehler") or kind=="warn" and tr("Warnung") or "Status")
     if statusText == nil then
         return
     end
@@ -866,7 +867,7 @@ function M.selectPage(i)
     end
     ensurePage(i)
     local changed=M.activePage~=i
-    if changed then core.log("Seite: "..M.pages[i].title) end
+    if changed then core.log(tr("Seite: ")..M.pages[i].title) end
     M.activePage = i
     try("switch page", function() switcher:SetActiveWidgetIndex(i - 1) end)
     for j, tab in ipairs(tabs) do
@@ -888,7 +889,7 @@ function M.refreshActive()
     end
     local started=os.clock()
     for _, fn in ipairs(page.refreshers) do
-        core.safe("Anzeige "..page.title,fn)
+        core.safe(tr("Anzeige ")..page.title,fn)
     end
     M.metrics.refreshMs=(os.clock()-started)*1000
     M.metrics.refreshMaxMs=math.max(M.metrics.refreshMaxMs,M.metrics.refreshMs)
@@ -918,7 +919,7 @@ local function buildHeader(parent, keyName)
     M.content(badge, M.text(keyName, F.badge, C.text, true, 1), CENTER, CENTER)
     local badgeCol = M.vbox()
     M.add(badgeCol, badge, { h = CENTER })
-    M.add(badgeCol, M.text("Menü", 6.5, C.text2, false, 1), { h = CENTER, pad = { 0, 2, 0, 0 } })
+    M.add(badgeCol, M.text(tr("Menü"), 6.5, C.text2, false, 1), { h = CENTER, pad = { 0, 2, 0, 0 } })
     M.add(hb, badgeCol, { v = CENTER, pad = { 0, 0, 10, 0 } })
 
     M.button(hb, "\u{00D7}", "ghost", function() M.hide() end,
@@ -955,10 +956,10 @@ local function buildFooter(parent)
     M.add(hb, M.text("WARDEN v" .. core.VERSION .. "  |  ", F.small, C.muted), { v = CENTER })
     M.add(hb, dot, { v = CENTER, pad = { 0, 0, 5, 0 } })
     M.add(hb, M.text("CARETAKER", F.small, C.muted), { v = CENTER, pad = { 0, 0, 14, 0 } })
-    statusText = M.text("Bereit.", F.small, C.text2)
+    statusText = M.text(tr("Bereit."), F.small, C.text2)
     try("status clip", function() statusText:SetTextOverflowPolicy(1) end)
     M.add(hb, statusText, { v = CENTER, fill = true })
-    M.add(hb, M.text("Strg+F1 = Eingabe freigeben", F.small, C.muted), { v = CENTER })
+    M.add(hb, M.text(tr("Strg+F1 = Eingabe freigeben"), F.small, C.muted), { v = CENTER })
     M.add(parent, M.sizeBox(nil, 1, M.border(C.divider, 0)))
     M.add(parent, footer)
 end
@@ -1164,14 +1165,14 @@ function M.show()
     M.trace = M.traceBuilds
     try("show", function() host:SetVisibility(SELF_HIT_TEST_INVISIBLE) end)
     M.isOpen = true
-    core.log("Menue geoeffnet")
+    core.log(tr("Menue geoeffnet"))
     grabInput()
     M.trace = traced
     M.selectPage(M.activePage > 0 and M.activePage or 1)
 end
 
 function M.hide()
-    if M.isOpen then core.log("Menue geschlossen") end
+    if M.isOpen then core.log(tr("Menue geschlossen")) end
     if core.isValid(host) then
         try("hide", function() host:SetVisibility(COLLAPSED) end)
     end
@@ -1187,7 +1188,7 @@ function M.tick()
     M.refreshActive()
     if statusText ~= nil and statusClear > 0 and os.clock() > statusClear then
         statusClear = 0
-        M.setText(statusText, "Bereit.", C.text2)
+        M.setText(statusText, tr("Bereit."), C.text2)
     end
     if playerChip ~= nil then
         local pawn = core.pawn()

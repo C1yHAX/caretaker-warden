@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     features/player.lua - survival, movement and character progress.
 
@@ -98,7 +99,7 @@ end
 function M.refillAll()
     local surv = core.survival()
     if surv == nil then
-        return false, "Kein Überlebens-Status gefunden (im Spiel?)"
+        return false, tr("Kein Überlebens-Status gefunden (im Spiel?)")
     end
     for _, attr in ipairs({ A.Health, A.Oxygen, A.Nutrition, A.Hydration, A.Stamina, A.Charge }) do
         fill(surv, attr)
@@ -107,7 +108,7 @@ function M.refillAll()
         drain(surv, attr)
     end
     building.fillEnergy()
-    return true, "Alle Werte aufgefüllt"
+    return true, tr("Alle Werte aufgefüllt")
 end
 
 local damageBlocked = false
@@ -193,7 +194,7 @@ end
 function M.gainExp(amount)
     local lib, pc = core.lib("gameplayV"), core.pc()
     if lib == nil or pc == nil then
-        return false, "Kein Spieler"
+        return false, tr("Kein Spieler")
     end
     local args = {
         Source = 5,   -- EVoyageExperienceType::Cheat
@@ -210,7 +211,7 @@ function M.gainExp(amount)
         end
     end
     if not ok then
-        return false, "EXP fehlgeschlagen: " .. tostring(res)
+        return false, tr("EXP fehlgeschlagen: ") .. tostring(res)
     end
     local after = M.level()
     local msg = "+" .. core.thousands(amount) .. " EXP"
@@ -224,7 +225,7 @@ function M.levelUp(levels)
     local lib = core.lib("gameplayV")
     local current = M.level()
     if lib == nil or current == nil then
-        return false, "Level nicht lesbar"
+        return false, tr("Level nicht lesbar")
     end
     local okCap, cap = pcall(function() return lib:GetLevelCap() end)
     local target = current + levels
@@ -232,7 +233,7 @@ function M.levelUp(levels)
         target = math.min(target, cap)
     end
     if target <= current then
-        return false, "Maximales Level erreicht"
+        return false, tr("Maximales Level erreicht")
     end
     local ok, need = pcall(function() return lib:GetTotalExpRequired(current, target) end)
     if not ok or type(need) ~= "number" or need <= 0 then
@@ -266,32 +267,32 @@ local function fmtFactor(v)
 end
 
 function M.page(ui)
-    local page = ui.newPage("Spieler")
+    local page = ui.newPage(tr("Spieler"))
 
-    local surv = ui.card(page.left, "Überleben")
-    ui.toggleRow(page, surv, "Gottmodus", function() return S.god end, M.setGod,
-        "Unverwundbar, alle Werte bleiben voll")
-    ui.toggleRow(page, surv, "Unendlich Sauerstoff", function() return S.oxygen end,
+    local surv = ui.card(page.left, tr("Überleben"))
+    ui.toggleRow(page, surv, tr("Gottmodus"), function() return S.god end, M.setGod,
+        tr("Unverwundbar, alle Werte bleiben voll"))
+    ui.toggleRow(page, surv, tr("Unendlich Sauerstoff"), function() return S.oxygen end,
         function(on) S.oxygen = on end)
-    ui.toggleRow(page, surv, "Kein Hunger & Durst", function() return S.food end,
+    ui.toggleRow(page, surv, tr("Kein Hunger & Durst"), function() return S.food end,
         function(on) S.food = on end)
-    ui.toggleRow(page, surv, "Unendlich Ausdauer", function() return S.stamina end,
+    ui.toggleRow(page, surv, tr("Unendlich Ausdauer"), function() return S.stamina end,
         function(on) S.stamina = on end)
-    ui.toggleRow(page, surv, "Unendlich Anzug-Energie", function() return S.charge end,
+    ui.toggleRow(page, surv, tr("Unendlich Anzug-Energie"), function() return S.charge end,
         function(on) S.charge = on end)
-    ui.toggleRow(page, surv, "Immun: Kälte, Strahlung, Fieber", function() return S.immune end,
+    ui.toggleRow(page, surv, tr("Immun: Kälte, Strahlung, Fieber"), function() return S.immune end,
         M.setImmune)
-    ui.button(surv, "Alles sofort auffüllen", "primary", function()
+    ui.button(surv, tr("Alles sofort auffüllen"), "primary", function()
         local ok, msg = M.refillAll()
         ui.toast(msg, ok and "good" or "bad")
     end, { slot = { pad = { 0, 6, 0, 0 } } })
 
-    local prog = ui.card(page.left, "Charakter")
+    local prog = ui.card(page.left, tr("Charakter"))
     ui.infoRow(page, prog, "Level", function()
         local lvl = M.level()
         return lvl and tostring(lvl) or "-"
     end)
-    ui.infoRow(page, prog, "Freie Skillpunkte", function()
+    ui.infoRow(page, prog, tr("Freie Skillpunkte"), function()
         local n = skillPoints()
         return n and tostring(n) or "-"
     end)
@@ -310,43 +311,43 @@ function M.page(ui)
         end
     end
     ui.buttonGrid(prog, 3, {
-        { "+1.000 EXP", exp(1000) }, { "+10.000 EXP", exp(10000) }, { "+100.000 EXP", exp(100000) },
+        { tr("+1.000 EXP"), exp(1000) }, { tr("+10.000 EXP"), exp(10000) }, { tr("+100.000 EXP"), exp(100000) },
         { "+1 Level", lvl(1) }, { "+5 Level", lvl(5) }, { "+10 Level", lvl(10) },
     })
 
-    local move = ui.card(page.right, "Bewegung")
-    ui.toggleRow(page, move, "Fliegen", function() return movement.state.fly end, M.setFly,
-        "WASD / linker Stick, Leertaste hoch, Strg / C runter")
+    local move = ui.card(page.right, tr("Bewegung"))
+    ui.toggleRow(page, move, tr("Fliegen"), function() return movement.state.fly end, M.setFly,
+        tr("WASD / linker Stick, Leertaste hoch, Strg / C runter"))
     ui.toggleRow(page, move, "Noclip", function() return movement.state.noclip end, M.setNoclip,
-        "Fliegen durch Wände und Boden")
-    ui.stepperRow(page, move, "Lauftempo", {
+        tr("Fliegen durch Wände und Boden"))
+    ui.stepperRow(page, move, tr("Lauftempo"), {
         values = SPEEDS, format = fmtFactor,
         index = function() return mult.walk end,
         set = function(i) movement.setIndex("walk", i) end,
     })
-    ui.stepperRow(page, move, "Sprungkraft", {
+    ui.stepperRow(page, move, tr("Sprungkraft"), {
         values = JUMPS, format = fmtFactor,
         index = function() return mult.jump end,
         set = function(i) movement.setIndex("jump", i) end,
     })
-    ui.stepperRow(page, move, "Fluggeschwindigkeit", {
+    ui.stepperRow(page, move, tr("Fluggeschwindigkeit"), {
         values = FLY_SPEEDS, format = fmtFactor,
         index = function() return mult.fly end,
         set = function(i) movement.setIndex("fly", i) end,
     })
 
-    local view = ui.card(page.right, "Ansicht & Notfall")
+    local view = ui.card(page.right, tr("Ansicht & Notfall"))
     local function cheat(fn, done)
         return function()
             local ok, err = core.cheat(fn)
-            ui.toast(ok and done or ("Fehlgeschlagen: " .. tostring(err)), ok and "good" or "bad")
+            ui.toast(ok and done or (tr("Fehlgeschlagen: ") .. tostring(err)), ok and "good" or "bad")
         end
     end
     ui.buttonGrid(view, 2, {
-        { "Third-Person", cheat("ToggleCharacterThirdPerson", "Kamera umgeschaltet") },
-        { "Freie Kamera", cheat("ToggleSpectatorMode", "Zuschauer-Modus umgeschaltet (nochmal = zurück)") },
+        { "Third-Person", cheat("ToggleCharacterThirdPerson", tr("Kamera umgeschaltet")) },
+        { tr("Freie Kamera"), cheat("ToggleSpectatorMode", tr("Zuschauer-Modus umgeschaltet (nochmal = zurück)")) },
     })
-    ui.button(view, "Respawn", "danger", cheat("Respawn", "Respawn ausgelöst"),
+    ui.button(view, "Respawn", "danger", cheat("Respawn", tr("Respawn ausgelöst")),
         { slot = { pad = { 0, 4, 0, 0 } } })
 
     utility.addToPage(ui, page, page.left)

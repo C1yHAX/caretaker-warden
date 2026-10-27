@@ -1,6 +1,7 @@
 -- Search metadata only; never changes game assets or inventory eligibility.
 -- German aliases remain available when UE4SS exposes an English source string.
 local core = require("core")
+local i18n = require("i18n")
 local M = {}
 local MATERIALS = {
     Aluminium = "Aluminium Aluminum",
@@ -55,8 +56,14 @@ function M.describe(value, path)
     end
     local material=path:match("^/Game/Data/Assets/Materials/DA_Material_([^%.]+)%.")
     local aliases=material and MATERIALS[material] or ""
+    -- Keep the game's own names/culture for arbitrary and modded items. Our
+    -- built-in material fallback must follow the selected menu language too.
     if not usable(name) then
-        name=aliases:match("^(%S+)") or path:match("%.([^%.]+)$") or path
+        if i18n.getLanguage()=="en" and aliases~="" then
+            name=material:gsub("(%l)(%u)","%1 %2")
+        else
+            name=aliases:match("^(%S+)") or path:match("%.([^%.]+)$") or path
+        end
     end
     local search=M.normalize(table.concat({name,usable(direct) and direct or "",path,aliases}," "))
     return name,search

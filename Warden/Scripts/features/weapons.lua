@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     Player-holster weapons, TLC 0.10.0.653173 / UE 5.8.2.
 
@@ -57,17 +58,17 @@ local HOOK = "/Script/Voyage.VoyageWeaponBallistic:OnAmmoCountChanged"
 local tracked, busy = {}, false
 local hookReady, resourceHookReady, hookAttempted = false, false, false
 local RESOURCE_HOOK = "/Script/Voyage.VoyageWeaponResource:ModuleValuesChanged"
-local status = "Aus"
+local status = tr("Aus")
 
 local function warn(key, message)
     status = message
-    core.logOnce("weapons." .. key, "Waffen: " .. message)
+    core.logOnce("weapons." .. key, tr("Waffen: ") .. message)
 end
 
 local function call(label, fn)
     local ok, result = pcall(fn)
     if not ok then
-        warn(label, label .. " fehlgeschlagen: " .. tostring(result))
+        warn(label, label .. tr(" fehlgeschlagen: ") .. tostring(result))
         return nil
     end
     return result
@@ -92,7 +93,7 @@ local function worldOf(o)
     if not core.isValid(o) then return nil end
     local lib = core.lib("misc")
     if lib == nil then
-        warn("worldLibrary", "Spielwelt nicht lesbar; Waffenfunktionen warten")
+        warn("worldLibrary", tr("Spielwelt nicht lesbar; Waffenfunktionen warten"))
         return nil
     end
     return call("GetActorWorld", function() return lib:GetActorWorld(o) end)
@@ -128,10 +129,10 @@ end
 local function writeProperty(o, name, value)
     local ok, err = pcall(function() o[name] = value end)
     if not ok then
-        warn(name, name .. " konnte nicht gesetzt werden: " .. tostring(err))
+        warn(name, name .. tr(" konnte nicht gesetzt werden: ") .. tostring(err))
         return false
     end
-    return call("Lesen " .. name, function() return o[name] end) == value
+    return call(tr("Lesen ") .. name, function() return o[name] end) == value
 end
 
 -- Store before writing, including false values; keep failed restores for retry.
@@ -139,11 +140,11 @@ local function flag(r, name, enabled)
     local old = r.flags[name]
     if enabled then
         if old == nil then
-            old = call("Lesen " .. name, function() return r.weapon[name] end)
+            old = call(tr("Lesen ") .. name, function() return r.weapon[name] end)
             if type(old) ~= "boolean" then return false end
             r.flags[name] = old
         end
-        if call("Lesen " .. name, function() return r.weapon[name] end) == false then return true end
+        if call(tr("Lesen ") .. name, function() return r.weapon[name] end) == false then return true end
         return writeProperty(r.weapon, name, false)
     end
     if old == nil then return true end
@@ -170,7 +171,7 @@ local function restoreAmmo(r)
     if r.ammo == nil then return true end
     local now = ammoState(r.weapon)
     if now == nil or now.pair ~= r.ammo.pair then
-        warn("ammoPair", "Munition/Magazin gewechselt; alten Füllstand nicht übertragen")
+        warn("ammoPair", tr("Munition/Magazin gewechselt; alten Füllstand nicht übertragen"))
         r.ammo = nil
         return true
     end
@@ -188,12 +189,12 @@ local function refillAmmo(r, inHook, newCount)
     -- Do not interfere with the engine's reload timer or pending inventory debit.
     local reloading = call("IsReloading", function() return r.weapon:IsReloading() end)
     if reloading ~= false then
-        status = "Warte auf Ende des Nachladens"
+        status = tr("Warte auf Ende des Nachladens")
         return false
     end
     local now = ammoState(r.weapon)
     if now == nil then
-        status = "Passende Munition und Magazin erforderlich"
+        status = tr("Passende Munition und Magazin erforderlich")
         return false
     end
     if r.ammo == nil or r.ammo.pair ~= now.pair then
@@ -205,7 +206,7 @@ local function refillAmmo(r, inHook, newCount)
         -- Pass the held count to the notification's original implementation too.
         if not writeProperty(r.weapon, "CurrentAmmoCount", now.capacity) then return false end
         local ok, err = pcall(function() newCount:set(now.capacity) end)
-        if not ok then warn("hookParam", "Munitionsanzeige: " .. tostring(err)) end
+        if not ok then warn("hookParam", tr("Munitionsanzeige: ") .. tostring(err)) end
         return true
     end
     local result = call("SetAmmoAmount", function() return r.weapon:SetAmmoAmount(now.capacity) end)
@@ -305,7 +306,7 @@ local function restore(r, ctx)
     end
     if not restoreAmmo(r) then ok = false end
     if not restoreResource(r) then ok = false end
-    if not ok then warn("restore", "Wiederherstellung unvollständig; nächster Tick versucht es erneut") end
+    if not ok then warn("restore", tr("Wiederherstellung unvollständig; nächster Tick versucht es erneut")) end
     return ok
 end
 
@@ -337,7 +338,7 @@ local function owns(r, ctx, holster)
 end
 
 local function update()
-    if not enabled() and next(tracked) == nil then status = "Aus" return end
+    if not enabled() and next(tracked) == nil then status = tr("Aus") return end
     local ctx = context()
     for key, r in pairs(tracked) do
         if ctx == nil or ctx.worldKey ~= r.worldKey or ctx.pcKey ~= r.pcKey
@@ -347,13 +348,13 @@ local function update()
         end
     end
     if not enabled() then
-        if releaseAll(ctx) then status = "Aus" end
+        if releaseAll(ctx) then status = tr("Aus") end
         return
     end
     local holster = playerHolster(ctx)
     if holster == nil then
         releaseAll(ctx)
-        status = "Warte auf Spielercharakter"
+        status = tr("Warte auf Spielercharakter")
         return
     end
     -- GetSlotActors is only 80 bytes. The reviewed UE4SS map out pusher places a
@@ -362,7 +363,7 @@ local function update()
     local got, err = pcall(function() holster:GetSlotActors(holder) end)
     if not got or type(holder.OutActors) ~= "table" then
         releaseAll(ctx)
-        warn("slots", "Spielerholster nicht lesbar: " .. tostring(err))
+        warn("slots", tr("Spielerholster nicht lesbar: ") .. tostring(err))
         return
     end
     local found = {}
@@ -385,7 +386,7 @@ local function update()
         end
     end
     local ok, count = true, 0
-    status = "Waffen im Spielerholster"
+    status = tr("Waffen im Spielerholster")
     for key, item in pairs(found) do
         local r = tracked[key]
         if r == nil then
@@ -407,8 +408,8 @@ local function update()
             if not refillResource(r, false) then ok = false end
         elseif not restoreResource(r) then ok = false end
     end
-    if count == 0 then status = "Keine Waffen im Spielerholster"
-    elseif not ok and status == "Waffen im Spielerholster" then status = "Teilweise aktiv; Werte konnten nicht bestätigt werden" end
+    if count == 0 then status = tr("Keine Waffen im Spielerholster")
+    elseif not ok and status == tr("Waffen im Spielerholster") then status = tr("Teilweise aktiv; Werte konnten nicht bestätigt werden") end
 end
 
 function M.tick()
@@ -416,7 +417,7 @@ function M.tick()
     busy = true
     local ok, err = pcall(update)
     busy = false
-    if not ok then warn("tick", "Aktualisierung fehlgeschlagen: " .. tostring(err)) end
+    if not ok then warn("tick", tr("Aktualisierung fehlgeschlagen: ") .. tostring(err)) end
 end
 
 local function ammoChanged(contextParam, _, newCount)
@@ -433,7 +434,7 @@ local function ammoChanged(contextParam, _, newCount)
         refillAmmo(r, true, newCount)
     end)
     busy = false
-    if not ok then warn("ammoHook", "Munitions-Hook fehlgeschlagen: " .. tostring(err)) end
+    if not ok then warn("ammoHook", tr("Munitions-Hook fehlgeschlagen: ") .. tostring(err)) end
 end
 
 local function moduleChanged(contextParam, moduleParam)
@@ -453,7 +454,7 @@ local function moduleChanged(contextParam, moduleParam)
         refillResource(r, true)
     end)
     busy = false
-    if not ok then warn("resourceHook", "Waffenressourcen konnten nicht aktualisiert werden: " .. tostring(err)) end
+    if not ok then warn("resourceHook", tr("Waffenressourcen konnten nicht aktualisiert werden: ") .. tostring(err)) end
 end
 
 -- Call only from the startup Lua state. Failed registration disables No Reload;
@@ -462,15 +463,15 @@ function M.init()
     if hookAttempted then return hookReady end
     hookAttempted = true
     if type(RegisterHook) ~= "function" then
-        warn("hook", "No Reload nicht verfügbar: RegisterHook fehlt")
+        warn("hook", tr("No Reload nicht verfügbar: RegisterHook fehlt"))
         return false
     end
     local ok, pre, post = pcall(RegisterHook, HOOK, ammoChanged)
     hookReady = ok and type(pre) == "number" and type(post) == "number"
-    if not hookReady then warn("hook", "No Reload nicht verfügbar: " .. tostring(pre)) end
+    if not hookReady then warn("hook", tr("No Reload nicht verfügbar: ") .. tostring(pre)) end
     local rok, rpre, rpost = pcall(RegisterHook, RESOURCE_HOOK, function() end, moduleChanged)
     resourceHookReady = rok and type(rpre) == "number" and type(rpost) == "number"
-    if not resourceHookReady then warn("resourceHookMissing", "Waffentanks werden nur periodisch aufgefüllt") end
+    if not resourceHookReady then warn("resourceHookMissing", tr("Waffentanks werden nur periodisch aufgefüllt")) end
     return hookReady
 end
 
@@ -488,7 +489,7 @@ end
 
 function M.setNoReload(on)
     if on and not hookReady then
-        status = "No Reload nicht verfügbar; Modul beim Modstart laden"
+        status = tr("No Reload nicht verfügbar; Modul beim Modstart laden")
         return false, status
     end
     S.noReload = on == true
@@ -506,8 +507,8 @@ function M.onWorldChanged()
     end)
     tracked = {}
     busy = false
-    status = "Warte auf Spielercharakter"
-    if not ok then warn("world", "Weltwechsel: " .. tostring(err)) end
+    status = tr("Warte auf Spielercharakter")
+    if not ok then warn("world", tr("Weltwechsel: ") .. tostring(err)) end
 end
 
 function M.reset()
@@ -518,29 +519,29 @@ function M.reset()
 end
 
 function M.page(ui)
-    local page = ui.newPage("Waffen")
-    local cheats = ui.card(page.left, "Waffen im Spielerholster")
-    ui.toggleRow(page, cheats, "Überhitzung aus", function() return S.noOverheat end,
-        M.setNoOverheat, "Deaktiviert den Überhitzungs-Cooldown")
-    ui.toggleRow(page, cheats, "Unendliche Waffenressourcen", function() return S.infiniteResources end,
-        M.setInfiniteResources, "Magazin und Waffentank: Munition, Benzin, Strom usw.")
+    local page = ui.newPage(tr("Waffen"))
+    local cheats = ui.card(page.left, tr("Waffen im Spielerholster"))
+    ui.toggleRow(page, cheats, tr("Überhitzung aus"), function() return S.noOverheat end,
+        M.setNoOverheat, tr("Deaktiviert den Überhitzungs-Cooldown"))
+    ui.toggleRow(page, cheats, tr("Unendliche Waffenressourcen"), function() return S.infiniteResources end,
+        M.setInfiniteResources, tr("Magazin und Waffentank: Munition, Benzin, Strom usw."))
     ui.toggleRow(page, cheats, "No Reload", function() return S.noReload end,
         function(on)
             local ok, message = M.setNoReload(on)
             if not ok then ui.toast(message, "bad") end
-        end, "Hält das Magazin voll; laufendes Nachladen erst beenden")
-    local info = ui.card(page.right, "Sitzung")
+        end, tr("Hält das Magazin voll; laufendes Nachladen erst beenden"))
+    local info = ui.card(page.right, tr("Sitzung"))
     ui.infoRow(page, info, "Status", function() return status end)
-    ui.infoRow(page, info, "Nachladen überspringen", function() return hookReady and "Bereit" or "Nicht verfügbar" end)
-    ui.infoRow(page, info, "Waffentanks auffüllen", function()
-        return resourceHookReady and "Bei Verbrauch und regelmäßig" or "Nur regelmäßig"
+    ui.infoRow(page, info, tr("Nachladen überspringen"), function() return hookReady and tr("Bereit") or tr("Nicht verfügbar") end)
+    ui.infoRow(page, info, tr("Waffentanks auffüllen"), function()
+        return resourceHookReady and tr("Bei Verbrauch und regelmäßig") or tr("Nur regelmäßig")
     end)
-    ui.button(info, "Waffenwerte zurücksetzen", "danger", function()
+    ui.button(info, tr("Waffenwerte zurücksetzen"), "danger", function()
         local ok = M.reset()
-        ui.toast(ok and "Waffen-Schalter aus" or "Wiederherstellung wird erneut versucht", ok and "good" or "bad")
+        ui.toast(ok and tr("Waffen-Schalter aus") or tr("Wiederherstellung wird erneut versucht"), ok and "good" or "bad")
         ui.refreshActive()
     end)
-    ui.add(info, ui.paragraph("Gilt für alle Waffen im Spielerholster. Beim Ablegen oder Ausschalten werden gesicherte Werte zurückgesetzt. Nur für diese Sitzung."))
+    ui.add(info, ui.paragraph(tr("Gilt für alle Waffen im Spielerholster. Beim Ablegen oder Ausschalten werden gesicherte Werte zurückgesetzt. Nur für diese Sitzung.")))
     return page
 end
 

@@ -1,10 +1,11 @@
+local tr = require("i18n").t
 -- Construction diagnostics are READ ONLY unless the user explicitly repairs a
 -- stalled job. Never add speculative writes to the normal building path.
 local core = require("core")
 local M = {}
 local CLASS = "/Game/Blueprints/Fabrication/BP_Location_Fabricator.BP_Location_Fabricator_C"
 local ELECTRICITY = 0 -- EModuleResourceType, not EVoyageInventoryType
-local status = "Noch nicht geprueft"
+local status = tr("Noch nicht geprueft")
 local countdown, seen = 0, {}
 local function call(o, fn, ...)
     if not core.isValid(o) then return nil end
@@ -32,12 +33,12 @@ function M.fillEnergy()
     local current=call(module,"GetResourceAmount",ELECTRICITY)
     local maximum=call(module,"GetMaxResourceAmount",ELECTRICITY)
     if not number(current) or not number(maximum) or maximum<=0 then
-        return false,"Keine lesbare Spielerbatterie"
+        return false,tr("Keine lesbare Spielerbatterie")
     end
     if current<maximum then call(module,"ForceAddResource",ELECTRICITY,maximum-current) end
     local after=call(module,"GetResourceAmount",ELECTRICITY)
     local ok=number(after) and after>=maximum-0.001
-    return ok,ok and "Spielerbatterie fuer Bauauftraege geladen" or "Batterieladung nicht bestaetigt"
+    return ok,ok and tr("Spielerbatterie fuer Bauauftraege geladen") or tr("Batterieladung nicht bestaetigt")
 end
 local function joinCount(module)
     local values=read(module,"JoinUpdateObjects")
@@ -50,9 +51,9 @@ local function joinCount(module)
 end
 function M.inspect(repair)
     local pawn=core.pawn()
-    if not core.isValid(pawn) then return false,"Kein Spieler" end
+    if not core.isValid(pawn) then return false,tr("Kein Spieler") end
     local module=call(pawn,"GetPlayerModule")
-    if not core.isValid(module) then return false,"Kein Spieler-Baumodul" end
+    if not core.isValid(module) then return false,tr("Kein Spieler-Baumodul") end
     local checked,relinked,paused,failed=0,0,0,0
     local alive={}
     for _,actor in ipairs(core.actorsOf(CLASS)) do
@@ -103,25 +104,25 @@ function M.inspect(repair)
         end
     end
     for id in pairs(seen) do if not alive[id] then seen[id]=nil end end
-    status=string.format("%d Bauauftraege; %d pausiert; %d neu angebunden%s",checked,paused,relinked,
-        failed>0 and ("; "..failed.." Anbindungen unbestaetigt") or "")
-    if repair then status=status..". Baufortschritt wird weiter geprueft." end
+    status=string.format(tr("%d Bauauftraege; %d pausiert; %d neu angebunden%s"),checked,paused,relinked,
+        failed>0 and ("; "..failed..tr(" Anbindungen unbestaetigt")) or "")
+    if repair then status=status..tr(". Baufortschritt wird weiter geprueft.") end
     return true,status
 end
 function M.tick()
     countdown=countdown+1
     if countdown%20==0 then M.inspect(false) end -- observe only: no automatic gameplay writes
 end
-function M.onWorldChanged() seen,countdown,status={},0,"Warte auf Bauauftrag" end
+function M.onWorldChanged() seen,countdown,status={},0,tr("Warte auf Bauauftrag") end
 function M.addToPage(ui,page,parent)
-    local card=ui.card(parent,"Bauen & Diagnose")
-    ui.infoRow(page,card,"Bauauftraege",function() return status end)
-    ui.button(card,"Bauauftraege pruefen / reaktivieren","action",function()
+    local card=ui.card(parent,tr("Bauen & Diagnose"))
+    ui.infoRow(page,card,tr("Bauauftraege"),function() return status end)
+    ui.button(card,tr("Bauauftraege pruefen / reaktivieren"),"action",function()
         local ok,msg=M.inspect(true);ui.toast(msg,ok and "good" or "bad")
     end)
-    ui.button(card,"Spielerbatterie laden","action",function()
+    ui.button(card,tr("Spielerbatterie laden"),"action",function()
         local ok,msg=M.fillEnergy();ui.toast(msg,ok and "good" or "bad")
     end)
-    ui.add(card,ui.paragraph("Prueft eigene Bauauftraege aus dem B-Menue. Materialien, Kollisionen und Recycling bleiben nach Spielregeln."))
+    ui.add(card,ui.paragraph(tr("Prueft eigene Bauauftraege aus dem B-Menue. Materialien, Kollisionen und Recycling bleiben nach Spielregeln.")))
 end
 return M

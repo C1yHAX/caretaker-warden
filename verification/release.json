@@ -2,31 +2,44 @@
   "version": "1.0.0",
   "gameVersion": "0.10.0.653173",
   "steamBuild": "25982825",
-  "build": "20261024-item-loader",
-  "runtimeFiles": 32,
+  "build": "20261027-language",
+  "runtimeFiles": 34,
   "runtimeOnlyZip": true,
   "nativeGameStartedForPublication": false,
   "privateSettingsIncluded": false,
   "nativeDllUnchanged": true,
   "offlineTests": {
     "publicSuite": {
-      "testsRun": 103,
+      "testsRun": 112,
+      "testsPassed": 111,
       "result": "passed",
       "optionalReflectionGroupsSkipped": 1
     },
     "developmentSuite": {
-      "testsRun": 226,
+      "testsRun": 235,
+      "testsPassed": 222,
       "result": "passed",
       "optionalChecksSkipped": 13
     },
     "smoke": {
-      "pages": 9,
-      "clickHandlers": 211,
+      "languages": [
+        "de",
+        "en"
+      ],
+      "pagesPerLanguage": 9,
+      "clickHandlersPerLanguage": 211,
       "errorLines": 0,
       "result": "passed"
     },
     "itemMetadata": {
       "verifiedIdentities": 923
+    },
+    "language": {
+      "testsRun": 9,
+      "result": "passed",
+      "translationCoverage": 553,
+      "configRoundtrip": true,
+      "placeholdersVerified": true
     }
   },
   "corrections": [
@@ -35,7 +48,17 @@
     "Retry missing item assets with bounded work",
     "Discover newly registered mod items through GetAssetsByClass",
     "Native loader fallback using verified PrimaryAssetId",
-    "Ship item_names.lua, item_registry.lua and data/item_types.lua"
+    "Ship item_names.lua, item_registry.lua and data/item_types.lua",
+    "Configurable German/English interface, initialized before feature modules",
+    "553 translations for menu, built-in module labels, help and status/log messages",
+    "Preserve game localization and user-owned names; no new engine calls for localization"
   ],
-  "runtimeLimitations": "Offline tests use controlled engine substitutes. Native item delivery and long-term gameplay were not retested for this packaging update."
+  "runtimeLimitations": "Offline tests use controlled engine substitutes. Native rendering, FPS and gameplay were not tested for this language update. Item names from the game and other mods retain their own localization.",
+  "languages": [
+    "de",
+    "en"
+  ],
+  "defaultLanguage": "de",
+  "translations": 553,
+  "zipSha256": "6fbeb639dde02aeb3ec67a0bd2c2b24c4c43eb97eb7eed51f5de78643be0ee0f"
 }

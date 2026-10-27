@@ -20,7 +20,7 @@ def main():
     args = parser.parse_args()
     rows = json.loads((ROOT/'Dateien.json').read_text(encoding='utf-8'))
     expected = {row['path'] for row in rows}
-    assert len(rows) == len(expected) == 32, 'Unexpected runtime manifest'
+    assert len(rows) == len(expected) == 34, 'Unexpected runtime manifest'
     files = {}
     for row in rows:
         name = row['path']
@@ -46,6 +46,13 @@ def main():
         actual = {p.relative_to(ROOT).as_posix() for p in (ROOT/'Voyage').rglob('*')
                   if p.is_file() and runtime_path(p.relative_to(ROOT).as_posix())}
         assert actual == expected, 'Unlisted runtime files'
+    if KIND == 'warden':
+        prefix='Voyage/Binaries/Win64/ue4ss/Mods/Warden/'
+        actual={prefix+p.relative_to(ROOT/'Warden').as_posix()
+                for p in (ROOT/'Warden/Scripts').rglob('*') if p.is_file()
+                and runtime_path(prefix+p.relative_to(ROOT/'Warden').as_posix())}
+        actual.add(prefix+'enabled.txt')
+        assert actual == expected, 'Unlisted or unexpected Warden runtime files'
     out = ROOT/'dist'; out.mkdir(exist_ok=True)
     target = out/ARCHIVE
     with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:

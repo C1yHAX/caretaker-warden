@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     Boat controls, TLC 0.10.0.653173 (UE 5.8.2). Game-thread entry points only.
     Integration: addToPage(ui, page, parent), tick(), onWorldChanged().
@@ -52,7 +53,7 @@ local FACTORS = { 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4 }
 local RANGE = 10000 -- cm: nearest boat must be within 100 m, in this world.
 local MAX_ITEMS, WORK_PER_TICK = 2048, 12
 local DISCOVERY_PER_TICK = 2 -- at most four local component enumerations per tick.
-local S = { index = 3, active = false, saved = {}, status = "Noch kein Boot gewaehlt" }
+local S = { index = 3, active = false, saved = {}, status = tr("Noch kein Boot gewaehlt") }
 local uiRef
 
 local function finite(n)
@@ -188,7 +189,7 @@ local function restore()
     S.saved = pending
     if #pending == 0 then S.restoreWorld = nil end
     return #pending == 0 and conflicts == 0, string.format(
-        "%d Rotorwerte restauriert; %d offen, %d externe Aenderungen, %d ungueltig",
+        tr("%d Rotorwerte restauriert; %d offen, %d externe Aenderungen, %d ungueltig"),
         restored, #pending, conflicts, lost)
 end
 
@@ -196,7 +197,7 @@ local function cancel(reason)
     outfit.cancel()
     local hadWork = S.active or S.job ~= nil or #S.saved > 0
     local _, result = restore()
-    local repair = S.job and string.format("; Reparatur abgebrochen nach %d bestaetigten Reparaturen", S.job.fixed) or ""
+    local repair = S.job and string.format(tr("; Reparatur abgebrochen nach %d bestaetigten Reparaturen"), S.job.fixed) or ""
     S.job, S.target, S.targetID, S.context, S.world = nil, nil, nil, nil, nil
     S.targetName = nil
     if hadWork then say(reason .. "; " .. result .. repair, false) else S.status = reason end
@@ -213,7 +214,7 @@ local function forgetWorld(reason)
     S.targetName = nil
     S.index = 3
     S.status = reason
-    core.log(string.format("Boat: %s; %d alte Rotorreferenzen verworfen; %d bestaetigte Reparaturen vor Abbruch",
+    core.log(string.format(tr("Boat: %s; %d alte Rotorreferenzen verworfen; %d bestaetigte Reparaturen vor Abbruch"),
         reason, count, fixed))
 end
 
@@ -226,12 +227,12 @@ end
 
 local function validate()
     local ctx, pawn, world = context()
-    if (S.world or S.restoreWorld) and (S.world or S.restoreWorld) ~= world then forgetWorld("Welt gewechselt")
-    elseif S.context and S.context ~= ctx then cancel("Spieler gewechselt") end
+    if (S.world or S.restoreWorld) and (S.world or S.restoreWorld) ~= world then forgetWorld(tr("Welt gewechselt"))
+    elseif S.context and S.context ~= ctx then cancel(tr("Spieler gewechselt")) end
     if not ctx then return nil end
     if S.target and (identity(S.target) ~= S.targetID or not live(S.target)
         or worldOf(S.target) ~= world or not withinScope(S.target, pawn)) then
-        cancel("Boot ungueltig oder ausserhalb des 100-m-Bereichs")
+        cancel(tr("Boot ungueltig oder ausserhalb des 100-m-Bereichs"))
     end
     return ctx, pawn, world
 end
@@ -239,12 +240,12 @@ end
 local function choose()
     outfit.cancel()
     local ctx, pawn, world = validate()
-    if not ctx then say("Kein gueltiger Spieler in einer Welt", false) return false end
-    if S.job then say("Reparatur laeuft; Bootwahl danach moeglich", false) return false end
+    if not ctx then say(tr("Kein gueltiger Spieler in einer Welt"), false) return false end
+    if S.job then say(tr("Reparatur laeuft; Bootwahl danach moeglich"), false) return false end
     local ok, result = restore()
     S.job, S.target, S.targetID = nil, nil, nil
     S.targetName = nil
-    if not ok then say("Bootwechsel gestoppt: " .. result, false) return false end
+    if not ok then say(tr("Bootwechsel gestoppt: ") .. result, false) return false end
     -- First the possessed boat, then the pawn's physical attachment parents.
     local target, parent, seen = nil, pawn, {}
     for _ = 1, 32 do
@@ -272,10 +273,10 @@ local function choose()
             end
         end
     end
-    if not target then say("Kein Boot im Spielerbezug oder innerhalb von 100 m", false) return false end
+    if not target then say(tr("Kein Boot im Spielerbezug oder innerhalb von 100 m"), false) return false end
     S.target, S.targetID, S.context, S.world = target, identity(target), ctx, world
     S.targetName = core.shortName(target)
-    say("Ziel: " .. S.targetName .. " (nur dieses Boot)", true)
+    say(tr("Ziel: ") .. S.targetName .. tr(" (nur dieses Boot)"), true)
     return true
 end
 
@@ -283,7 +284,7 @@ local function targetForAction()
     validate()
     if not S.target and not choose() then return nil end
     local ok, authority = call(S.target, "HasAuthority")
-    if not ok or authority ~= true then say("Boot kann hier nicht geaendert werden (nur Host)", false) return nil end
+    if not ok or authority ~= true then say(tr("Boot kann hier nicht geaendert werden (nur Host)"), false) return nil end
     return S.target
 end
 
@@ -312,9 +313,9 @@ local function applySpeed()
     local boat = targetForAction()
     if not boat then return false end
     local ok, result = restore()
-    if not ok then say("Antrieb gestoppt: " .. result, false) return false end
+    if not ok then say(tr("Antrieb gestoppt: ") .. result, false) return false end
     local items = collect(boat)
-    if not items then say("Boot-Module konnten nicht vollstaendig gelesen werden", false) return false end
+    if not items then say(tr("Boot-Module konnten nicht vollstaendig gelesen werden"), false) return false end
     local seen, records = {}, {}
     for _, item in ipairs(items) do
         local actor = item.object
@@ -324,24 +325,24 @@ local function applySpeed()
             seen[id] = true
             local value = read(actor, SPEED_FIELD)
             if not finite(value) or value <= 0 or value * FACTORS[S.index] > 3.402823466e38 then
-                say("Rotor hat keinen gueltigen Geschwindigkeitsfaktor; nichts angewandt", false) return false
+                say(tr("Rotor hat keinen gueltigen Geschwindigkeitsfaktor; nichts angewandt"), false) return false
             end
             records[#records+1] = { actor = actor, id = id, original = value, applied = value * FACTORS[S.index] }
         end
     end
-    if #records == 0 then say("Kein unterstuetzter, physisch angebauter Boot-Rotor gefunden", false) return false end
+    if #records == 0 then say(tr("Kein unterstuetzter, physisch angebauter Boot-Rotor gefunden"), false) return false end
     for _, item in ipairs(records) do
         -- Record BEFORE attempting the write, including a write that throws after mutation.
         S.saved[#S.saved+1] = item
         S.restoreWorld = S.world
         if not setScalar(item.actor, item.applied) then
             local _, rollback = restore()
-            say("Antriebswert nicht bestaetigt; " .. rollback, false)
+            say(tr("Antriebswert nicht bestaetigt; ") .. rollback, false)
             return false
         end
     end
     S.active, S.checkIndex = true, 1
-    say(string.format("Antriebsfaktor %.2fx: %d Rotorwerte bestaetigt", FACTORS[S.index], #records), true)
+    say(string.format(tr("Antriebsfaktor %.2fx: %d Rotorwerte bestaetigt"), FACTORS[S.index], #records), true)
     return true
 end
 
@@ -354,14 +355,14 @@ end
 local function startRepair(mode)
     local boat = targetForAction()
     if not boat then return end
-    if S.job then say("Reparatur laeuft bereits", false) return end
+    if S.job then say(tr("Reparatur laeuft bereits"), false) return end
     local items = collect(boat)
-    if not items then say("Reparatur nicht gestartet: Boot-Module nicht vollstaendig lesbar", false) return end
+    if not items then say(tr("Reparatur nicht gestartet: Boot-Module nicht vollstaendig lesbar"), false) return end
     local cls, damageCls = core.find(MODULE), core.find(DAMAGE)
-    if not cls or not damageCls then say("Reparaturdaten fehlen; nicht gestartet", false) return end
+    if not cls or not damageCls then say(tr("Reparaturdaten fehlen; nicht gestartet"), false) return end
     S.job = { mode = mode or "repair", items = items, next = 1, moduleClass = cls, damageClass = damageCls, seen = {}, checked = 0,
         fixed = 0, fixedModules = 0, fixedParts = 0, healthy = 0, partial = 0, failed = 0, skipped = 0, errors = 0 }
-    say((mode == "refill" and "Auffuellen gestartet: " or "Reparatur gestartet: ") .. core.shortName(boat), true)
+    say((mode == "refill" and tr("Auffuellen gestartet: ") or tr("Reparatur gestartet: ")) .. core.shortName(boat), true)
 end
 
 local function health(object)
@@ -440,7 +441,7 @@ local function repairTick()
     local job, boat = S.job, S.target
     if not job then return end
     local ok, authority = call(boat, "HasAuthority")
-    if not ok or authority ~= true then cancel("Boot kann hier nicht mehr geaendert werden") return end
+    if not ok or authority ~= true then cancel(tr("Boot kann hier nicht mehr geaendert werden")) return end
     local work, discoveries = 0, 0
     while work < WORK_PER_TICK and job.next <= #job.items do
         work = work + 1
@@ -474,11 +475,11 @@ local function repairTick()
             else job.skipped = job.skipped + 1 end
         end
     end
-    S.status = string.format("%s: %d/%d Eintraege; %d bestaetigt",
-        job.mode == "refill" and "Auffuellen" or "Reparatur", job.next-1, #job.items, job.fixed)
+    S.status = string.format(tr("%s: %d/%d Eintraege; %d bestaetigt"),
+        job.mode == "refill" and tr("Auffuellen") or tr("Reparatur"), job.next-1, #job.items, job.fixed)
     if job.next > #job.items then
         S.job = nil
-        say(string.format((job.mode == "refill" and "Aufgefuellt" or "Repariert") .. ": %d Module, %d Bauteile. Intakt: %d; teilweise: %d; fehlgeschlagen: %d; uebersprungen: %d; Lesefehler: %d",
+        say(string.format((job.mode == "refill" and tr("Aufgefuellt") or tr("Repariert")) .. tr(": %d Module, %d Bauteile. Intakt: %d; teilweise: %d; fehlgeschlagen: %d; uebersprungen: %d; Lesefehler: %d"),
             job.fixedModules, job.fixedParts, job.healthy, job.partial, job.failed, job.skipped, job.errors),
             job.partial == 0 and job.failed == 0 and job.skipped == 0 and job.errors == 0)
     end
@@ -496,33 +497,33 @@ function M.tick()
         if not item or not ok or authority ~= true or identity(item.actor) ~= item.id
             or not live(item.actor) or not attachedTo(item.actor, S.target)
             or not close(read(item.actor, SPEED_FIELD), item.applied) then
-            cancel("Antriebsbindung oder Rotorwert geaendert")
+            cancel(tr("Antriebsbindung oder Rotorwert geaendert"))
         else S.checkIndex = (S.checkIndex or 1) % #S.saved + 1 end
     elseif #S.saved > 0 then
         local ok, result = restore()
-        if #S.saved == 0 then say("Wiederherstellung: " .. result, ok) end
+        if #S.saved == 0 then say(tr("Wiederherstellung: ") .. result, ok) end
     end
     repairTick()
 end
 
 function M.onWorldChanged()
-    forgetWorld("Boot-Sitzung beendet: Weltwechsel")
+    forgetWorld(tr("Boot-Sitzung beendet: Weltwechsel"))
 end
 
 function M.addToPage(ui, page, parent)
     uiRef = ui
-    local card = ui.card(parent, "Boot")
-    ui.infoRow(page, card, "Zielboot", function()
-        return S.targetName or "Keines"
+    local card = ui.card(parent, tr("Boot"))
+    ui.infoRow(page, card, tr("Zielboot"), function()
+        return S.targetName or tr("Keines")
     end)
-    ui.infoRow(page,card,"Motorleistung",function()
-        if not S.target then return "Boot waehlen" end
+    ui.infoRow(page,card,tr("Motorleistung"),function()
+        if not S.target then return tr("Boot waehlen") end
         local ok,value=call(S.target,"GetTotalEnginePower")
         return ok and finite(value) and string.format("%.1f",value) or "-"
     end)
-    ui.button(card, "Boot waehlen", "action", choose)
-    ui.add(card, ui.paragraph("Spielerboot oder naechstes Boot bis 100 m. Auswahl bleibt fest."))
-    ui.stepperRow(page, card, "Tempo", {
+    ui.button(card, tr("Boot waehlen"), "action", choose)
+    ui.add(card, ui.paragraph(tr("Spielerboot oder naechstes Boot bis 100 m. Auswahl bleibt fest.")))
+    ui.stepperRow(page, card, tr("Tempo"), {
         values = FACTORS, index = function() return S.index end,
         format = function(value) return string.format("%.2fx", value) end,
         set = function(i)
@@ -531,17 +532,17 @@ function M.addToPage(ui, page, parent)
             if S.active then applySpeed() end
         end,
     })
-    ui.toggleRow(page, card, "Tempo aktiv", function() return S.active end,
-        function(on) if on then applySpeed() else stopSpeed() end end, "Antriebsfaktor, nur diese Sitzung")
+    ui.toggleRow(page, card, tr("Tempo aktiv"), function() return S.active end,
+        function(on) if on then applySpeed() else stopSpeed() end end, tr("Antriebsfaktor, nur diese Sitzung"))
     ui.buttonGrid(card, 2, {
-        { "Originaltempo", stopSpeed }, { "Alles reparieren", function() startRepair() end, "primary" },
-        { "Tanks & Batterien fuellen", function() startRepair("refill") end },
-        { "Zum Zielboot", function()
+        { tr("Originaltempo"), stopSpeed }, { tr("Alles reparieren"), function() startRepair() end, "primary" },
+        { tr("Tanks & Batterien fuellen"), function() startRepair("refill") end },
+        { tr("Zum Zielboot"), function()
             local boat = targetForAction()
             if not boat then return end
             local x,y,z = core.location(boat)
             if not (finite(x) and finite(y) and finite(z)) then return end
-            local ok, message = require("features.teleport").teleport(x,y,z+300,core.yaw(boat),"Zielboot")
+            local ok, message = require("features.teleport").teleport(x,y,z+300,core.yaw(boat),tr("Zielboot"))
             say(message, ok)
         end },
     })
@@ -550,13 +551,13 @@ function M.addToPage(ui, page, parent)
         if not boat then return end
         local ok = call(boat, up and "LiftAnchors" or "DropAnchors")
         local confirmed = ok and read(boat,"AnchorsDropped") == not up
-        say(confirmed and (up and "Anker gelichtet" or "Anker gesetzt") or "Ankerzustand nicht bestaetigt", confirmed)
+        say(confirmed and (up and tr("Anker gelichtet") or tr("Anker gesetzt")) or tr("Ankerzustand nicht bestaetigt"), confirmed)
     end
     ui.buttonGrid(card, 2, {
-        { "Anker lichten", function() anchor(true) end },
-        { "Anker setzen", function() anchor(false) end },
+        { tr("Anker lichten"), function() anchor(true) end },
+        { tr("Anker setzen"), function() anchor(false) end },
     })
-    ui.add(card, ui.paragraph("Repariert vorhandene Bauteile und Module dauerhaft."))
+    ui.add(card, ui.paragraph(tr("Repariert vorhandene Bauteile und Module dauerhaft.")))
     local status = ui.paragraph(S.status)
     ui.add(card, status)
     local last
@@ -571,60 +572,60 @@ local CYLINDER_LEVELS = {"", "_Eco", "_Booster", "_SuperBooster", "_CheatBooster
 function M.giveCylinder(kind, level, count)
     if not CYLINDER_TYPES[kind] or not CYLINDER_LEVELS[level]
         or not finite(count) or count%1~=0 or count<1 or count>50 then
-        return false,"Ungueltige Zylinderauswahl"
+        return false,tr("Ungueltige Zylinderauswahl")
     end
     -- The old developer retrofit destroys owners of EVERY connected engine
     -- socket, including the boat hull. Never call it, even for basic cylinders.
     local name="DA_Item_"..CYLINDER_TYPES[kind].."EngineCylinder"..CYLINDER_LEVELS[level]
     local packages=require("features.packages")
     local item=packages.load("/Game/Data/Assets/Items/"..name.."."..name)
-    if not item then return false,"Motorzylinder nicht geladen" end
+    if not item then return false,tr("Motorzylinder nicht geladen") end
     local amount,reason=packages.give(item,count,1)
-    return amount==count,string.format("%d/%d Zylinder ins Inventar%s",amount,count,reason and (": "..reason) or "")
+    return amount==count,string.format(tr("%d/%d Zylinder ins Inventar%s"),amount,count,reason and (": "..reason) or "")
 end
 
 function M.page(ui)
-    local page = ui.newPage("Boot")
+    local page = ui.newPage(tr("Boot"))
     M.addToPage(ui, page, page.left)
-    local engines=ui.card(page.right,"Motoren ausruesten","Direkt am ausgewaehlten Boot")
-    local choices={"Basis","Eco","Booster","Super-Booster"}
+    local engines=ui.card(page.right,tr("Motoren ausruesten"),tr("Direkt am ausgewaehlten Boot"))
+    local choices={tr("Basis"),"Eco","Booster","Super-Booster"}
     local level=1
-    ui.stepperRow(page,engines,"Zylindervariante",{
+    ui.stepperRow(page,engines,tr("Zylindervariante"),{
         values=choices,index=function() return level end,format=tostring,
         set=function(i) if choices[i] then level=i end end,
     })
-    ui.button(engines,"Boot ausruesten","primary",function()
+    ui.button(engines,tr("Boot ausruesten"),"primary",function()
         local boat=targetForAction();if not boat then return end
         local ok,msg=outfit.start(boat,level,say);say(msg,ok)
     end)
-    ui.button(engines,"Ausstattung beenden","action",outfit.cancel)
-    ui.button(engines,"Motoranschluesse pruefen","action",function()
+    ui.button(engines,tr("Ausstattung beenden"),"action",outfit.cancel)
+    ui.button(engines,tr("Motoranschluesse pruefen"),"action",function()
         local boat=targetForAction();if not boat then return end
         local ok,msg=outfit.inspect(boat);say(msg,ok)
     end)
-    ui.infoRow(page,engines,"Anschluesse",outfit.status)
-    ui.add(engines,ui.paragraph("Diesel- und Elektromotoren: passende Zylinder werden an jedem Motoranschluss eingesetzt. Bestehende Zylinder werden ersetzt; andere Anbauteile bleiben erhalten. Anschluss wird einzeln geprueft."))
-    local navigation = ui.card(page.right, "Boot bergen & steuern")
-    ui.button(navigation, "Boot aufrichten", "action", function()
+    ui.infoRow(page,engines,tr("Anschluesse"),outfit.status)
+    ui.add(engines,ui.paragraph(tr("Diesel- und Elektromotoren: passende Zylinder werden an jedem Motoranschluss eingesetzt. Bestehende Zylinder werden ersetzt; andere Anbauteile bleiben erhalten. Anschluss wird einzeln geprueft.")))
+    local navigation = ui.card(page.right, tr("Boot bergen & steuern"))
+    ui.button(navigation, tr("Boot aufrichten"), "action", function()
         local boat = targetForAction()
         if not boat then return end
         local ok = call(boat, "AddUprightForce", 1.0)
-        say(ok and "Aufrichtimpuls angewandt" or "Aufrichten fehlgeschlagen", ok)
+        say(ok and tr("Aufrichtimpuls angewandt") or tr("Aufrichten fehlgeschlagen"), ok)
     end)
-    ui.add(navigation, ui.paragraph("Aufrichtimpuls fuer das gewaehlte Boot. Bei Bedarf erneut ausloesen."))
-    ui.button(navigation, "Bootsteuerung uebernehmen", "action", function()
+    ui.add(navigation, ui.paragraph(tr("Aufrichtimpuls fuer das gewaehlte Boot. Bei Bedarf erneut ausloesen.")))
+    ui.button(navigation, tr("Bootsteuerung uebernehmen"), "action", function()
         local boat=targetForAction()
         if not boat then return end
         local _,driver=call(boat,"GetDriver")
-        if core.isValid(driver) then say("Dieses Boot hat bereits einen Fahrer",false);return end
+        if core.isValid(driver) then say(tr("Dieses Boot hat bereits einen Fahrer"),false);return end
         local ok,err=call(boat,"OnEnterVehicle",core.pc())
         local pawn = core.pawn()
         local success = ok and identity(pawn)==identity(boat)
         if success then ui.hide() end
-        say(success and "Bootsteuerung aktiv; normale Aussteigen-Taste verwenden"
-            or "Bootsteuerung nicht uebernommen: " .. tostring(err), success)
+        say(success and tr("Bootsteuerung aktiv; normale Aussteigen-Taste verwenden")
+            or tr("Bootsteuerung nicht uebernommen: ") .. tostring(err), success)
     end)
-    ui.add(navigation, ui.paragraph("Steuerung des ausgewaehlten Boots; normale Aussteigen-Taste verwenden."))
+    ui.add(navigation, ui.paragraph(tr("Steuerung des ausgewaehlten Boots; normale Aussteigen-Taste verwenden.")))
     return page
 end
 

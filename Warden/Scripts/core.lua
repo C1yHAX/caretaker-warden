@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     core.lua - shared plumbing: logging, safe calls, object lookup, the player's
     handles, settings on disk and the game's own cheat functions.
@@ -19,7 +20,7 @@ local M = {}
 
 -- Public release version. Earlier 1.x labels identify internal test snapshots only.
 M.VERSION = "1.0.0"
-M.BUILD = "20261024-item-loader"
+M.BUILD = "20261027-language"
 M.NAME = "Warden"
 
 ------------------------------------------------------------------------------------------
@@ -28,7 +29,7 @@ M.NAME = "Warden"
 
 local journal = require("journal")
 function M.log(msg, level)
-    journal.add(msg, level or (tostring(msg):find("ERROR",1,true) and "Fehler" or "Info"))
+    journal.add(msg, level or (tostring(msg):find("ERROR",1,true) and tr("Fehler") or "Info"))
     print("[Warden] " .. tostring(msg) .. "\n")
 end
 
@@ -290,8 +291,10 @@ end
 -- 12345 -> "12.345"
 function M.thousands(n)
     local s = tostring(math.floor(n))
-    local out = s:reverse():gsub("(%d%d%d)", "%1."):reverse()
-    return (out:gsub("^%.", ""))
+    local separator=require("i18n").getLanguage()=="en" and "," or "."
+    local out = s:reverse():gsub("(%d%d%d)", "%1"..separator):reverse()
+    if out:sub(1,1)==separator then out=out:sub(2) end
+    return out
 end
 
 ------------------------------------------------------------------------------------------
@@ -472,16 +475,16 @@ function M.cheat(fnName, ...)
     local pc = M.pc()
     local wbl = M.lib("widgets")
     if pc == nil or wbl == nil then
-        return false, "kein Spieler"
+        return false, tr("kein Spieler")
     end
     local cls = M.loadClass(M.CHEAT_WIDGET)
     if cls == nil then
-        return false, "Cheat-Widget des Spiels nicht gefunden"
+        return false, tr("Cheat-Widget des Spiels nicht gefunden")
     end
     local widget
     local ok, err = pcall(function() widget = wbl:Create(pc, cls, pc) end)
     if not ok or not M.isValid(widget) then
-        return false, "Cheat-Widget konnte nicht erstellt werden: " .. tostring(err)
+        return false, tr("Cheat-Widget konnte nicht erstellt werden: ") .. tostring(err)
     end
     local args = table.pack(...)
     local result = table.pack(pcall(function()
@@ -549,6 +552,7 @@ function M.loadSettings()
             M.settings[k] = v
         end
     end
+    M.settings.language=require("i18n").setLanguage(M.settings.language)
 end
 
 function M.saveSettings()
@@ -557,7 +561,8 @@ function M.saveSettings()
         keys[#keys + 1] = k
     end
     table.sort(keys)
-    local lines = { "; Warden settings - written by the mod, safe to delete" }
+    local lines = { "; Warden settings - written by the mod, safe to delete",
+        "; language = de or en (restart the game after changing language)" }
     for _, k in ipairs(keys) do
         lines[#lines + 1] = k .. " = " .. tostring(M.settings[k])
     end

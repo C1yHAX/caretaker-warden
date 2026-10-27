@@ -10,6 +10,7 @@ import pathlib
 import shutil
 import sys
 import tempfile
+import argparse
 
 import lupa.lua54 as lua54
 
@@ -66,11 +67,17 @@ end
 
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--language",choices=("de","en"),default="de")
+    parser.add_argument("--verbose",action="store_true")
+    args=parser.parse_args()
+    (WORK/"Warden/settings.ini").write_text("language = "+args.language+"\n",encoding="utf-8")
     lua = lua54.LuaRuntime(unpack_returned_tuples=True)
     lua.execute(f'package.path = "{SCRIPTS.as_posix()}/?.lua;{MOCK.as_posix()}/?.lua;" .. package.path')
     lua.execute("MOCK = require(\"ue4ss_mock\")")
     mock = lua.globals().MOCK
     lua.execute('require("main")')
+    assert lua.eval('require("i18n").getLanguage()')==args.language
     steps = lua.eval(DRIVER)(mock)
     for s in steps.values():
         print(s)
@@ -78,7 +85,7 @@ def main() -> int:
     errors = [line for line in log if "ERROR" in line or "failed" in line]
     print(f"log lines: {len(log)}, error lines: {len(errors)}")
     seen = set()
-    if "--verbose" in sys.argv:
+    if args.verbose:
         for line in log:
             print("  LOG", line)
     for e in errors:

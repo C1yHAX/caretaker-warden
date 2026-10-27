@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     features/world.lua - time of day, weather, the boat, threats and simulation speed.
 
@@ -67,7 +68,7 @@ function M.setTime(t)
     if not pin(t) then
         local ok = core.cheat("SetWorldTime", t)
         if not ok then
-            return false, "Tageszeit nicht verfügbar"
+            return false, tr("Tageszeit nicht verfügbar")
         end
     end
     if frozen ~= nil then
@@ -88,7 +89,7 @@ function M.setTime(t)
             end
         end
     end)
-    return true, "Uhrzeit: " .. M.clock(t)
+    return true, tr("Uhrzeit: ") .. M.clock(t)
 end
 
 function M.clock(t)
@@ -161,7 +162,7 @@ local function fmt(v)
 end
 
 function M.page(ui)
-    local page = ui.newPage("Welt")
+    local page = ui.newPage(tr("Welt"))
 
     local function show(ok, msg)
         ui.toast(msg, ok and "good" or "bad")
@@ -173,48 +174,48 @@ function M.page(ui)
         return function()
             local now = M.time()
             if now == nil then
-                show(false, "Tageszeit nicht lesbar")
+                show(false, tr("Tageszeit nicht lesbar"))
                 return
             end
             show(M.setTime(now + delta))
         end
     end
 
-    local time = ui.card(page.left, "Tageszeit")
-    ui.infoRow(page, time, "Aktuelle Uhrzeit", function() return M.clock(M.time()) end)
+    local time = ui.card(page.left, tr("Tageszeit"))
+    ui.infoRow(page, time, tr("Aktuelle Uhrzeit"), function() return M.clock(M.time()) end)
     ui.buttonGrid(time, 4, {
-        { "Morgen", at(600) }, { "Mittag", at(1200) }, { "Abend", at(1800) }, { "Nacht", at(0) },
+        { tr("Morgen"), at(600) }, { tr("Mittag"), at(1200) }, { tr("Abend"), at(1800) }, { tr("Nacht"), at(0) },
         { "\u{2212}3 h", shift(-300) }, { "\u{2212}1 h", shift(-100) }, { "+1 h", shift(100) }, { "+3 h", shift(300) },
     })
-    ui.toggleRow(page, time, "Zeit anhalten", M.isFrozen, M.setFrozen, "Hält die aktuelle Uhrzeit fest")
+    ui.toggleRow(page, time, tr("Zeit anhalten"), M.isFrozen, M.setFrozen, tr("Hält die aktuelle Uhrzeit fest"))
 
-    local weather = ui.card(page.left, "Wetter")
-    ui.add(weather, ui.paragraph("Setzt das weltweite Wetter auf den Spiel-Standard zurück, nachdem "
-        .. "das Admin-Menü des Spiels es verändert hat. Danach speichern."), { pad = { 2, 0, 2, 6 } })
-    ui.button(weather, "Wetter auf Standard zurücksetzen", "action", function()
+    local weather = ui.card(page.left, tr("Wetter"))
+    ui.add(weather, ui.paragraph(tr("Setzt das weltweite Wetter auf den Spiel-Standard zurück, nachdem ")
+        .. tr("das Admin-Menü des Spiels es verändert hat. Danach speichern.")), { pad = { 2, 0, 2, 6 } })
+    ui.button(weather, tr("Wetter auf Standard zurücksetzen"), "action", function()
         local ok, msg = weatherreset.reset()
-        ui.toast(ok and "Wetter zurückgesetzt \u{2013} jetzt speichern" or tostring(msg), ok and "good" or "bad")
+        ui.toast(ok and tr("Wetter zurückgesetzt \u{2013} jetzt speichern") or tostring(msg), ok and "good" or "bad")
     end)
 
     local sim = ui.card(page.left, "Simulation")
-    ui.stepperRow(page, sim, "Produktionstempo", {
-        values = PRODUCTION, format = fmt, note = "Module, Generatoren, Fabriken",
+    ui.stepperRow(page, sim, tr("Produktionstempo"), {
+        values = PRODUCTION, format = fmt, note = tr("Module, Generatoren, Fabriken"),
         index = productionIndex,
         set = function(i)
             if core.setCvar(PRODUCTION_CVAR, PRODUCTION[i]) then
-                ui.toast("Produktionstempo " .. fmt(PRODUCTION[i]), "good")
+                ui.toast(tr("Produktionstempo ") .. fmt(PRODUCTION[i]), "good")
             else
-                ui.toast("Produktionstempo lässt sich in diesem Build nicht setzen", "warn")
+                ui.toast(tr("Produktionstempo lässt sich in diesem Build nicht setzen"), "warn")
             end
         end,
     })
-    ui.stepperRow(page, sim, "Spielgeschwindigkeit", {
+    ui.stepperRow(page, sim, tr("Spielgeschwindigkeit"), {
         values = GAME_SPEED, format = fmt,
         index = gameSpeedIndex,
         set = function(i)
             local gs, pc = core.lib("gameplay"), core.pc()
             local ok = pcall(function() gs:SetGlobalTimeDilation(pc, GAME_SPEED[i]) end)
-            ui.toast(ok and ("Spielgeschwindigkeit " .. fmt(GAME_SPEED[i])) or "Fehlgeschlagen", ok and "good" or "bad")
+            ui.toast(ok and (tr("Spielgeschwindigkeit ") .. fmt(GAME_SPEED[i])) or tr("Fehlgeschlagen"), ok and "good" or "bad")
         end,
     })
 
@@ -222,18 +223,18 @@ function M.page(ui)
         local args = table.pack(...)
         return function()
             local ok, err = core.cheat(fn, table.unpack(args, 1, args.n))
-            ui.toast(ok and done or ("Fehlgeschlagen: " .. tostring(err)), ok and "good" or "bad")
+            ui.toast(ok and done or (tr("Fehlgeschlagen: ") .. tostring(err)), ok and "good" or "bad")
         end
     end
 
-    local danger = ui.card(page.right, "Gefahren in der Nähe")
+    local danger = ui.card(page.right, tr("Gefahren in der Nähe"))
     require("features.storage").addToPage(ui, page, page.right)
     require("features.building").addToPage(ui, page, page.right)
     require("features.carrier").addToPage(ui,page,page.right)
-    ui.button(danger, "Schwärme vernichten", "action", cheat("Kill Swarm", "Schwärme in der Nähe vernichtet"))
-    ui.button(danger, "Eiersäcke zerstören", "action", cheat("DestroyEggs", "Eiersäcke zerstört"))
-    ui.button(danger, "NPCs in der Nähe ausschalten", "danger",
-        cheat("Damage NPCs", "NPCs in der Nähe getroffen", 5000.0))
+    ui.button(danger, tr("Schwärme vernichten"), "action", cheat("Kill Swarm", tr("Schwärme in der Nähe vernichtet")))
+    ui.button(danger, tr("Eiersäcke zerstören"), "action", cheat("DestroyEggs", tr("Eiersäcke zerstört")))
+    ui.button(danger, tr("NPCs in der Nähe ausschalten"), "danger",
+        cheat("Damage NPCs", tr("NPCs in der Nähe getroffen"), 5000.0))
 
     return page
 end

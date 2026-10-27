@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 -- One-shot, world-scoped resource refill. All entry points run on the game thread.
 -- Inspect every module component of nearby module actors, including detached
 -- batteries. No boat membership, resource-name guessing or TMap writes.
@@ -5,13 +6,13 @@ local core = require("core")
 local M = {}
 local MODULE = "/Script/Voyage.VoyageModuleComponent"
 local RANGES = { 10, 25, 50, 100 }
-local rangeIndex, status = 3, "Noch nicht aufgefuellt"
+local rangeIndex, status = 3, tr("Noch nicht aufgefuellt")
 M.resources = {
-    { 0, "Batterien aufladen" }, { 16, "Dieseltanks befuellen" },
-    { 1, "Benzintanks befuellen" }, { 10, "Methantanks befuellen" },
-    { 2, "Oeltanks befuellen" }, { 4, "Frischwassertanks befuellen" },
-    { 3, "Salzwassertanks befuellen" }, { 11, "Sauerstofftanks befuellen" },
-    { 17, "CO2-Tanks befuellen" }, { 12, "Dampfspeicher befuellen" },
+    { 0, tr("Batterien aufladen") }, { 16, tr("Dieseltanks befuellen") },
+    { 1, tr("Benzintanks befuellen") }, { 10, tr("Methantanks befuellen") },
+    { 2, tr("Oeltanks befuellen") }, { 4, tr("Frischwassertanks befuellen") },
+    { 3, tr("Salzwassertanks befuellen") }, { 11, tr("Sauerstofftanks befuellen") },
+    { 17, tr("CO2-Tanks befuellen") }, { 12, tr("Dampfspeicher befuellen") },
 }
 local function call(o, fn, ...)
     if not core.isValid(o) then return nil end
@@ -47,14 +48,14 @@ end
 function M.fill(resource)
     local allowed=false
     for _,r in ipairs(M.resources) do if r[1]==resource then allowed=true end end
-    if not allowed then return false,"Unbekannte Ressource" end
+    if not allowed then return false,tr("Unbekannte Ressource") end
     local pawn=core.pawn()
     local w=world(pawn)
     local x,y,z=core.location(pawn)
-    if not w or not finite(x) or not finite(y) or not finite(z) then return false,"Kein Spieler in einer Welt" end
-    if call(pawn,"HasAuthority")~=true then return false,"Nur der Host kann Speicher auffuellen" end
+    if not w or not finite(x) or not finite(y) or not finite(z) then return false,tr("Kein Spieler in einer Welt") end
+    if call(pawn,"HasAuthority")~=true then return false,tr("Nur der Host kann Speicher auffuellen") end
     local cls=core.find(MODULE)
-    if not cls then return false,"Modulklasse nicht verfuegbar" end
+    if not cls then return false,tr("Modulklasse nicht verfuegbar") end
     local totals={filled=0,full=0,error=0,skip=0}
     local seen={}
     for _,actor in ipairs(core.actorsOf("/Script/Voyage.VoyageModuleActor")) do
@@ -75,14 +76,14 @@ function M.fill(resource)
             end
         end
     end
-    status=string.format("%d aufgefuellt, %d bereits voll, %d Fehler (%d m)",totals.filled,totals.full,totals.error,RANGES[rangeIndex])
-    if totals.filled+totals.full+totals.error==0 then status="Keine passenden Speicher im "..RANGES[rangeIndex].."-m-Umkreis" end
+    status=string.format(tr("%d aufgefuellt, %d bereits voll, %d Fehler (%d m)"),totals.filled,totals.full,totals.error,RANGES[rangeIndex])
+    if totals.filled+totals.full+totals.error==0 then status=tr("Keine passenden Speicher im ")..RANGES[rangeIndex]..tr("-m-Umkreis") end
     core.log("Storage: "..status)
     return totals.filled+totals.full>0 and totals.error==0,status
 end
 function M.addToPage(ui,page,parent)
-    local card=ui.card(parent,"Speicher in der Umgebung")
-    ui.stepperRow(page,card,"Umkreis",{values=RANGES,index=function() return rangeIndex end,
+    local card=ui.card(parent,tr("Speicher in der Umgebung"))
+    ui.stepperRow(page,card,tr("Umkreis"),{values=RANGES,index=function() return rangeIndex end,
         format=function(v) return v.." m" end,
         set=function(i) if RANGES[i] then rangeIndex=i end end})
     local buttons={}
@@ -91,7 +92,7 @@ function M.addToPage(ui,page,parent)
         buttons[#buttons+1]={row[2],function() local ok,msg=M.fill(resource);ui.toast(msg,ok and "good" or "warn") end}
     end
     ui.buttonGrid(card,2,buttons)
-    ui.infoRow(page,card,"Ergebnis",function() return status end)
-    ui.add(card,ui.paragraph("Passende Speicher und Modul-Puffer im Umkreis; auch ohne Verbindung zum Boot."))
+    ui.infoRow(page,card,tr("Ergebnis"),function() return status end)
+    ui.add(card,ui.paragraph(tr("Passende Speicher und Modul-Puffer im Umkreis; auch ohne Verbindung zum Boot.")))
 end
 return M

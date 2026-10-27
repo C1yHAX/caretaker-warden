@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 --[[
     Warden - admin menu for The Last Caretaker (UE4SS Lua).
 
@@ -10,6 +11,8 @@
 --]]
 
 local core = require("core")
+-- Select the language before any feature creates cached labels or status text.
+core.loadSettings()
 local ui = require("ui")
 local player = require("features.player")
 local unlocks = require("features.unlocks")
@@ -22,8 +25,6 @@ local utility = require("features.utility")
 local boat = require("features.boat")
 local building = require("features.building")
 local instant = require("features.instant")
-
-core.loadSettings()
 
 -- This build needs the game-thread scheduler. An async fallback would reintroduce
 -- concurrent Lua access. Fail before registering keys on unsupported UE4SS builds.
@@ -42,13 +43,13 @@ end
 local hooks = {}
 
 local builders = {
-    { title = "Spieler", build = player.page },
-    { title = "Waffen", build = weapons.page },
-    { title = "Freischalten", build = unlocks.page },
-    { title = "Spawnen", build = spawn.page },
+    { title = tr("Spieler"), build = player.page },
+    { title = tr("Waffen"), build = weapons.page },
+    { title = tr("Freischalten"), build = unlocks.page },
+    { title = tr("Spawnen"), build = spawn.page },
     { title = "Teleport", build = teleport.page },
-    { title = "Boot", build = boat.page },
-    { title = "Welt", build = world.page },
+    { title = tr("Boot"), build = boat.page },
+    { title = tr("Welt"), build = world.page },
     { title = "System", build = function(u) return system.page(u, hooks) end },
     { title = "Log", build = require("features.log").page },
 }
@@ -97,7 +98,7 @@ function hooks.rebuild()
     local ok = core.safe("rebuild", build)
     if ok then
         ui.show()
-        ui.toast("Menü neu aufgebaut", "good")
+        ui.toast(tr("Menü neu aufgebaut"), "good")
     end
 end
 
@@ -172,7 +173,7 @@ end
 
 LoopInGameThreadWithDelay(50, function()
     core.safe("keys", drainKeys)
-    core.safe("Katalog",require("features.catalog").tick)
+    core.safe(tr("Katalog"),require("features.catalog").tick)
 end)
 LoopInGameThreadWithDelay(250, function() core.safe("tick", tick) end)
 

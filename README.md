@@ -1,6 +1,6 @@
 # Warden — Adminmenü für The Last Caretaker
 
-**Version 1.0.0 — öffentlicher Erstrelease.** Warden ergänzt *The Last Caretaker* um ein deutschsprachiges Adminmenü mit Gegenstands- und Modulkatalog, Spieleroptionen, Teleport, Bootswerkzeugen und Diagnose. **F1** öffnet und schließt das Menü; **Strg + F1** schließt es im Notfall und gibt die Eingabe an das Spiel zurück.
+**Version 1.0.0 — öffentlicher Erstrelease.** Warden ergänzt *The Last Caretaker* um ein auf Deutsch oder Englisch bedienbares Adminmenü mit Gegenstands- und Modulkatalog, Spieleroptionen, Teleport, Bootswerkzeugen und Diagnose. **F1** öffnet und schließt das Menü; **Strg + F1** schließt es im Notfall und gibt die Eingabe an das Spiel zurück.
 
 [Download auf GitHub](https://github.com/C1yHAX/caretaker-warden/releases/tag/v1.0.0) · [Download auf GitLab](https://gitlab.com/c0d1ngf1eber/caretaker-warden/-/releases/v1.0.0)
 
@@ -53,6 +53,30 @@ Geprüfter UE4SS-DLL-Hash (SHA-256): `91d5444f41d19d0bb502f0fbdc15d76421e20359e8
 
 Das vollständige Caretaker-Modpack 1.0.0 enthält Warden bereits. Keine zweite Kopie unter anderem Ordnernamen laden. Das Menü nicht gleichzeitig mit TLC-AdminMenuMod auf F1 belegen. Für eine andere Taste in der erzeugten `settings.ini` zum Beispiel `toggleKey = F2` setzen und das Spiel neu starten.
 
+## Sprache / Language
+
+Die Sprache wird in `<Spielordner>/Voyage/Binaries/Win64/ue4ss/Mods/Warden/settings.ini`
+festgelegt. Die Datei bei Bedarf als Textdatei anlegen; vorhandene Einstellungen erhalten.
+Für Englisch diese Zeile eintragen oder ändern und das Spiel neu starten:
+
+```ini
+language = en
+```
+
+Mit `language = de` zurück zu Deutsch. Ohne Eintrag bleibt Deutsch der Standard.
+Die Auswahl gilt für alle neun Tabs, Schaltflächen, Beschreibungen, die 66 bekannten
+Modulnamen, Paket-/Statusmeldungen und Warden-Protokolltexte. Die Übersetzungen werden
+einmal geladen; es gibt keine zusätzlichen Engine-Abfragen oder Hintergrundsuche.
+Warden verändert weder die Spielsprache noch eigene Namen gespeicherter Teleportpunkte.
+Gegenstandsnamen aus dem Spiel und anderen Mods verwenden weiterhin deren Texte in der
+Spiel-Sprache; Warden-eigene Material-Ersatznamen folgen der Menü-Sprache.
+
+**English:** Set `language = en` in the `settings.ini` file next to Warden's `enabled.txt`,
+preserve the other settings, and restart the game. Set `language = de` to return to German.
+All Warden tabs, controls, help text, built-in module labels and status/log messages support
+English. Item names supplied by the game or other mods keep their own localization.
+The menu language does not change the game's language or your saved location names.
+
 ## Bedienung und Grenzen
 
 - **F1:** öffnen/schließen. **Strg + F1:** Notfallschließen. Bei geänderter Menütaste gilt Strg plus diese Taste.
@@ -60,7 +84,7 @@ Das vollständige Caretaker-Modpack 1.0.0 enthält Warden bereits. Keine zweite 
 - **Boot ausrüsten** benötigt ein ausgewähltes Boot und erkannte passende Motoranschlüsse. „Motoranschlüsse prüfen“ liefert eine Diagnose, ohne umzubauen. Fehlgeschlagene oder unbestätigte Anschlüsse werden im Log gemeldet.
 - Teleportziele werden aus bekannten Spielorten und selbst gespeicherten Punkten aufgebaut. Ein frisches Profil enthält keine aus einer fremden Sitzung übernommenen Reiseziele.
 - Free Crafting bis zum Abschluss der betreffenden Warteschlangenaufträge eingeschaltet lassen. Abschalten stellt die normale Materialprüfung wieder her.
-- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung bleibt `20261024-item-loader`.
+- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung lautet `20261027-language`.
 
 ## Prüfung
 
@@ -80,7 +104,7 @@ Warden-Code: MIT, siehe [LICENSE](LICENSE). Der Wetter-Reset und der Modul-Craft
 
 ## English
 
-Warden is a German-language admin menu for The Last Caretaker. Press **F1** to open/close; **Ctrl+F1** is the emergency close shortcut. Includes player options, crafting controls, item/module spawning, unlocks, teleport, boat maintenance/outfitting, world controls and a session log. Requires game 0.10.0.653173 / Steam build 25982825 and separately installed UE4SS v3.0.1-1125-g527a483b. Close the game and merge the release ZIP's `Voyage` folder into the game directory. Preserve your existing settings and saved teleport files during updates. First public release **1.0.0**; runtime validation remains limited, and offline mock tests do not prove native engine compatibility. The included Free Crafting DLL checks the supported game executable hash before enabling its hooks. No personal settings or discovered destinations are distributed.
+Warden is a German/English admin menu for The Last Caretaker. Set **`language = en`** in Warden's `settings.ini` and restart the game to use English. Press **F1** to open/close; **Ctrl+F1** is the emergency close shortcut. Includes player options, crafting controls, item/module spawning, unlocks, teleport, boat maintenance/outfitting, world controls and a session log. Requires game 0.10.0.653173 / Steam build 25982825 and separately installed UE4SS v3.0.1-1125-g527a483b. Close the game and merge the release ZIP's `Voyage` folder into the game directory. Preserve your existing settings and saved teleport files during updates. First public release **1.0.0**; runtime validation remains limited, and offline mock tests do not prove native engine compatibility. The included Free Crafting DLL checks the supported game executable hash before enabling its hooks. No personal settings or discovered destinations are distributed.
 
 ## Inhalt des Mod-Downloads
 

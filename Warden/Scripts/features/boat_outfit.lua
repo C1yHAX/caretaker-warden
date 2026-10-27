@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 -- Original engine retrofit geometry and item spawning, with explicit socket type
 -- and cylinder identity checks. BP_Module_Crafter calls the SAME native
 -- SpawnActorForItem as SetBoatEnginesLevel, without Lua soft-pointer marshalling.
@@ -9,7 +10,7 @@ local PREFIX="/Game/Blueprints/Modules/Utility/Boat/"
 local variants={DieselEngine={37,61,60,62},ElectricEngine={46,64,63,65}}
 local names={DieselEngine="Diesel",ElectricEngine="Electric"}
 local job
-local status="Noch nicht geprueft"
+local status=tr("Noch nicht geprueft")
 local function read(o,k) local ok,v=pcall(function() return o[k] end);if ok then return v end end
 local function call(o,k,...)
     if not core.isValid(o) then return end
@@ -72,14 +73,14 @@ end
 local function finish(reason)
     local j=job;job=nil
     if j then
-        status=string.format("%s: %d verbunden, %d uebersprungen, %d unbestaetigt",reason,j.connected,j.skipped,j.failed)
+        status=string.format(tr("%s: %d verbunden, %d uebersprungen, %d unbestaetigt"),reason,j.connected,j.skipped,j.failed)
         j.report(status,j.failed==0 and j.skipped==0 and j.connected>0 and j.index>#j.plan)
     end
 end
 local function scan(boat)
     local plan,seen,omitted={},{},0
     local stats={engines=0,components=0,diesel=0,electric=0,occupied=0,unknown=0}
-    local attached=core.outList("boot engines",function(h) return boat:GetAttachedActors(h,true,true) end,"OutActors")
+    local attached=core.outList(tr("boot engines"),function(h) return boat:GetAttachedActors(h,true,true) end,"OutActors")
     for _,actor in ipairs(attached) do
         if isa(actor,ENGINE) and belongs(actor,boat) then
             stats.engines=stats.engines+1
@@ -88,7 +89,7 @@ local function scan(boat)
                 local kind=core.str(read(comp,"SocketTypeOverride"))
                 local plug=call(comp,"IsPlugSocket")
                 local sockets=array(read(comp,"Sockets"))
-                core.log(string.format("Bootsanalyse: %s; Typ=%s; Stecker=%s; Anschluesse=%d",
+                core.log(string.format(tr("Bootsanalyse: %s; Typ=%s; Stecker=%s; Anschluesse=%d"),
                     core.fullName(actor),tostring(kind),tostring(plug),#sockets))
                 if variants[kind] and plug==false then
                     local n="BP_Module_"..names[kind].."_Engine_Cylinder"
@@ -111,34 +112,34 @@ local function scan(boat)
             end
         end
     end
-    status=string.format("%d Motoren; %d Diesel / %d Elektro; %d belegt; %d fremde Verbindungen",
+    status=string.format(tr("%d Motoren; %d Diesel / %d Elektro; %d belegt; %d fremde Verbindungen"),
         stats.engines,stats.diesel,stats.electric,stats.occupied,stats.unknown)
-    core.log("Bootsanalyse: "..status..string.format("; %d Anbauteile; %d Anschlusskomponenten",#attached,stats.components))
+    core.log(tr("Bootsanalyse: ")..status..string.format(tr("; %d Anbauteile; %d Anschlusskomponenten"),#attached,stats.components))
     return plan,omitted
 end
 function M.status() return status end
 function M.inspect(boat)
-    if not core.isValid(boat) or call(boat,"IsActorBeingDestroyed")~=false then return false,"Kein gueltiges Zielboot" end
+    if not core.isValid(boat) or call(boat,"IsActorBeingDestroyed")~=false then return false,tr("Kein gueltiges Zielboot") end
     local plan=scan(boat)
     return #plan>0,status
 end
 function M.start(boat,level,report)
-    if job then return false,"Ausstattung laeuft bereits" end
-    if level<1 or level>4 or level%1~=0 or call(boat,"HasAuthority")~=true then return false,"Kein gueltiges Zielboot" end
+    if job then return false,tr("Ausstattung laeuft bereits") end
+    if level<1 or level>4 or level%1~=0 or call(boat,"HasAuthority")~=true then return false,tr("Kein gueltiges Zielboot") end
     local plan,omitted=scan(boat)
-    if #plan==0 then return false,"Keine passenden Motoranschluesse: "..status end
+    if #plan==0 then return false,tr("Keine passenden Motoranschluesse: ")..status end
     job={boat=ident(boat),pc=core.address(core.pc()),plan=plan,index=1,level=level,report=report,connected=0,skipped=omitted,failed=0}
-    return true,string.format("%d Motoranschluesse werden einzeln ausgeruestet",#plan)
+    return true,string.format(tr("%d Motoranschluesse werden einzeln ausgeruestet"),#plan)
 end
-function M.cancel() if job then finish("Ausstattung beendet") end end
-function M.onWorldChanged() job=nil;status="Noch nicht geprueft" end
+function M.cancel() if job then finish(tr("Ausstattung beendet")) end end
+function M.onWorldChanged() job=nil;status=tr("Noch nicht geprueft") end
 local function tick()
     local j=job;if not j then return end
     if j.pc~=core.address(core.pc()) then job=nil;return end
     local boat=resolve(j.boat)
-    if not boat or call(boat,"HasAuthority")~=true or call(boat,"IsActorBeingDestroyed")~=false then finish("Zielboot nicht mehr verfuegbar");return end
+    if not boat or call(boat,"HasAuthority")~=true or call(boat,"IsActorBeingDestroyed")~=false then finish(tr("Zielboot nicht mehr verfuegbar"));return end
     local row=j.plan[j.index]
-    if not row then finish("Bootsausstattung fertig");return end
+    if not row then finish(tr("Bootsausstattung fertig"));return end
     local engine,comp,socket=resolve(row.engine),resolve(row.component),resolve(row.socket)
     if not engine or not comp or not socket or not belongs(engine,boat)
         or not same(read(socket,"Owner"),comp) or not same(call(comp,"GetOwner"),engine)
@@ -149,12 +150,12 @@ local function tick()
     if j.waitUntil then
         if cylinder(existing,row.kind) and core.address(existing)~=j.old then
             j.connected=j.connected+1;j.waitUntil=nil;j.index=j.index+1
-            status=string.format("%d/%d Motoranschluesse verbunden",j.connected,#j.plan)
-            core.log("Bootsausstattung: "..status)
+            status=string.format(tr("%d/%d Motoranschluesse verbunden"),j.connected,#j.plan)
+            core.log(tr("Bootsausstattung: ")..status)
         elseif os.clock()>=j.waitUntil then
             j.failed=j.failed+1
-            core.log("Bootsausstattung: Zylinder erzeugt, Anschluss nicht bestaetigt", "Warnung")
-            finish("Einrasten unbestaetigt; weitere Wechsel gestoppt")
+            core.log(tr("Bootsausstattung: Zylinder erzeugt, Anschluss nicht bestaetigt"), tr("Warnung"))
+            finish(tr("Einrasten unbestaetigt; weitere Wechsel gestoppt"))
         end
         return
     end
@@ -179,8 +180,8 @@ local function tick()
     if core.isValid(existing) and not core.isValid(persistent) then
         j.failed=j.failed+1;j.index=j.index+1;return
     end
-    local ok,msg,crafter=require("features.spawn").craft({value=variants[row.kind][j.level],label="Motorzylinder"},transform,engine)
-    if not ok then j.failed=j.failed+1;j.index=j.index+1;core.log(msg,"Fehler");return end
+    local ok,msg,crafter=require("features.spawn").craft({value=variants[row.kind][j.level],label=tr("Motorzylinder")},transform,engine)
+    if not ok then j.failed=j.failed+1;j.index=j.index+1;core.log(msg,tr("Fehler"));return end
     if core.isValid(existing) then
         -- Revalidate after preparing the crafter. Delete ONLY the typed cylinder
         -- still connected to this exact engine socket; never a socket's owner.
@@ -201,9 +202,9 @@ end
 function M.tick()
     local ok,err=pcall(tick)
     if not ok then
-        core.log("ERROR Bootsausstattung: "..tostring(err),"Fehler")
+        core.log(tr("ERROR Bootsausstattung: ")..tostring(err),tr("Fehler"))
         if job then job.failed=job.failed+1 end
-        finish("Ausstattung abgebrochen")
+        finish(tr("Ausstattung abgebrochen"))
     end
 end
 return M

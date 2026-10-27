@@ -1,3 +1,4 @@
+local tr = require("i18n").t
 -- Compress only the remaining TIME of already admitted crafting jobs.
 -- Native fabrication still consumes materials/energy and delivers the item.
 -- No Finish callbacks, queue edits, forced unpausing or shared-recipe mutations.
@@ -6,7 +7,7 @@ local core=require("core")
 local M={}
 local enabled=false
 local buildEnabled=false
-local message="Aus"
+local message=tr("Aus")
 local nextScan=0
 local function call(o,fn,...)
     if not core.isValid(o) then return nil end
@@ -29,17 +30,17 @@ local function arrayLength(q)
 end
 function M.setEnabled(on)
     enabled=on==true
-    message=enabled and "Aktiv: Inventar und Fabrikatoren bis 50 m" or "Aus"
+    message=enabled and tr("Aktiv: Inventar und Fabrikatoren bis 50 m") or tr("Aus")
     nextScan=0
     core.log("Instant Craft: "..message)
 end
 function M.setBuildEnabled(on)
     buildEnabled=on==true
     nextScan=0
-    core.log("Instant Build: "..(buildEnabled and "Aktiv, eigene Bauauftraege" or "Aus"))
+    core.log("Instant Build: "..(buildEnabled and tr("Aktiv, eigene Bauauftraege") or tr("Aus")))
 end
 function M.status() return enabled,message end
-function M.onWorldChanged() enabled,buildEnabled,nextScan=false,false,0;message="Aus" end
+function M.onWorldChanged() enabled,buildEnabled,nextScan=false,false,0;message=tr("Aus") end
 function M.tick()
     if not enabled and not buildEnabled then return end
     -- One scan per second, never per frame; do not retain unrooted UObjects.
@@ -101,15 +102,15 @@ function M.tick()
         end
     end
     if shortened>0 or outputs>0 then
-        message=string.format("%d Herstellung, %d Bau, %d Ausgaben beschleunigt",shortened-builds,builds,outputs)
-        core.log("Instant: "..message.."; Abschluss durch das Spiel")
+        message=string.format(tr("%d Herstellung, %d Bau, %d Ausgaben beschleunigt"),shortened-builds,builds,outputs)
+        core.log("Instant: "..message..tr("; Abschluss durch das Spiel"))
     end
 end
 function M.addToPage(ui,page,card)
     ui.toggleRow(page,card,"Instant Craft",function() return enabled end,M.setEnabled,
-        "Inventar und Fabrikatoren bis 50 m; Material- und Energiebedarf gelten")
+        tr("Inventar und Fabrikatoren bis 50 m; Material- und Energiebedarf gelten"))
     ui.toggleRow(page,card,"Instant Build",function() return buildEnabled end,M.setBuildEnabled,
-        "Eigene platzierte Bauplaene bis 50 m; nur bei freier Bauposition")
+        tr("Eigene platzierte Bauplaene bis 50 m; nur bei freier Bauposition"))
     ui.infoRow(page,card,"Instant Craft",function() return message end)
 end
 return M
