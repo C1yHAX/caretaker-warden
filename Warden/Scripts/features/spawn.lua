@@ -115,6 +115,7 @@ end
 ------------------------------------------------------------------------------------------
 
 local modules = nil   -- { {value, name, label, group} }
+function M.onLanguageChanged() modules=nil;require("features.catalog").onLanguageChanged() end
 
 local function loadModules()
     if modules ~= nil and #modules > 0 then
@@ -136,7 +137,7 @@ local function loadModules()
         name = ok and core.str(name) or nil
         if name ~= nil and name ~= "" and not name:find("_MAX") then
             modules[#modules + 1] = {
-                value = value, name = name, label = MODULE_DE[name] or name, group = moduleGroup(name),
+                value = value, name = name, label = tr(MODULE_DE[name] or name), group = moduleGroup(name),
             }
         end
     end

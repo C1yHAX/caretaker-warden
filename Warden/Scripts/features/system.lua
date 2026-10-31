@@ -17,7 +17,7 @@ function M.page(ui, hooks)
     ui.infoRow(page, menu, tr("Sprache"), function()
         return require("i18n").getLanguage()=="en" and "English" or "Deutsch"
     end)
-    ui.add(menu, ui.paragraph(tr("Sprache in settings.ini: language = en oder de. Danach das Spiel neu starten.")),
+    ui.add(menu, ui.paragraph(tr("Die Menüsprache folgt automatisch der Spielsprache. Andere Sprachen verwenden Englisch.")),
         { pad = { 2, 0, 2, 6 } })
     ui.stepperRow(page, menu, tr("Fensterposition"), {
         values = POSITIONS, wrap = true,

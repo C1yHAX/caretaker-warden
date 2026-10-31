@@ -1,0 +1,7 @@
+en: 120 actual asset text properties passed
+de: 120 actual asset text properties passed
+en-US: 120 actual asset text properties passed
+de-DE: 120 actual asset text properties passed
+fr: 120 actual asset text properties passed
+de: 120 actual asset text properties passed
+en: 120 actual asset text properties passed

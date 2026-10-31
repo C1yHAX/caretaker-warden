@@ -79,27 +79,9 @@ Das vollständige Caretaker-Modpack 1.0.0 enthält Warden bereits. Keine zweite 
 
 ## Sprache / Language
 
-Die Sprache wird in `<Spielordner>/Voyage/Binaries/Win64/ue4ss/Mods/Warden/settings.ini`
-festgelegt. Eine Standarddatei liegt im Release-ZIP bereits bei; vorhandene Einstellungen erhalten.
-Für Englisch diese Zeile eintragen oder ändern und das Spiel neu starten:
+Die Mod folgt automatisch der Spielsprache: Deutsch bei deutscher Sprache, Englisch bei englischer Sprache. Für andere Spielsprachen wird Englisch verwendet. Ein Sprachwechsel im Spiel wird übernommen. Alle neun Seiten, eigene Modulnamen und Meldungen werden umgeschaltet. `language = auto` ist die Vorgabe; alte `de`/`en`-Einträge dienen nur als Startfallback, bis die Spielsprache verfügbar ist. Eigene Tasten, Fensteroptionen und gespeicherte Ortsnamen bleiben erhalten.
 
-```ini
-language = en
-```
-
-Mit `language = de` zurück zu Deutsch. Ohne Eintrag bleibt Deutsch der Standard.
-Die Auswahl gilt für alle neun Tabs, Schaltflächen, Beschreibungen, die 66 bekannten
-Modulnamen, Paket-/Statusmeldungen und Warden-Protokolltexte. Die Übersetzungen werden
-einmal geladen; es gibt keine zusätzlichen Engine-Abfragen oder Hintergrundsuche.
-Warden verändert weder die Spielsprache noch eigene Namen gespeicherter Teleportpunkte.
-Gegenstandsnamen aus dem Spiel und anderen Mods verwenden weiterhin deren Texte in der
-Spiel-Sprache; Warden-eigene Material-Ersatznamen folgen der Menü-Sprache.
-
-**English:** Set `language = en` in the `settings.ini` file next to Warden's `enabled.txt`,
-preserve the other settings, and restart the game. Set `language = de` to return to German.
-All Warden tabs, controls, help text, built-in module labels and status/log messages support
-English. Item names supplied by the game or other mods keep their own localization.
-The menu language does not change the game's language or your saved location names.
+**English:** The mod automatically follows the game language: German for German, English for English, with English as the fallback for other languages. In-game language changes are picked up automatically. All nine pages, built-in module labels and messages follow it. `language = auto` is the default; old `de`/`en` settings are only a startup fallback until the game language is available. Your hotkey, window preferences and saved location names are preserved.
 
 ## Bedienung und Grenzen
 
@@ -108,13 +90,13 @@ The menu language does not change the game's language or your saved location nam
 - **Boot ausrüsten** benötigt ein ausgewähltes Boot und erkannte passende Motoranschlüsse. „Motoranschlüsse prüfen“ liefert eine Diagnose, ohne umzubauen. Fehlgeschlagene oder unbestätigte Anschlüsse werden im Log gemeldet.
 - Teleportziele werden aus bekannten Spielorten und selbst gespeicherten Punkten aufgebaut. Ein frisches Profil enthält keine aus einer fremden Sitzung übernommenen Reiseziele.
 - Free Crafting bis zum Abschluss der betreffenden Warteschlangenaufträge eingeschaltet lassen. Abschalten stellt die normale Materialprüfung wieder her.
-- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung lautet `20261031-release-config`.
+- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung lautet `20261031-auto-language`.
 
 ## Prüfung
 
 Die Lua-Dateien enthalten den aktuellen Gegenstandskatalog aus der installierten Modpack-Fassung. Suchbegriffe wie „Stoff“, „Fabric“ und „Cloth“ finden denselben Gegenstand. Neue Suchbegriffe setzen einen vorherigen Kategorienfilter zurück. Fehlgeschlagene Asset-Ladungen werden begrenzt erneut versucht; registrierte neue Mod-Gegenstände können nachträglich in den Katalog aufgenommen werden. Falls der reguläre Loader ein bekanntes Item nicht liefert, wird der native Loader anhand seiner überprüften PrimaryAssetId verwendet. Fertige Katalogeinträge werden wiederverwendet. Die native Hilfs-DLL bleibt unverändert; Version **1.0.0** bleibt erhalten. Persönliche Konfigurationen und entdeckte Teleportziele wurden aus dem Download ausgeschlossen. Die Lizenztexte von Nerfus und MinHook bleiben im Repository erhalten; sie gehören nicht zum Mod-ZIP.
 
-Die enthaltenen Offline-Tests prüfen zusätzlich Gegenstandssuche, fehlende und später registrierte Assets, begrenzte Wiederholungen, native Lade-Rückgaben und die Ausgabe in Materialpakete. Außerdem werden UI-Aufbau, Klickhandler, wiederholtes Öffnen/Schließen sowie verpackte UE4SS-Rückgabewerte bei der Bootssuche geprüft. Sie verwenden Attrappen und ersetzen keinen nativen Unreal-Spieltest. Darstellung/FPS, echtes Einrasten von Motorzylindern und vollständige Herstellungsabläufe sind für diese Veröffentlichung nicht abschließend bestätigt. **Für die Veröffentlichung wurde das Spiel nicht gestartet.** Siehe [Prüfbericht](verification/release.json).
+Die enthaltenen Offline-Tests prüfen zusätzlich Gegenstandssuche, fehlende und später registrierte Assets, begrenzte Wiederholungen, native Lade-Rückgaben und die Ausgabe in Materialpakete. Außerdem werden UI-Aufbau, Klickhandler, wiederholtes Öffnen/Schließen sowie verpackte UE4SS-Rückgabewerte bei der Bootssuche geprüft. Sie verwenden Attrappen und ersetzen keinen nativen Unreal-Spieltest. Darstellung/FPS, echtes Einrasten von Motorzylindern und vollständige Herstellungsabläufe sind für diese Veröffentlichung nicht abschließend bestätigt. Die Sprachabfrage wurde außerdem in der Spielengine mit einem separaten leeren Testprofil geprüft. Die vollständige native Admin-Bedienung ist dadurch nicht neu abgenommen. Siehe [Prüfbericht](verification/release.json).
 
 ## Entfernen
 
@@ -128,7 +110,7 @@ Warden-Code: MIT, siehe [LICENSE](LICENSE). Der Wetter-Reset und der Modul-Craft
 
 ## English
 
-Warden is a German/English admin menu for The Last Caretaker. Set **`language = en`** in Warden's `settings.ini` and restart the game to use English. Press **F1** to open/close; **Ctrl+F1** is the emergency close shortcut. Includes player options, crafting controls, item/module spawning, unlocks, teleport, boat maintenance/outfitting, world controls and a session log. Requires game 0.10.0.653173 / Steam build 25982825 and separately installed UE4SS v3.0.1-1125-g527a483b. Close the game and merge the release ZIP's `Voyage` folder into the game directory. Preserve your existing settings and saved teleport files during updates. First public release **1.0.0**; runtime validation remains limited, and offline mock tests do not prove native engine compatibility. The included Free Crafting DLL checks the supported game executable hash before enabling its hooks. No personal settings or discovered destinations are distributed.
+Warden is a German/English admin menu for The Last Caretaker. The mod automatically follows the game language: German for German, English for English, with English as the fallback for other languages. In-game language changes are picked up automatically. Press **F1** to open/close; **Ctrl+F1** is the emergency close shortcut. Includes player options, crafting controls, item/module spawning, unlocks, teleport, boat maintenance/outfitting, world controls and a session log. Requires game 0.10.0.653173 / Steam build 25982825 and separately installed UE4SS v3.0.1-1125-g527a483b. Close the game and merge the release ZIP's `Voyage` folder into the game directory. Preserve your existing settings and saved teleport files during updates. First public release **1.0.0**; runtime validation remains limited, and offline mock tests do not prove native engine compatibility. The included Free Crafting DLL checks the supported game executable hash before enabling its hooks. No personal settings or discovered destinations are distributed.
 
 ## Inhalt des Mod-Downloads
 

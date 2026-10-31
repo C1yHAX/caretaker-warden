@@ -237,6 +237,7 @@ class BoatBehavior(unittest.TestCase):
         self.lua = LuaRuntime(unpack_returned_tuples=True)
         scripts = (ROOT / "Warden/Scripts").as_posix()
         self.lua.execute(f'package.path = {json.dumps(scripts + "/?.lua;")} .. package.path')
+        self.lua.execute('require("i18n").setLanguage("de")')  # Fixture assertions use German labels.
         self.lua.execute(HARNESS)
 
     def run_lua(self, code):

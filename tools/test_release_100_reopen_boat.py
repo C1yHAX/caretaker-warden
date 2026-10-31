@@ -28,6 +28,7 @@ class Release100(unittest.TestCase):
         lua = LuaRuntime(unpack_returned_tuples=True)
         lua.execute(f'package.path="{(ROOT / "Warden/Scripts").as_posix()}/?.lua;'
                     f'{(ROOT / "tools/mock").as_posix()}/?.lua;"..package.path')
+        lua.execute('require("i18n").setLanguage("de")')  # German fixture labels.
         lua.globals().wrap = Param
         if harness:
             lua.execute(harness)

@@ -10,6 +10,7 @@ class Features(unittest.TestCase):
     def setUp(self):
         self.lua = LuaRuntime(unpack_returned_tuples=True)
         self.lua.execute(f'package.path = "{(ROOT / "Warden/Scripts").as_posix()}/?.lua;" .. package.path')
+        self.lua.execute('require("i18n").setLanguage("de")')  # Fixture assertions use German labels.
         self.lua.execute('''
           local id = 0
           function obj(fields)

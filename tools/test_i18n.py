@@ -108,15 +108,34 @@ class Localization(unittest.TestCase):
         lua=self.runtime()
         lua.execute(r'''
           local i=require('i18n')
-          assert(i.normalize(nil)=='de' and i.normalize('fr')=='de')
+          assert(i.normalize(nil)=='en' and i.normalize('fr')=='en')
           assert(i.normalize(' DE-de ')=='de' and i.normalize('EN_GB')=='en')
           core.readLines=function() return {'walk = false'} end
-          core.loadSettings();assert(i.getLanguage()=='de' and core.setting('walk',true)==false)
+          core.loadSettings();assert(i.getLanguage()=='en' and core.setting('walk',true)==false)
           i.setLanguage('en')
           assert(i.t('Boot')=='Boat' and i.t('My custom place')=='My custom place')
           assert(i.t('/Game/Boot.Boot')=='/Game/Boot.Boot')
           assert(core.thousands(12345)=='12,345' and core.thousands(100000)=='100,000')
           i.setLanguage('de');assert(core.thousands(12345)=='12.345')
+        ''')
+
+    def test_game_language_overrides_legacy_config_and_switches_open_menu(self):
+        lua=self.runtime('de')
+        lua.execute(r'''
+          local originalSettings=core.settings
+          local culture='en-US'
+          mock.RETURNS.GetCurrentLanguage=function() return culture end
+          mock.RETURNS.SetCurrentLanguage=function() error('Must not change game culture') end
+          for _,case in ipairs({{'en-US','PLAYER','God mode'}, {'de-DE','SPIELER','Gottmodus'}, {'fr','PLAYER','God mode'}}) do
+            culture=case[1];shown={};mock.timers[250]()
+            assert(ui.isOpen and #ui.pages==9)
+            for i=1,#ui.pages do ui.selectPage(i);ui.tick() end
+            local text=table.concat(shown,'\n')
+            assert(text:find(case[2],1,true),case[2])
+            assert(text:find(case[3],1,true),case[3])
+            assert(core.settings==originalSettings and core.setting('toggleKey')=='F2')
+            assert(writes['settings.ini']==nil,'Language detection must not rewrite user settings')
+          end
         ''')
 
     def test_material_fallback_and_bilingual_search_without_game_culture_change(self):

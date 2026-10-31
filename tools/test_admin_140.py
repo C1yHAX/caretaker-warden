@@ -63,6 +63,7 @@ class Admin140(unittest.TestCase):
  def runtime(self,script=''):
   lua=LuaRuntime(unpack_returned_tuples=True)
   lua.execute(f'package.path="{(ROOT/"Warden/Scripts").as_posix()}/?.lua;{(ROOT/"tools/mock").as_posix()}/?.lua;"..package.path')
+  lua.execute('require("i18n").setLanguage("de")')  # Fixture assertions use German labels.
   if script:lua.execute(script)
   return lua
 

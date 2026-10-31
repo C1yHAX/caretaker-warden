@@ -113,7 +113,20 @@ local pendingToggle, pendingPanic = false, false
 local function onToggleKey() pendingToggle = true end
 local function onPanicKey() pendingPanic = true end
 
+local function syncLanguage()
+    if not require("i18n").sync() then return end
+    for _,builder in ipairs(builders) do builder.title=tr(builder.title) end
+    spawn.onLanguageChanged()
+    if ui.isBuilt() then
+        local wasOpen=ui.isOpen
+        ui.hide()
+        ui.reset()
+        if wasOpen and core.safe("language rebuild",build) then ui.show() end
+    end
+end
+
 local function toggle()
+    syncLanguage()
     if not core.inGame() then
         core.log("not in a loaded game - menu not opened")
         return
@@ -153,6 +166,7 @@ end
 
 local ticks = 0
 local function tick()
+    syncLanguage()
     watchWorld()
     core.safe("utility tick", utility.tick)
     if core.pc() == nil then

@@ -1,0 +1,7 @@
+en: 9 Energy string-table texts and Warden native language passed
+de: 9 Energy string-table texts and Warden native language passed
+en-US: 9 Energy string-table texts and Warden native language passed
+de-DE: 9 Energy string-table texts and Warden native language passed
+fr: 9 Energy string-table texts and Warden native language passed
+de: 9 Energy string-table texts and Warden native language passed
+en: 9 Energy string-table texts and Warden native language passed

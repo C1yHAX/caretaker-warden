@@ -20,7 +20,7 @@ local M = {}
 
 -- Public release version. Earlier 1.x labels identify internal test snapshots only.
 M.VERSION = "1.0.0"
-M.BUILD = "20261031-release-config"
+M.BUILD = "20261031-auto-language"
 M.NAME = "Warden"
 
 ------------------------------------------------------------------------------------------
@@ -270,6 +270,7 @@ function M.xyz(v)
 end
 
 function M.text(s)
+    s = tr(s)
     local lib = M.lib("text")
     if lib ~= nil then
         local ok, t = pcall(function() return lib:Conv_StringToText(tostring(s)) end)
@@ -548,7 +549,7 @@ M.settings = {}
 
 function M.loadSettings()
     M.settings = {
-        language = "de", toggleKey = "F1", position = "left",
+        language = "auto", toggleKey = "F1", position = "left",
         walk = "true", block = "true", trace = "false",
     }
     local lines, exists = M.readLines("settings.ini")
@@ -560,7 +561,10 @@ function M.loadSettings()
             M.settings[k] = v
         end
     end
-    M.settings.language=require("i18n").setLanguage(M.settings.language)
+    -- Keep old settings as loading fallback; game language wins on the game thread.
+    local i18n=require("i18n")
+    i18n.setLanguage(M.settings.language)
+    if M.settings.language~="auto" then M.settings.language=i18n.normalize(M.settings.language) end
     -- Recover incomplete/manual installs. Existing files are never rewritten on load.
     if exists == false then M.saveSettings() end
 end
@@ -572,7 +576,8 @@ function M.saveSettings()
     end
     table.sort(keys)
     local lines = { "; Warden settings - written by the mod, safe to delete",
-        "; language = de or en; toggleKey = F1, F2, ... (restart after changes)",
+        "; language = auto (follows game); legacy de/en is a loading fallback only",
+        "; toggleKey = F1, F2, ... (restart after key changes)",
         "; position = left, center or right; walk, block and trace = true or false" }
     for _, k in ipairs(keys) do
         lines[#lines + 1] = k .. " = " .. tostring(M.settings[k])

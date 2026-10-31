@@ -1,42 +1,20 @@
-# Warden 1.0.0 — Erstrelease
+# Warden Admin Menu 1.0.0
 
-Eigenständiges Adminmenü mit F1, Gegenstands-/Modulkatalog, Spieler-, Teleport-, Boots- und Weltfunktionen. UE4SS erforderlich und separat zu installieren.
+## English
 
-Für The Last Caretaker **0.10.0.653173 / Steam-Build 25982825** unter Windows.
+Warden follows the game language automatically: English or German, with English fallback for other languages. All nine menu pages, built-in module labels, controls and status messages support both languages. Language changes refresh an open menu; no manual language setting is needed. Existing hotkeys, window preferences and saved locations are preserved.
 
-**Paketkorrektur vom 31.10.2026, weiterhin Version 1.0.0:** Das ZIP enthält jetzt
-die zuvor fehlende `Mods/Warden/settings.ini` mit allen sechs Menüeinstellungen.
-Eine fehlende Datei wird zusätzlich beim Laden automatisch angelegt. Eine vorhandene
-INI beim Aktualisieren behalten/überspringen; nur `Scripts` und `enabled.txt` ersetzen.
-Der Download wurde aus einer leeren Installation offline geprüft, einschließlich
-Lua-Abhängigkeiten, Konfigurationszugriff und Laden der enthaltenen Hilfs-DLL.
+Requires [UE4SS](https://www.nexusmods.com/thelastcaretaker/mods/4) v3.0.1-1125-g527a483b for The Last Caretaker 0.10.0.653173. Close the game and merge the ZIP's Voyage folder into the game installation. Preserve your existing settings.ini and saved location files. F1 opens the menu; Ctrl+F1 closes it in an emergency. The download contains 35 runtime files and a neutral default configuration.
 
-**Package fix, 2026-10-31 (still 1.0.0):** The ZIP now includes the missing default
-`Warden/settings.ini`. Missing settings are also created on startup. Keep your existing
-INI when updating. UE4SS remains a separate prerequisite: install its complete official
-archive, including `dwmapi.dll`, `ue4ss/UE4SS.dll`, `ue4ss/UE4SS-settings.ini` and
-`ue4ss/Mods/shared/UEHelpers/UEHelpers.lua`. See the README for the supported loader
-and engine-version settings. An offline package test does not replace a native game test.
+Validation: 122 offline tests (one optional integration test skipped), including all nine pages, language changes with the menu open, settings preservation and startup directly from the ZIP. Native game-language detection passed with en/de, regional variants and English fallback in a separate empty profile. This is not a new full native test of every admin action.
 
-**Deutsch / English:** Alle Warden-Menütexte sind auch auf Englisch verfügbar.
-In `Voyage/Binaries/Win64/ue4ss/Mods/Warden/settings.ini` die Zeile `language = en`
-setzen und das Spiel neu starten. `language = de` aktiviert Deutsch (Standard).
-Spiel- und Mod-Gegenstandsnamen behalten ihre eigene Lokalisierung.
+## Deutsch
 
-Set **`language = en`** in Warden's `settings.ini` and restart the game for an English
-menu. All tabs, controls, built-in module labels and Warden status/log text are translated.
-The game's language and saved location names are unchanged. Version remains **1.0.0**.
+Warden folgt automatisch der Spielsprache: Deutsch oder Englisch, bei anderen Sprachen Englisch als Fallback. Alle neun Menüseiten, eigenen Modulnamen, Bedienelemente und Statusmeldungen unterstützen beide Sprachen. Ein geöffnetes Menü wird beim Sprachwechsel aktualisiert; keine manuelle Sprachwahl nötig. Eigene Tasten, Fensteroptionen und gespeicherte Orte bleiben erhalten.
 
-## Download und Installation
+Benötigt [UE4SS](https://www.nexusmods.com/thelastcaretaker/mods/4) v3.0.1-1125-g527a483b für The Last Caretaker 0.10.0.653173. Spiel schließen und den Voyage-Ordner aus der ZIP in die Spielinstallation kopieren. Bestehende settings.ini und gespeicherte Ortsdateien erhalten. F1 öffnet das Menü; Strg+F1 schließt es im Notfall. Der Download enthält 35 Laufzeitdateien und eine neutrale Standardkonfiguration.
 
-Den benannten Mod-ZIP-Anhang herunterladen, vollständig entpacken und bei geschlossenem Spiel den enthaltenen **Voyage**-Ordner in das Spielinstallationsverzeichnis kopieren. Die komplette Anleitung, Voraussetzungen, Bedienung und bekannte Grenzen stehen in der **README.md** im Projekt. `SHA256SUMS.txt` ermöglicht die Prüfung des Downloads. Das vollständige Caretaker-Modpack enthält diese Mod bereits.
+Prüfung: 122 Offline-Tests (ein optionaler Integrationstest übersprungen), einschließlich aller neun Seiten, Sprachwechsel bei geöffnetem Menü, Erhalt der Einstellungen und Start direkt aus dem ZIP. Die native Erkennung der Spielsprache besteht en/de, regionale Varianten und englischen Fallback mit separatem leerem Profil. Dies ist keine erneute vollständige native Prüfung aller Admin-Aktionen.
 
-Warden benötigt den in der Anleitung verlinkten UE4SS-Build. F1 öffnet das Menü. Eigene Einstellungen und Teleportpunkte beim Aktualisieren behalten. Die enthaltene native Hilfs-DLL bleibt gegenüber der Modpack-Fassung unverändert; die Versionsanzeige lautet nun 1.0.0. Keine persönlichen Dateien enthalten. Offline-Tests ersetzen keinen nativen Spieltest.
-
-Enthält die korrigierte deutsche/englische Gegenstandssuche, das Nachladen zunächst fehlender Gegenstände, die Erkennung neuer registrierter Mod-Items und den nativen Item-Loader. Die drei dafür benötigten Lua-Module sind vollständig im Download enthalten. Bestehende Einstellungen bleiben erhalten.
-
-Für diese Veröffentlichung wurde das Spiel nicht gestartet.
-
-## Inhalt des Mod-Downloads
-
-Das Release-ZIP enthält ausschließlich die zum Betrieb benötigten Moddateien in der `Voyage`-Ordnerstruktur. Anleitung, Änderungslisten, Lizenztexte, Drittanbieterhinweise, Entwicklungswerkzeuge und Prüfberichte bleiben im Repository bzw. auf der Release-Seite. Sie werden nicht mit ins Mod-ZIP gepackt. Die Prüfsumme ist ein separater Download. Version bleibt **1.0.0**.
+Version 1.0.0. Runtime files only / nur benötigte Mod-Dateien.
+Credits: C1yHAX / c0d1ngf1eber (mod)

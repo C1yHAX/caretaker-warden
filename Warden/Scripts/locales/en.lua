@@ -1,5 +1,6 @@
 -- English translations of Warden-owned text. German source text is the fallback.
 return {
+    ["Die Menüsprache folgt automatisch der Spielsprache. Andere Sprachen verwenden Englisch."] = "The menu follows the game language automatically. Other languages use English.",
     ["Sprache"] = "Language",
     ["Sprache in settings.ini: language = en oder de. Danach das Spiel neu starten."] = "In settings.ini, set language = en or de, then restart the game.",
     ["  •  %d ins Lager"] = "  •  %d to storage",

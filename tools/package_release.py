@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ARCHIVE = 'Warden-1.0.0.zip'
 PREFIX = 'Voyage/Binaries/Win64/ue4ss/Mods/Warden/'
 DEFAULT_CONFIG = ROOT / 'config/settings.ini'
-DEFAULTS = dict(language='de', toggleKey='F1', position='left',
+DEFAULTS = dict(language='auto', toggleKey='F1', position='left',
                 walk='true', block='true', trace='false')
 REQUIRED = {PREFIX + path for path in (
     'enabled.txt', 'settings.ini', 'Scripts/main.lua', 'Scripts/core.lua',

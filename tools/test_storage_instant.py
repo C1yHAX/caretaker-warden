@@ -58,6 +58,7 @@ class StorageInstant(unittest.TestCase):
  def setUp(self):
   self.lua=LuaRuntime(unpack_returned_tuples=True)
   self.lua.execute(f'package.path="{(ROOT/"Warden/Scripts").as_posix()}/?.lua;"..package.path')
+  self.lua.execute('require("i18n").setLanguage("de")')  # Fixture assertions use German labels.
   self.lua.execute(HARNESS)
  def test_detached_medium_battery_and_secondary_components(self):
   self.lua.execute('''

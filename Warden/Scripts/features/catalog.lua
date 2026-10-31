@@ -9,6 +9,7 @@ local missing,seen={},{}
 local known,lastDiscovery={},-math.huge
 local revision,ready,unloaded=0,false,0
 local state=tr("Noch nicht geladen")
+local languageRefresh=nil
 local function read(o,k) local ok,v=pcall(function() return o[k] end);if ok then return v end end
 local function path(o) return core.fullName(o):match("^%S+%s+(/.+)$") end
 local function visit(item,seen,depth)
@@ -59,6 +60,19 @@ function M.start(force,retryMissing,discoverNew)
 end
 function M.refresh() M.start(false,true,true) end
 function M.tick()
+    if languageRefresh then
+        for _=1,8 do
+            local row=rows[languageRefresh]
+            if not row then
+                table.sort(rows,function(a,b)return a.lname<b.lname end)
+                languageRefresh=nil;revision=revision+1;break
+            end
+            local item=core.find(row.path)
+            local name,search=names.describe(item and read(item,"Name"),row.path)
+            row.name,row.lname,row.search=name,names.normalize(name),search
+            languageRefresh=languageRefresh+1
+        end
+    end
     if not scan then return end
     if core.address(core.pc())~=scan.pc then M.reset();return end
     local started=os.clock()
@@ -90,5 +104,6 @@ function M.tick()
     revision=revision+1
 end
 function M.snapshot() return rows,components,ready,revision,state,unloaded end
+function M.onLanguageChanged() languageRefresh=1 end
 function M.reset() scan=nil;rows={};components={};missing={};seen={};known={};lastDiscovery=-math.huge;ready=false;unloaded=0;revision=revision+1;state=tr("Noch nicht geladen") end
 return M
