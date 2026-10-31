@@ -2,24 +2,18 @@
   "version": "1.0.0",
   "gameVersion": "0.10.0.653173",
   "steamBuild": "25982825",
-  "build": "20261027-language",
-  "runtimeFiles": 34,
+  "build": "20261031-release-config",
+  "runtimeFiles": 35,
   "runtimeOnlyZip": true,
   "nativeGameStartedForPublication": false,
   "privateSettingsIncluded": false,
   "nativeDllUnchanged": true,
   "offlineTests": {
     "publicSuite": {
-      "testsRun": 112,
-      "testsPassed": 111,
+      "testsRun": 121,
+      "testsPassed": 120,
       "result": "passed",
       "optionalReflectionGroupsSkipped": 1
-    },
-    "developmentSuite": {
-      "testsRun": 235,
-      "testsPassed": 222,
-      "result": "passed",
-      "optionalChecksSkipped": 13
     },
     "smoke": {
       "languages": [
@@ -40,6 +34,19 @@
       "translationCoverage": 553,
       "configRoundtrip": true,
       "placeholdersVerified": true
+    },
+    "releasePackage": {
+      "testsRun": 9,
+      "testsPassed": 9,
+      "actualExtractedZip": true,
+      "usesOfficialUEHelpers": true,
+      "isolatedLuaPathsAndConfigIO": true,
+      "allPages": 9,
+      "nativeDllLoadsOnWindows": true,
+      "missingConfigRecovery": true,
+      "existingConfigPreserved": true,
+      "unreadableConfigPreserved": true,
+      "missingDependenciesRejected": true
     }
   },
   "corrections": [
@@ -51,14 +58,19 @@
     "Ship item_names.lua, item_registry.lua and data/item_types.lua",
     "Configurable German/English interface, initialized before feature modules",
     "553 translations for menu, built-in module labels, help and status/log messages",
-    "Preserve game localization and user-owned names; no new engine calls for localization"
+    "Preserve game localization and user-owned names; no new engine calls for localization",
+    "Ship neutral settings.ini from a dedicated template, not personal settings",
+    "Create missing settings.ini at startup without overwriting existing or unreadable files",
+    "Verify clean extracted ZIP, config I/O, native library loading and Lua dependency closure"
   ],
-  "runtimeLimitations": "Offline tests use controlled engine substitutes. Native rendering, FPS and gameplay were not tested for this language update. Item names from the game and other mods retain their own localization.",
+  "runtimeLimitations": "Offline menu tests use controlled engine substitutes with the official UE4SS UEHelpers module. The packaged native DLL was loaded and its entrypoints resolved outside the game; native rendering, FPS and gameplay were not tested. UE4SS remains a separate prerequisite. Existing settings.ini must be retained when copying an update.",
   "languages": [
     "de",
     "en"
   ],
   "defaultLanguage": "de",
   "translations": 553,
-  "zipSha256": "6fbeb639dde02aeb3ec67a0bd2c2b24c4c43eb97eb7eed51f5de78643be0ee0f"
+  "zipSha256": "d02b4a8a86fa1132d7f0da7563bc625d0fe8bc2b6169f91f15364bff093e7603",
+  "defaultSettingsIncluded": true,
+  "verifiedDate": "2026-10-31"
 }

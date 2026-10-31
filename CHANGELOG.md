@@ -1,5 +1,18 @@
 # Änderungen
 
+## 1.0.0 — Vollständige Standardkonfiguration, 2026-10-31
+
+- Fehlende `settings.ini` im Release-ZIP ergänzt. Der Paketierer verwendet eine
+  neutrale Vorlage mit Sprache, Menütaste, Fensterposition, Lauf-, Klick- und
+  Diagnoseeinstellung, niemals eine private Benutzerkonfiguration.
+- Eine fehlende INI wird beim Laden automatisch angelegt. Vorhandene oder nicht
+  lesbare Konfigurationen werden dabei nicht überschrieben; UTF-8-BOM wird erkannt.
+- Neue Prüfung direkt aus dem entpackten ZIP, ohne vorbereitete Einstellungen oder
+  Lua-Module aus der Entwicklungsinstallation. Pflichtdateien und Lua-Abhängigkeiten
+  werden unabhängig vom Manifest geprüft; der offizielle UE4SS-Loader bleibt Voraussetzung.
+- Installationshinweise unterscheiden Warden- und UE4SS-Konfiguration ausdrücklich.
+  Version und Release-Tag bleiben 1.0.0. Kein Spielstart für die Paketprüfung.
+
 ## 1.0.0 — Sprachauswahl, 2026-10-27
 
 - Deutsch und Englisch über `language = de` / `language = en` in `settings.ini`.

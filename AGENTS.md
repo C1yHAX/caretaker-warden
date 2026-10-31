@@ -15,3 +15,7 @@ folder structure. Keep this policy for future packaging changes.
 - Apply the same runtime-only rule to the complete local modpack ZIP. Preserve
   local settings and saved state; do not publish personal files in standalone mods.
 - Do not start the game automatically for packaging or offline verification.
+- Include the neutral `config/settings.ini` template as `Warden/settings.ini` in
+  releases. Never package a local or installed user's settings file.
+- Verify a clean extraction of the actual ZIP with `tools/test_release_package.py`;
+  creating a settings file in a test before startup is not a fresh-install check.

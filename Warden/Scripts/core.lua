@@ -20,7 +20,7 @@ local M = {}
 
 -- Public release version. Earlier 1.x labels identify internal test snapshots only.
 M.VERSION = "1.0.0"
-M.BUILD = "20261027-language"
+M.BUILD = "20261031-release-config"
 M.NAME = "Warden"
 
 ------------------------------------------------------------------------------------------
@@ -516,16 +516,18 @@ end
 M.DIR = modDir()
 
 function M.readLines(name)
-    local f = io.open(M.DIR .. name, "r")
+    local f, err, code = io.open(M.DIR .. name, "r")
     if f == nil then
-        return {}
+        if code == 2 then return {}, false end -- ENOENT: genuinely absent
+        M.logOnce("read:" .. name, "could not read " .. name .. ": " .. tostring(err))
+        return {}, nil -- unreadable is not missing; never overwrite it on startup
     end
     local lines = {}
     for line in f:lines() do
         lines[#lines + 1] = line
     end
     f:close()
-    return lines
+    return lines, true
 end
 
 function M.writeLines(name, lines)
@@ -545,14 +547,22 @@ end
 M.settings = {}
 
 function M.loadSettings()
-    M.settings = {}
-    for _, line in ipairs(M.readLines("settings.ini")) do
+    M.settings = {
+        language = "de", toggleKey = "F1", position = "left",
+        walk = "true", block = "true", trace = "false",
+    }
+    local lines, exists = M.readLines("settings.ini")
+    for _, line in ipairs(lines) do
+        -- Editors can add a UTF-8 BOM; it must not hide the first setting.
+        line = line:gsub("^\239\187\191", "")
         local k, v = line:match("^%s*([%w_%.]+)%s*=%s*(.-)%s*$")
         if k ~= nil then
             M.settings[k] = v
         end
     end
     M.settings.language=require("i18n").setLanguage(M.settings.language)
+    -- Recover incomplete/manual installs. Existing files are never rewritten on load.
+    if exists == false then M.saveSettings() end
 end
 
 function M.saveSettings()
@@ -562,11 +572,12 @@ function M.saveSettings()
     end
     table.sort(keys)
     local lines = { "; Warden settings - written by the mod, safe to delete",
-        "; language = de or en (restart the game after changing language)" }
+        "; language = de or en; toggleKey = F1, F2, ... (restart after changes)",
+        "; position = left, center or right; walk, block and trace = true or false" }
     for _, k in ipairs(keys) do
         lines[#lines + 1] = k .. " = " .. tostring(M.settings[k])
     end
-    M.writeLines("settings.ini", lines)
+    return M.writeLines("settings.ini", lines)
 end
 
 function M.setting(key, default)

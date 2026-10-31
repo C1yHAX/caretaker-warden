@@ -1,13 +1,8 @@
 [
   {
-    "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/enabled.txt",
-    "bytes": 0,
-    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/core.lua",
-    "bytes": 17421,
-    "sha256": "d4ea7797df6fb4ed3dd03433c62cb8237f96f735f9c2f70fa5a4a90ed599a656"
+    "bytes": 18182,
+    "sha256": "50f1cf1f188ec280bfd5afb69f91ff612e5209e1bcf090decf0f7825c37e817f"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/data/item_paths.lua",
@@ -168,5 +163,15 @@
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/weatherreset.lua",
     "bytes": 17452,
     "sha256": "e5075896df16c757176704ea3c97993d40fa79df56ecbbd04a7bc28584107c6f"
+  },
+  {
+    "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/enabled.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/settings.ini",
+    "bytes": 838,
+    "sha256": "7a0080cb4b7b0496ea066f47de4c34ae2c9b053060012b736fc8235a0664a54f"
   }
 ]

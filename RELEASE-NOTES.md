@@ -4,6 +4,20 @@ Eigenständiges Adminmenü mit F1, Gegenstands-/Modulkatalog, Spieler-, Teleport
 
 Für The Last Caretaker **0.10.0.653173 / Steam-Build 25982825** unter Windows.
 
+**Paketkorrektur vom 31.10.2026, weiterhin Version 1.0.0:** Das ZIP enthält jetzt
+die zuvor fehlende `Mods/Warden/settings.ini` mit allen sechs Menüeinstellungen.
+Eine fehlende Datei wird zusätzlich beim Laden automatisch angelegt. Eine vorhandene
+INI beim Aktualisieren behalten/überspringen; nur `Scripts` und `enabled.txt` ersetzen.
+Der Download wurde aus einer leeren Installation offline geprüft, einschließlich
+Lua-Abhängigkeiten, Konfigurationszugriff und Laden der enthaltenen Hilfs-DLL.
+
+**Package fix, 2026-10-31 (still 1.0.0):** The ZIP now includes the missing default
+`Warden/settings.ini`. Missing settings are also created on startup. Keep your existing
+INI when updating. UE4SS remains a separate prerequisite: install its complete official
+archive, including `dwmapi.dll`, `ue4ss/UE4SS.dll`, `ue4ss/UE4SS-settings.ini` and
+`ue4ss/Mods/shared/UEHelpers/UEHelpers.lua`. See the README for the supported loader
+and engine-version settings. An offline package test does not replace a native game test.
+
 **Deutsch / English:** Alle Warden-Menütexte sind auch auf Englisch verfügbar.
 In `Voyage/Binaries/Win64/ue4ss/Mods/Warden/settings.ini` die Zeile `language = en`
 setzen und das Spiel neu starten. `language = de` aktiviert Deutsch (Standard).

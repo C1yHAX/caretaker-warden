@@ -41,6 +41,7 @@ Geprüfter UE4SS-DLL-Hash (SHA-256): `91d5444f41d19d0bb502f0fbdc15d76421e20359e8
    ```text
    <Spielordner>/Voyage/Binaries/Win64/ue4ss/Mods/Warden/
        enabled.txt
+       settings.ini
        Scripts/main.lua
        Scripts/core.lua
        Scripts/features/...
@@ -49,14 +50,37 @@ Geprüfter UE4SS-DLL-Hash (SHA-256): `91d5444f41d19d0bb502f0fbdc15d76421e20359e8
 
 5. Einen Spielstand laden und **F1** drücken. `enabled.txt` aktiviert die Mod; ein zusätzlicher `mods.txt`-Eintrag ist nicht nötig.
 
-**Update:** Nur `Scripts` und `enabled.txt` durch die neuen Dateien ersetzen. Eigene `settings.ini`, `hotspots.tsv` und `destinations.tsv` erhalten. Diese benutzerspezifischen Dateien werden vom Release nicht mitgeliefert; Warden verwendet anfangs seine Standardwerte und legt eigene Daten beim Benutzen an.
+**Update:** Nur `Scripts` und `enabled.txt` durch die neuen Dateien ersetzen. Eine vorhandene `settings.ini` beim Kopieren **behalten/überspringen**, damit Sprache, Taste und Fensterposition erhalten bleiben. Fehlt sie, die mitgelieferte Standarddatei übernehmen. Eigene `hotspots.tsv` und `destinations.tsv` ebenfalls behalten. Diese Dateien enthalten gespeicherte Reiseziele und werden bei Bedarf vom Menü angelegt; fremde Spielstände oder Reiseziele gehören nicht in den Download.
+
+**Neuinstallation:** Das ZIP enthält jetzt eine direkt bearbeitbare `settings.ini` mit
+allen sechs Menüeinstellungen. Falls die Datei fehlt oder gelöscht wurde, erstellt
+Warden sie beim Laden mit Standardwerten; dafür muss keine Einstellung angeklickt werden.
+Vorhandene Konfigurationsdateien werden beim Laden nicht überschrieben.
+
+**UE4SS vollständig installieren:** Der separate offizielle UE4SS-Download enthält
+`dwmapi.dll` für `Voyage/Binaries/Win64/` sowie `UE4SS.dll`, `UE4SS-settings.ini` und
+`Mods/shared/UEHelpers/UEHelpers.lua` im darunterliegenden `ue4ss`-Ordner. Den gesamten
+Loader entpacken, nicht nur seine DLL kopieren. `UE4SS-settings.ini` ist die Konfiguration
+des Loaders; `Mods/Warden/settings.ini` ist die Konfiguration dieses Menüs. Für den oben
+genannten Spielbuild verwendet die geprüfte Installation in `UE4SS-settings.ini`:
+
+```ini
+[EngineVersionOverride]
+MajorVersion = 5
+MinorVersion = 8
+```
+
+Diese Werte in der vorhandenen Sektion setzen, nicht die übrige UE4SS-Konfiguration
+ersetzen. Wenn F1 nicht reagiert, zuerst in `ue4ss/UE4SS.log` prüfen, ob UE4SS und
+`[Warden] v1.0.0 loaded` geladen wurden. Fehlt schon der UE4SS-Start, kann eine Änderung
+der Warden-INI den Loader nicht aktivieren.
 
 Das vollständige Caretaker-Modpack 1.0.0 enthält Warden bereits. Keine zweite Kopie unter anderem Ordnernamen laden. Das Menü nicht gleichzeitig mit TLC-AdminMenuMod auf F1 belegen. Für eine andere Taste in der erzeugten `settings.ini` zum Beispiel `toggleKey = F2` setzen und das Spiel neu starten.
 
 ## Sprache / Language
 
 Die Sprache wird in `<Spielordner>/Voyage/Binaries/Win64/ue4ss/Mods/Warden/settings.ini`
-festgelegt. Die Datei bei Bedarf als Textdatei anlegen; vorhandene Einstellungen erhalten.
+festgelegt. Eine Standarddatei liegt im Release-ZIP bereits bei; vorhandene Einstellungen erhalten.
 Für Englisch diese Zeile eintragen oder ändern und das Spiel neu starten:
 
 ```ini
@@ -84,7 +108,7 @@ The menu language does not change the game's language or your saved location nam
 - **Boot ausrüsten** benötigt ein ausgewähltes Boot und erkannte passende Motoranschlüsse. „Motoranschlüsse prüfen“ liefert eine Diagnose, ohne umzubauen. Fehlgeschlagene oder unbestätigte Anschlüsse werden im Log gemeldet.
 - Teleportziele werden aus bekannten Spielorten und selbst gespeicherten Punkten aufgebaut. Ein frisches Profil enthält keine aus einer fremden Sitzung übernommenen Reiseziele.
 - Free Crafting bis zum Abschluss der betreffenden Warteschlangenaufträge eingeschaltet lassen. Abschalten stellt die normale Materialprüfung wieder her.
-- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung lautet `20261027-language`.
+- Fehler erscheinen unter `[Warden]` in `Voyage/Binaries/Win64/ue4ss/UE4SS.log`. Der Versionshinweis lautet `v1.0.0 loaded`; die interne Build-Kennung lautet `20261031-release-config`.
 
 ## Prüfung
 

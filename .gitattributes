@@ -2,6 +2,7 @@
 *.lua text eol=lf
 *.py text eol=lf
 *.md text eol=lf
+config/*.ini text eol=lf
 *.dll binary
 *.pak binary
 *.ucas binary
