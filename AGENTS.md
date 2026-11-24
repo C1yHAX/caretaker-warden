@@ -1,6 +1,6 @@
 # Release packaging preference
 
-The user requires version 1.0.0 for the current first releases. Release download
+The first release is 1.0.0. Public fixes receive a new version number. Release download
 ZIPs must contain only files required to run the mod, under the installation
 folder structure. Keep this policy for future packaging changes.
 

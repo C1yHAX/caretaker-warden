@@ -26,6 +26,9 @@ SCRATCH = ROOT / "reference"
 
 # Verified parameter storage, including return values and padding, in this build.
 FUNCTIONS = {
+    "/Script/Engine.KismetSystemLibrary:BoxOverlapActors": (120, ["WorldContextObject", "BoxPos", "BoxExtent", "ObjectTypes", "ActorClassFilter", "ActorsToIgnore", "OutActors"]),
+    "/Script/Voyage.VoyageItem:IsBuildable": (1, []),
+    "/Script/Voyage.VoyageBaseInventoryComponent:CanAddItem": (16, ["NewItem"]),
     "/Script/Voyage.VoyageVehiclePawn:GetDriver": (8, []),
     "/Script/Voyage.VoyageVehiclePawn:OnEnterVehicle": (8, ["NewPossessor"]),
     "/Script/Voyage.VoyageBoatPawn:GetTotalEnginePower": (4, []),

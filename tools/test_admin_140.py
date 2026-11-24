@@ -24,19 +24,42 @@ function object(t)
  return t
 end
 boat=object({kind='boat'});engine=object({kind='/Script/Voyage.VoyageModuleEngineActor',parent=boat})
-comp=object({SocketTypeOverride='DieselEngine',owner=engine});socket=object({Owner=comp,RelativeLocation={X=1,Y=2,Z=3}})
+comp=object({SocketTypeOverride='DieselEngine',owner=engine,RelativeScale3D={X=1,Y=1,Z=1}});socket=object({Owner=comp,RelativeLocation={X=1,Y=2,Z=3}})
 comp.Sockets={socket}
 function comp:IsPlugSocket() return false end
 function comp:K2_GetComponentToWorld() return {} end
+function comp:K2_GetComponentLocation() return {X=100,Y=200,Z=300} end
+function comp:K2_GetComponentRotation() return {Pitch=0,Yaw=0,Roll=0} end
+function engine:GetVelocity() return {X=10,Y=20,Z=30} end
 function socket:IsPlugged() return self.linked~=nil and not self.linked.dead end
 socket.AttachedToSocket={Get=function() if socket.linked and not socket.linked.dead then return object({Owner=object({owner=socket.linked})}) end end}
 function boat:GetAttachedActors() return {engine} end
 function engine:K2_GetComponentsByClass() return {comp} end
-function cyl() return object({kind='/Game/Blueprints/Modules/Utility/Boat/BP_Module_Diesel_Engine_Cylinder.BP_Module_Diesel_Engine_Cylinder_C'}) end
+function cyl(kind)
+ local n='BP_Module_'..(kind or 'Diesel')..'_Engine_Cylinder'
+ return object({kind='/Game/Blueprints/Modules/Utility/Boat/'..n..'.'..n..'_C'})
+end
 pawn=object({});pc=object({})
 local mathlib=object({})
 function mathlib:TransformLocation(t,loc) return loc end
-function mathlib:MakeTransform(pos,rot,scale) return {Translation=pos} end
+function mathlib:MakeTransform(pos,rot,scale) return {Translation=pos,Rotation=rot,Scale3D=scale} end
+function mathlib:GreaterGreater_VectorRotator(v,r)
+ local a=math.rad(r.Yaw);return {X=v.X*math.cos(a)-v.Y*math.sin(a),Y=v.X*math.sin(a)+v.Y*math.cos(a),Z=v.Z}
+end
+world=object({});sys=object({});misc=object({});gameplay=object({})
+function sys:Conv_ObjectToSoftObjectReference(item) return wrap(item) end
+function sys:LoadAsset_Blocking(ref) assert(type(ref)=='userdata');return ref:get() end
+function misc:GetActorWorld() return world end
+function gameplay:GetWorldDeltaSeconds() return 0.1 end
+function gameplay:GetRealTimeSeconds() return now end
+function misc:SpawnActorForItem(w,ref,t,data,settings)
+ assert(w==world and type(ref)=='userdata')
+ H.spawns=H.spawns+1;H.item=ref:get();H.transform=t;H.data=data;H.settings=settings
+ H.deletedBeforeSpawn=#H.deletes
+ if H.spawnReject then return {} end
+ H.created=cyl(H.item.asset:find('Electric',1,true) and 'Electric' or 'Diesel')
+ return {wrap(H.created)}
+end
 persist=object({})
 function persist:DestroyActor(o,delay) assert(o~=boat and o~=engine);H.deletes[#H.deletes+1]=o;o.dead=true end
 sub=object({});function sub:GetWorldSubsystem() return persist end
@@ -44,26 +67,32 @@ core={isValid=function(o) return type(o)=='table' and o.IsValid and o:IsValid() 
  address=function(o) return o and o.id end,fullName=function(o) return o and o.path and ('Object '..o.path) or '?' end,
  find=function(p) return H.objects[p] or p end,loadClass=function(p) return p end,
  pc=function() return pc end,pawn=function() return pawn end,
- outList=function(_,fn) return fn({}) end,unwrap=function(x) return x end,str=tostring,
+ outList=function(_,fn) return fn({}) end,unwrap=function(x) if type(x)=='userdata' then return x:get() else return x end end,str=tostring,
  vec=function(x,y,z) return {X=x,Y=y,Z=z} end,rot=function(p,y,r) return {pitch=p,Yaw=y,Roll=r} end,
  xyz=function(p) if p then return p.X,p.Y,p.Z end end,
- lib=function(n) if n=='math' then return mathlib elseif n=='subsystem' then return sub end end,
+ lib=function(n) return ({math=mathlib,subsystem=sub,system=sys,misc=misc,gameplay=gameplay})[n] end,
  log=function(s) H.logs[#H.logs+1]=s end}
 package.loaded.core=core
-package.loaded['features.spawn']={craft=function(mod,t,parent)
- assert(parent==engine and mod.value==37)
- if H.reject then return false,'rejected' end
- H.spawns=H.spawns+1;H.crafter=object({});return true,'started',H.crafter
+package.loaded['features.spawn']={craft=function() error('Crafter must never be used for engine sockets') end}
+package.loaded['features.packages']={load=function(path)
+ if H.reject then return nil,'rejected' end
+ H.loaded=object({asset=path});return H.loaded
 end}
 function report(s,ok) H.reports[#H.reports+1]={text=s,ok=ok} end
 O=require('features.boat_outfit')
 '''
+
+class Param:
+ def __init__(self,value): self.value=value
+ def get(self): return self.value
+ def __getitem__(self,key): return getattr(self,key)
 
 class Admin140(unittest.TestCase):
  def runtime(self,script=''):
   lua=LuaRuntime(unpack_returned_tuples=True)
   lua.execute(f'package.path="{(ROOT/"Warden/Scripts").as_posix()}/?.lua;{(ROOT/"tools/mock").as_posix()}/?.lua;"..package.path')
   lua.execute('require("i18n").setLanguage("de")')  # Fixture assertions use German labels.
+  lua.globals().wrap=Param
   if script:lua.execute(script)
   return lua
 
@@ -117,12 +146,13 @@ class Admin140(unittest.TestCase):
    lua=self.runtime(BOAT)
    lua.execute(f'socket.linked={kind};assert(O.start(boat,1,report));O.tick();O.tick();assert(#H.deletes==0 and H.spawns==0)')
 
- def test_boat_cylinder_only_removed_after_crafter_is_ready(self):
+ def test_boat_cylinder_only_removed_after_item_preflight_before_native_spawn(self):
   lua=self.runtime(BOAT)
   lua.execute('''
   old=cyl();socket.linked=old;assert(O.start(boat,1,report));O.tick()
   assert(H.spawns==1 and #H.deletes==1 and H.deletes[1]==old and not boat.dead and not engine.dead)
-  socket.linked=cyl();O.tick();O.tick()
+  assert(H.deletedBeforeSpawn==1)
+  socket.linked=H.created;O.tick();O.tick()
   assert(H.reports[1].ok and H.reports[1].text:find('1 verbunden',1,true))
   ''')
 

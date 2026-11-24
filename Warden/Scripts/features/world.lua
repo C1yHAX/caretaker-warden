@@ -14,6 +14,8 @@ local tr = require("i18n").t
 
 local core = require("core")
 local weatherreset = require("weatherreset")
+local presets = require("features.weather")
+local repair = require("features.repair")
 
 local M = {}
 
@@ -144,12 +146,15 @@ end
 ------------------------------------------------------------------------------------------
 
 function M.tick()
+    repair.tick()
     if frozen ~= nil then
         pin(frozen)
     end
 end
 
 function M.onWorldChanged()
+    repair.onWorldChanged()
+    presets.onWorldChanged()
     frozen = nil
 end
 
@@ -190,6 +195,7 @@ function M.page(ui)
     ui.toggleRow(page, time, tr("Zeit anhalten"), M.isFrozen, M.setFrozen, tr("Hält die aktuelle Uhrzeit fest"))
 
     local weather = ui.card(page.left, tr("Wetter"))
+    presets.addToPage(ui,page,weather)
     ui.add(weather, ui.paragraph(tr("Setzt das weltweite Wetter auf den Spiel-Standard zurück, nachdem ")
         .. tr("das Admin-Menü des Spiels es verändert hat. Danach speichern.")), { pad = { 2, 0, 2, 6 } })
     ui.button(weather, tr("Wetter auf Standard zurücksetzen"), "action", function()
@@ -228,6 +234,7 @@ function M.page(ui)
     end
 
     local danger = ui.card(page.right, tr("Gefahren in der Nähe"))
+    repair.addToPage(ui, page, page.left)
     require("features.storage").addToPage(ui, page, page.right)
     require("features.building").addToPage(ui, page, page.right)
     require("features.carrier").addToPage(ui,page,page.right)

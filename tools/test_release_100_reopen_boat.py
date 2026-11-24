@@ -19,6 +19,9 @@ class Param:
     def get(self):
         return self.value
 
+    def type(self):
+        return "RemoteUnrealParam"
+
     def __getitem__(self, name):
         return getattr(self, name)
 
@@ -56,7 +59,7 @@ class Release100(unittest.TestCase):
             assert(type(wrap(comp))=='userdata')
             assert(O.start(boat,1,report)); O.tick()
             assert(H.spawns==1 and #H.deletes==0)
-            socket.linked=cyl(); O.tick(); O.tick()
+            socket.linked=H.created; O.tick(); O.tick()
             assert(H.reports[1].ok and H.reports[1].text:find('1 verbunden',1,true))
         ''')
 

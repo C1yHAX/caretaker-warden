@@ -17,13 +17,28 @@ local function each(array, fn)
 end
 function M.eligible(item, target)
     if field(item, "bSupportInventory") ~= true then return false end
+    -- VoyageItem defaults bSupportInventory to true, including large tanks and
+    -- machines. IsBuildable reads CraftFilter's Buildable bit (8) in this build.
+    -- Do not put construction blueprints/actors in either inventory. Read the
+    -- live asset, so newly registered mod items receive the same check.
+    local filter = field(item, "CraftFilter")
+    local ok, buildable = pcall(function() return item:IsBuildable() end)
+    -- Four Nixie tube variants also have Fabricator (2): those remain legitimate
+    -- inventory outputs. Exclude build-only routes, not every placeable item.
+    local inventoryRecipe=type(filter)=="number" and (filter % 4 >= 2 or filter % 32 >= 16)
+    if (buildable == true or (type(filter) == "number" and filter % 16 >= 8)) and not inventoryRecipe then return false end
+    if type(buildable) ~= "boolean" and type(filter) ~= "number" then return false end
     if field(item, "bOnlyAllowDesiredInventory") == true then
         local desired = field(item, "DesiredInventory")
         if (desired == 1 and target ~= 2) or (desired == 0 and target ~= 1) then return false end
     end
     local blocked = false
     each(field(item, "BlockedInventoryTypes"), function(v) if v == target then blocked = true end end)
-    return not blocked
+    if blocked then return false end
+    local inv = core.inventory(target)
+    if not inv then return false end
+    local accepted, yes = pcall(function() return inv:CanAddItem(item) end)
+    return accepted and yes == true
 end
 local function loadById(path)
     local ok,types=pcall(require,"data.item_types")
@@ -107,7 +122,7 @@ end
 function M.start(kind, amount, notify)
     if job then return false, tr("Ein Paket wird bereits ausgegeben") end
     if not core.inventory(1) then return false, tr("Kein Spielerinventar") end
-    if kind ~= "all" and kind ~= "parts" and kind ~= "trash" then return false, tr("Unbekanntes Paket") end
+    if kind ~= "all" and kind ~= "parts" and kind ~= "trash" and kind ~= "lazarus" then return false, tr("Unbekanntes Paket") end
     job = { kind = kind, amount = math.max(1, math.min(500, math.floor(amount))), index = 1,
         phase = "catalog", candidates = {}, components = {}, selected = {}, seen = {}, given = 0, units = 0, partial = 0,
         failures = 0, unloaded = 0, pc = core.address(core.pc()), inventory = core.address(core.inventory(1)), notify = notify }
@@ -124,12 +139,13 @@ function M.tick()
     if j.phase=="catalog" then
         local catalogue=require("features.catalog")
         catalogue.tick()
-        local rows,components,ready,_,text,unloaded=catalogue.snapshot()
+        local rows,components,ready,_,text,unloaded,lazarus=catalogue.snapshot()
         status=text
         if not ready then return end
         j.unloaded=unloaded or 0
         for _,entry in ipairs(rows) do
             if entry.player and (j.kind=="all" or (j.kind=="trash" and entry.cat==28)
+                or (j.kind=="lazarus" and lazarus and lazarus[entry.path])
                 or (j.kind=="parts" and (entry.cat==19 or entry.cat==22 or entry.path:find("/Parts/",1,true) or components[entry.path]))) then
                 j.selected[#j.selected+1]=entry
             end

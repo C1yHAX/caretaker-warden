@@ -33,7 +33,7 @@ local tr = require("i18n").t
     The native rotor physics implementation is not in the supplied source.
     No changes to resource production, time dilation, CDOs or other vehicles.
 
-    Repair uses actual durability deltas, plus attached destructible components
+    Repair restores the actual destructible component, as in the original widget,
     using OverrideHealth with the scalar
     DestructibleObjectProperties.Health read directly. Never pass the 0x320-byte
     properties struct to a UFunction. Repair is a one-shot gameplay change, not an
@@ -44,6 +44,7 @@ local tr = require("i18n").t
 local core = require("core")
 local M = {}
 local outfit=require("features.boat_outfit")
+local repair=require("features.repair")
 local BOAT = "/Script/Voyage.VoyageBoatPawn"
 local ROTOR = "/Script/Voyage.VoyageModuleRotorActor"
 local MODULE = "/Script/Voyage.VoyageModuleComponent"
@@ -299,12 +300,22 @@ local function collect(boat)
         local id = identity(object)
         if id and not seen[id] then
             seen[id] = true
-            items[#items+1] = { kind = kind, object = object, id = id }
+            local entry = { kind = kind, object = object, id = id, native = kind == "module" }
+            items[#items+1] = entry
+            return entry
         end
     end
     add("actor", boat, seenActors)
     for _, actor in ipairs(actors) do add("actor", core.unwrap(actor), seenActors) end
-    for _, module in ipairs(modules) do add("module", core.unwrap(module), seenModules) end
+    for _, module in ipairs(modules) do
+        module=core.unwrap(module)
+        add("module", module, seenModules)
+        local ok,owner=call(module,"GetOwner")
+        if ok then
+            local entry=add("actor",owner,seenActors)
+            if entry then entry.member=module end
+        end
+    end
     if #items > MAX_ITEMS then return nil end
     return items
 end
@@ -361,7 +372,7 @@ local function startRepair(mode)
     local cls, damageCls = core.find(MODULE), core.find(DAMAGE)
     if not cls or not damageCls then say(tr("Reparaturdaten fehlen; nicht gestartet"), false) return end
     S.job = { mode = mode or "repair", items = items, next = 1, moduleClass = cls, damageClass = damageCls, seen = {}, checked = 0,
-        fixed = 0, fixedModules = 0, fixedParts = 0, healthy = 0, partial = 0, failed = 0, skipped = 0, errors = 0 }
+        visuals = 0, fixed = 0, fixedModules = 0, fixedParts = 0, healthy = 0, partial = 0, failed = 0, skipped = 0, errors = 0 }
     say((mode == "refill" and tr("Auffuellen gestartet: ") or tr("Reparatur gestartet: ")) .. core.shortName(boat), true)
 end
 
@@ -413,18 +424,27 @@ local function repairOne(job, object, kind)
     else
         before, maximum = health(object)
     end
-    if not finite(before) or not finite(maximum) or maximum <= 0 or before < 0 then
+    if not finite(before) or not finite(maximum) or maximum <= 0 then
         job.failed = job.failed + 1 return
     end
     job.checked = job.checked + 1
-    if before >= maximum then
-        job.healthy = job.healthy + 1
-        if kind == "module" then markSharedDamage(job, object) end
-        return
+    local damage = kind == "damage" and object or read(object,"DestructibleObjectReference")
+    local ok, visual
+    if isa(damage,DAMAGE) then
+        local _,owner=call(object,"GetOwner")
+        local result
+        result,visual=repair.damage(damage,owner,maximum)
+        ok=result=="fixed" or result=="partial" or result=="healthy"
+        if visual then job.visuals=job.visuals+1 end
+        if visual==false then job.errors=job.errors+1 end
+    elseif before<maximum and kind=="module" then
+        ok=call(object,"Repair",maximum-before)
     end
-    local ok
-    if kind == "module" then ok = call(object, "Repair", maximum - before)
-    else ok = call(object, "OverrideHealth", maximum) end
+    if before>=maximum then
+        job.healthy=job.healthy+1
+        if kind=="module" then markSharedDamage(job,object) end
+        return visual~=nil
+    end
     local after
     if kind == "module" then local got, value = call(object, "GetDurability") if got then after = value end
     else after = read(object, "Health") end
@@ -433,13 +453,42 @@ local function repairOne(job, object, kind)
         if kind == "module" then job.fixedModules = job.fixedModules + 1
         else job.fixedParts = job.fixedParts + 1 end
     elseif ok and finite(after) and after > before then job.partial = job.partial + 1
-    else job.failed = job.failed + 1 end
+    else
+        job.failed = job.failed + 1
+        if job.failed<=10 then core.log("Boat repair failed: "..core.fullName(object).." health="..tostring(before).." -> "..tostring(after).." max="..tostring(maximum)) end
+    end
     if kind == "module" then markSharedDamage(job, object) end
+    return visual~=nil
+end
+
+local function nativeMember(job, component, owner, boat)
+    -- A gameplay member need not have a scene-attachment chain (e.g. a snapped
+    -- module). Reject a chain to a DIFFERENT boat; refresh membership before use
+    -- so an entry disconnected since the initial snapshot is not modified.
+    local parent,seen=owner,{}
+    for _=1,32 do
+        local id=identity(parent)
+        if not id then break end
+        if seen[id] then return false end
+        seen[id]=true
+        if isa(parent,BOAT) then return id==identity(boat) end
+        local ok,nextParent=call(parent,"GetAttachParentActor")
+        if not ok then return false end
+        parent=nextParent
+    end
+    if not job.members then
+        job.members={}
+        local modules=outArray(boat,"GetAllModules","Modules")
+        if not modules then job.errors=job.errors+1;return false end
+        for _,m in ipairs(modules) do local id=identity(m);if id then job.members[id]=true end end
+    end
+    return job.members[identity(component)]==true
 end
 
 local function repairTick()
     local job, boat = S.job, S.target
     if not job then return end
+    job.members=nil
     local ok, authority = call(boat, "HasAuthority")
     if not ok or authority ~= true then cancel(tr("Boot kann hier nicht mehr geaendert werden")) return end
     local work, discoveries = 0, 0
@@ -452,7 +501,8 @@ local function repairTick()
         local good = identity(object) == item.id
         if item.kind == "actor" then
             discoveries = discoveries + 1
-            if good and live(object) and attachedTo(object, boat) then
+            if good and live(object) and worldOf(object)==S.world and (attachedTo(object, boat)
+                or (item.member and nativeMember(job,item.member,object,boat))) then
                 for _, spec in ipairs({ { "module", job.moduleClass }, { "damage", job.damageClass } }) do
                     local got, components = call(object, "K2_GetComponentsByClass", spec[2])
                     components = got and array(components) or nil
@@ -461,7 +511,7 @@ local function repairTick()
                         for _, component in ipairs(components) do
                             component = core.unwrap(component)
                             if #job.items < MAX_ITEMS then
-                                job.items[#job.items+1] = { kind = spec[1], object = component, id = identity(component) }
+                                job.items[#job.items+1] = { kind = spec[1], object = component, id = identity(component), member = item.member }
                             else job.errors = job.errors + 1 break end
                         end
                     end
@@ -470,8 +520,9 @@ local function repairTick()
         else
             local got, owner = call(object, "GetOwner")
             local expected = item.kind == "module" and MODULE or DAMAGE
-            if good and isa(object, expected) and got and live(owner) and attachedTo(owner, boat) then
-                repairOne(job, object, item.kind)
+            if good and isa(object, expected) and got and live(owner) and worldOf(owner)==S.world
+                and (attachedTo(owner, boat) or ((item.native or item.member) and nativeMember(job,item.member or object,owner,boat))) then
+                if repairOne(job, object, item.kind) then break end
             else job.skipped = job.skipped + 1 end
         end
     end
@@ -480,7 +531,8 @@ local function repairTick()
     if job.next > #job.items then
         S.job = nil
         say(string.format((job.mode == "refill" and tr("Aufgefuellt") or tr("Repariert")) .. tr(": %d Module, %d Bauteile. Intakt: %d; teilweise: %d; fehlgeschlagen: %d; uebersprungen: %d; Lesefehler: %d"),
-            job.fixedModules, job.fixedParts, job.healthy, job.partial, job.failed, job.skipped, job.errors),
+            job.fixedModules, job.fixedParts, job.healthy, job.partial, job.failed, job.skipped, job.errors)
+            .. (job.mode=="refill" and "" or string.format(tr(" | Schadensanzeige aktualisiert: %d"),job.visuals)),
             job.partial == 0 and job.failed == 0 and job.skipped == 0 and job.errors == 0)
     end
 end
@@ -588,7 +640,7 @@ function M.page(ui)
     local page = ui.newPage(tr("Boot"))
     M.addToPage(ui, page, page.left)
     local engines=ui.card(page.right,tr("Motoren ausruesten"),tr("Direkt am ausgewaehlten Boot"))
-    local choices={tr("Basis"),"Eco","Booster","Super-Booster"}
+    local choices={tr("Basis"),"Booster","Super-Booster","Cheat-Booster"}
     local level=1
     ui.stepperRow(page,engines,tr("Zylindervariante"),{
         values=choices,index=function() return level end,format=tostring,

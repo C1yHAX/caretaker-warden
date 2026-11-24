@@ -23,6 +23,7 @@ class Features(unittest.TestCase):
           registry, inventoryCounts, logs, keys = {}, {}, {}, {}
           capacity = 100000
           inv = obj({})
+          function inv:CanAddItem(item) return item.rejectInventory~=true end
           function inv:GetNumItems(item) return inventoryCounts[item.path] or 0 end
           function inv:AddItem(item, data)
             local n = math.min(capacity, data.ItemCount)
@@ -82,7 +83,7 @@ class Features(unittest.TestCase):
           CancelDelayedAction=function() cancelled=true end
           package.loaded['data.item_paths']={}
           function item(path, cat, inventory, components)
-            local o = obj({path=path,Name=path,Category=cat,bSupportInventory=inventory,
+            local o = obj({path=path,Name=path,Category=cat,bSupportInventory=inventory,CraftFilter=0,
               bOnlyAllowDesiredInventory=false, BlockedInventoryTypes={}, Components={}})
             function o:IsA() return true end
             function o.Components:ForEach(fn)

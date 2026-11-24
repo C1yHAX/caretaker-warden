@@ -1,0 +1,126 @@
+{
+  "game": "0.10.0.653173",
+  "functions": {
+    "/Script/Voyage.VoyageItem:IsBuildable": {
+      "properties_size": 1,
+      "parameters": [
+        {
+          "name": "ReturnValue",
+          "type": "BoolProperty",
+          "offset": 0,
+          "size": 1
+        }
+      ]
+    },
+    "/Script/Voyage.VoyageBaseInventoryComponent:CanAddItem": {
+      "properties_size": 16,
+      "parameters": [
+        {
+          "name": "NewItem",
+          "type": "ObjectProperty",
+          "offset": 0,
+          "size": 8
+        },
+        {
+          "name": "ReturnValue",
+          "type": "BoolProperty",
+          "offset": 8,
+          "size": 1
+        }
+      ]
+    },
+    "/Script/Voyage.VoyageDestructibleObjectComponent:OverrideHealth": {
+      "properties_size": 4,
+      "parameters": [
+        {
+          "name": "NewHealth",
+          "type": "FloatProperty",
+          "offset": 0,
+          "size": 4
+        }
+      ]
+    },
+    "/Script/Voyage.VoyageModuleComponent:GetMaxDurability": {
+      "properties_size": 4,
+      "parameters": [
+        {
+          "name": "ReturnValue",
+          "type": "FloatProperty",
+          "offset": 0,
+          "size": 4
+        }
+      ]
+    },
+    "/Script/Voyage.VoyageBoatPawn:GetAllModules": {
+      "properties_size": 16,
+      "parameters": [
+        {
+          "name": "Modules",
+          "type": "ArrayProperty",
+          "offset": 0,
+          "size": 16
+        }
+      ]
+    },
+    "/Script/Engine.KismetSystemLibrary:BoxOverlapActors": {
+      "properties_size": 120,
+      "parameters": [
+        {
+          "name": "WorldContextObject",
+          "type": "ObjectProperty",
+          "offset": 0,
+          "size": 8
+        },
+        {
+          "name": "BoxPos",
+          "type": "StructProperty",
+          "offset": 8,
+          "size": 24
+        },
+        {
+          "name": "BoxExtent",
+          "type": "StructProperty",
+          "offset": 32,
+          "size": 24
+        },
+        {
+          "name": "ObjectTypes",
+          "type": "ArrayProperty",
+          "offset": 56,
+          "size": 16
+        },
+        {
+          "name": "ActorClassFilter",
+          "type": "ClassProperty",
+          "offset": 72,
+          "size": 8
+        },
+        {
+          "name": "ActorsToIgnore",
+          "type": "ArrayProperty",
+          "offset": 80,
+          "size": 16
+        },
+        {
+          "name": "OutActors",
+          "type": "ArrayProperty",
+          "offset": 96,
+          "size": 16
+        },
+        {
+          "name": "ReturnValue",
+          "type": "BoolProperty",
+          "offset": 112,
+          "size": 1
+        }
+      ]
+    }
+  },
+  "craftFilter": {
+    "Buildable": 8,
+    "Fabricator": 2,
+    "FoodProcessor": 16
+  },
+  "originalRepair": "BP_VoyageCheatWiget ExecuteUbergraph uses OverrideHealth(GetMaxDurability()) on the destructible component of BP_Module_RoomOutlet",
+  "moduleRepairNative": "VoyageModuleComponent::Repair negates Amount and dispatches TakeDamage on DestructibleObjectReference"
+}

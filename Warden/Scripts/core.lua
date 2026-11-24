@@ -18,9 +18,9 @@ local UEHelpers = require("UEHelpers")
 
 local M = {}
 
--- Public release version. Earlier 1.x labels identify internal test snapshots only.
-M.VERSION = "1.0.0"
-M.BUILD = "20261031-auto-language"
+-- 1.0.0 was the first public release; subsequent fixes use a new patch version.
+M.VERSION = "1.0.4"
+M.BUILD = "20261120-repair-visuals-weather"
 M.NAME = "Warden"
 
 ------------------------------------------------------------------------------------------
@@ -173,9 +173,15 @@ end
 
 -- Array elements and out values sometimes come back wrapped; get() unwraps them.
 function M.unwrap(v)
-    local inner
-    if type(v) == "userdata" and pcall(function() inner = v:get() end) and inner ~= nil then
-        return inner
+    if type(v) == "userdata" then
+        -- type() is a wrapper method and does not inspect the remote UObject.
+        -- Never probe get on a bare UObject: that invokes reflected property
+        -- lookup BEFORE IsValid and can crash on an unloaded/reused object.
+        local ok, kind = pcall(function() return v:type() end)
+        if ok and (kind == "RemoteUnrealParam" or kind == "LocalUnrealParam") then
+            local got, inner = pcall(function() return v:get() end)
+            if got and inner ~= nil then return inner end
+        end
     end
     return v
 end

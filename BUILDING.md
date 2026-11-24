@@ -2,7 +2,7 @@
 
 ## Release-ZIP
 
-Python 3 installieren und im Repository `python tools/package_release.py` ausführen. Das Werkzeug prüft alle Laufzeitdateien gegen `Dateien.json` und erzeugt `dist/Warden-1.0.0.zip` sowie `dist/SHA256SUMS.txt`. Laufzeitcode liegt im Repository unter `Warden/`, im ZIP unter `Voyage/Binaries/Win64/ue4ss/Mods/Warden/`. Die neutrale Standardkonfiguration aus `config/settings.ini` wird als `Warden/settings.ini` mitgeliefert. Eine lokale `Warden/settings.ini` und gespeicherte Reiseziele werden niemals als Paketquelle verwendet.
+Python 3 installieren und im Repository `python tools/package_release.py` ausführen. Das Werkzeug prüft alle Laufzeitdateien gegen `Dateien.json` und erzeugt `dist/Warden-1.0.4.zip` sowie `dist/SHA256SUMS.txt`. Laufzeitcode liegt im Repository unter `Warden/`, im ZIP unter `Voyage/Binaries/Win64/ue4ss/Mods/Warden/`. Die neutrale Standardkonfiguration aus `config/settings.ini` wird als `Warden/settings.ini` mitgeliefert. Eine lokale `Warden/settings.ini` und gespeicherte Reiseziele werden niemals als Paketquelle verwendet.
 
 Der Paketierer prüft Pflichtdateien und sämtliche statischen Lua-Abhängigkeiten zusätzlich zum Dateikatalog. Änderungen an Laufzeitdateien oder der Standardvorlage müssen in `Dateien.json` nachgezogen werden. Die vollständige ZIP-Dateiliste und alle Dateihashes werden nach dem Packen erneut geprüft.
 

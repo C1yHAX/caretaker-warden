@@ -1,0 +1,30 @@
+Warden Admin Menu 1.0.4 - Nexus-Update (Mod 382)
+================================================
+
+Datei: dist/Warden-1.0.4.zip (SHA-256 in dist/SHA256SUMS.txt), lokaler Kandidat vom 20.11.2026.
+Öffentlich war bisher 1.0.0; 1.0.1 bis 1.0.3 waren nur lokale Kandidaten, ihr Inhalt steckt in 1.0.4.
+Beschreibung und Kurzbeschreibung bleiben unverändert.
+
+## Kurzbeschreibung (About this mod, max. 350 Zeichen, unverändert)
+EN: Admin menu with player, spawn, crafting, teleport, boat and world controls. Automatic English/German. DE: Admin-Menü für Spieler, Spawnen, Herstellung, Teleport, Boote und Welt. Automatisch Deutsch/Englisch.
+
+## Datei
+Name: Warden Admin Menu 1.0.4
+Version: 1.0.4
+Kategorie: Main
+Beschreibung (max. 255 Zeichen):
+EN: Weather presets, area and boat repair, safer item spawning, Lazarus package, engine cylinders. Keep your settings.ini and saved locations. DE: Wettervorlagen, Umkreis-/Bootsreparatur, Lazarus-Paket. settings.ini und Orte behalten.
+
+## Changelog 1.0.4
+EN: World: seven weather presets for the current session and a switch back to natural weather.
+EN: World: "Repair everything nearby" within 10, 25, 50, 100 or 250 m, with progress and cancel; repairs also refresh the damage visuals of supported objects.
+EN: Boat repair targets the actual damaged part; only modules of your own boat are included.
+EN: Boat engines: cylinders are fitted with the game's own method (Basic, Booster, Super Booster and Cheat Booster for diesel and electric engines).
+EN: Items: the catalog and all spawning skip build-only objects such as large tanks, batteries and generators; new Lazarus package with human seeds, food, nutrients and memory objects.
+EN: Fixes a crash during area repair caused by access to an expired object.
+DE: Welt: sieben Wettervorlagen für die laufende Sitzung und Rückkehr zum natürlichen Wetter.
+DE: Welt: „Alles im Umkreis reparieren“ mit 10, 25, 50, 100 oder 250 m, Fortschritt und Abbruch; Reparaturen aktualisieren auch die Schadensanzeige unterstützter Objekte.
+DE: Bootsreparatur setzt am tatsächlich beschädigten Bauteil an; nur Module des eigenen Boots werden berücksichtigt.
+DE: Bootsmotoren: Zylinder werden mit der Methode des Spiels ausgerüstet (Basis, Booster, Super-Booster und Cheat-Booster für Diesel und Elektro).
+DE: Gegenstände: Katalog und Ausgabe überspringen reine Bauobjekte wie große Tanks, Batterien und Generatoren; neues Lazarus-Paket mit Menschensaat, Nahrung, Nährstoffen und Erinnerungsobjekten.
+DE: Behebt einen Absturz bei der Umkreisreparatur durch Zugriff auf ein abgelaufenes Objekt.

@@ -1,13 +1,17 @@
 local tr = require("i18n").t
--- Original engine retrofit geometry and item spawning, with explicit socket type
--- and cylinder identity checks. BP_Module_Crafter calls the SAME native
--- SpawnActorForItem as SetBoatEnginesLevel, without Lua soft-pointer marshalling.
+-- Port of BP_VoyageCheatWiget.SetBoatEnginesLevel, used by TLC-AdminMenuMod.
+-- SpawnActorForItem initializes the item and lets the physical sockets connect it.
+-- A BP_Module_Crafter cannot be attached to these engines. Do not use it here.
+-- SpawnActorForItem's complete parameter block is 0x168 bytes, below UE4SS's
+-- 0x200 limit. ItemClass MUST be native TSoftObjectPtr userdata produced by the
+-- engine, never a Lua table/string/UObject. See verification/boat-outfit-abi.json.
 local core=require("core")
 local M={}
 local ENGINE="/Script/Voyage.VoyageModuleEngineActor"
 local SNAP="/Script/Voyage.VoyagePhysicalSnapSocketComponent"
 local PREFIX="/Game/Blueprints/Modules/Utility/Boat/"
-local variants={DieselEngine={37,61,60,62},ElectricEngine={46,64,63,65}}
+local variants={DieselEngine=true,ElectricEngine=true}
+local levels={"","_Booster","_SuperBooster","_CheatBooster"}
 local names={DieselEngine="Diesel",ElectricEngine="Electric"}
 local job
 local status=tr("Noch nicht geprueft")
@@ -18,6 +22,11 @@ local function call(o,k,...)
     if ok then return v end
 end
 local function same(a,b) return core.isValid(a) and core.isValid(b) and core.address(a)==core.address(b) end
+local function finite(n) return type(n)=="number" and n==n and math.abs(n)<math.huge end
+local function vector(v)
+    local x,y,z=core.xyz(v)
+    if finite(x) and finite(y) and finite(z) then return x,y,z end
+end
 local function isa(o,path) return call(o,"IsA",core.find(path))==true end
 local function ident(o)
     if not core.isValid(o) then return end
@@ -125,7 +134,7 @@ function M.inspect(boat)
 end
 function M.start(boat,level,report)
     if job then return false,tr("Ausstattung laeuft bereits") end
-    if level<1 or level>4 or level%1~=0 or call(boat,"HasAuthority")~=true then return false,tr("Kein gueltiges Zielboot") end
+    if not finite(level) or not levels[level] or call(boat,"HasAuthority")~=true then return false,tr("Kein gueltiges Zielboot") end
     local plan,omitted=scan(boat)
     if #plan==0 then return false,tr("Keine passenden Motoranschluesse: ")..status end
     job={boat=ident(boat),pc=core.address(core.pc()),plan=plan,index=1,level=level,report=report,connected=0,skipped=omitted,failed=0}
@@ -133,6 +142,27 @@ function M.start(boat,level,report)
 end
 function M.cancel() if job then finish(tr("Ausstattung beendet")) end end
 function M.onWorldChanged() job=nil;status=tr("Noch nicht geprueft") end
+-- Prepare and round-trip the native soft reference BEFORE removing any cylinder.
+-- This is a supported UE4SS property type; only hand-built soft-pointer tables
+-- were unsafe. Keep its userdata alive until SpawnActorForItem has returned.
+local function prepare(kind,level,engine)
+    local name="DA_Item_"..names[kind].."EngineCylinder"..levels[level]
+    local path="/Game/Data/Assets/Items/"..name.."."..name
+    local item,reason,detail=require("features.packages").load(path)
+    assert(core.isValid(item),tr("Motorzylinder nicht geladen")..": "..path.." "..tostring(detail or reason))
+    local sys,misc=core.lib("system"),core.lib("misc")
+    assert(core.isValid(sys) and core.isValid(misc),tr("Bootsausstattung: Spielfunktionen fehlen"))
+    local soft=sys:Conv_ObjectToSoftObjectReference(item)
+    assert(same(sys:LoadAsset_Blocking(soft),item),tr("Bootsausstattung: Itemreferenz nicht bestaetigt"))
+    local world=misc:GetActorWorld(engine)
+    assert(core.isValid(world),tr("Bootsausstattung: Spielwelt fehlt"))
+    return misc,world,soft
+end
+local function clock(boat)
+    local n=call(core.lib("gameplay"),"GetRealTimeSeconds",boat)
+    assert(finite(n),tr("Bootsausstattung: Spielzeit nicht lesbar"))
+    return n
+end
 local function tick()
     local j=job;if not j then return end
     if j.pc~=core.address(core.pc()) then job=nil;return end
@@ -148,11 +178,11 @@ local function tick()
     end
     local existing=linked(socket)
     if j.waitUntil then
-        if cylinder(existing,row.kind) and core.address(existing)~=j.old then
+        if cylinder(existing,row.kind) and same(existing,resolve(j.spawned)) then
             j.connected=j.connected+1;j.waitUntil=nil;j.index=j.index+1
             status=string.format(tr("%d/%d Motoranschluesse verbunden"),j.connected,#j.plan)
             core.log(tr("Bootsausstattung: ")..status)
-        elseif os.clock()>=j.waitUntil then
+        elseif clock(boat)>=j.waitUntil then
             j.failed=j.failed+1
             core.log(tr("Bootsausstattung: Zylinder erzeugt, Anschluss nicht bestaetigt"), tr("Warnung"))
             finish(tr("Einrasten unbestaetigt; weitere Wechsel gestoppt"))
@@ -165,39 +195,53 @@ local function tick()
         or (not plugged and core.isValid(existing)) then
         j.skipped=j.skipped+1;j.index=j.index+1;return
     end
+    local misc,world,soft=prepare(row.kind,j.level,engine)
     local km=core.lib("math")
-    local t=call(comp,"K2_GetComponentToWorld")
-    local relative=read(socket,"RelativeLocation")
-    local pos=call(km,"TransformLocation",t,relative)
-    local x,y,z=core.xyz(pos)
-    if not x then j.failed=j.failed+1;j.index=j.index+1;return end
-    -- Same initial orientation/offset as the shipped SetBoatEnginesLevel.
+    -- Match the original: component location + rotated/scaled socket offset
+    -- + electric Z offset + one frame of engine velocity (the boat can move).
+    local rx,ry,rz=vector(read(socket,"RelativeLocation"))
+    local sx,sy,sz=vector(read(comp,"RelativeScale3D"))
+    local x,y,z=vector(call(comp,"K2_GetComponentLocation"))
+    local vx,vy,vz=vector(call(engine,"GetVelocity"))
+    local dt=call(core.lib("gameplay"),"GetWorldDeltaSeconds",boat)
+    assert(rx and sx and x and vx and finite(dt) and dt>=0 and dt<=1,
+        tr("Bootsausstattung: Anschlussposition nicht lesbar"))
+    local offset=km:GreaterGreater_VectorRotator(core.vec(rx*sx,ry*sy,rz*sz),comp:K2_GetComponentRotation())
+    local ox,oy,oz=vector(offset)
+    assert(ox,tr("Bootsausstattung: Anschlussposition nicht lesbar"))
+    x,y,z=x+ox+vx*dt,y+oy+vy*dt,z+oz+vz*dt
     if row.kind=="ElectricEngine" then z=z+50 end
-    local transform=call(km,"MakeTransform",core.vec(x,y,z),core.rot(0,row.kind=="ElectricEngine" and 180 or 0,0),core.vec(1,1,1))
-    if not transform then j.failed=j.failed+1;j.index=j.index+1;return end
-    local old=core.address(existing)
+    local transform=km:MakeTransform(core.vec(x,y,z),core.rot(0,row.kind=="ElectricEngine" and 180 or 0,0),core.vec(1,1,1))
+    local now=clock(boat)
     local persistent=call(core.lib("subsystem"),"GetWorldSubsystem",boat,core.find("/Script/Voyage.VoyagePersistentSubsystem"))
     if core.isValid(existing) and not core.isValid(persistent) then
-        j.failed=j.failed+1;j.index=j.index+1;return
+        error(tr("Bootsausstattung: Austausch nicht verfuegbar"))
     end
-    local ok,msg,crafter=require("features.spawn").craft({value=variants[row.kind][j.level],label=tr("Motorzylinder")},transform,engine)
-    if not ok then j.failed=j.failed+1;j.index=j.index+1;core.log(msg,tr("Fehler"));return end
     if core.isValid(existing) then
-        -- Revalidate after preparing the crafter. Delete ONLY the typed cylinder
-        -- still connected to this exact engine socket; never a socket's owner.
+        -- Original order: remove the old cylinder, then spawn its replacement.
+        -- Unlike the old menu, NEVER delete an arbitrary connected actor/hull.
+        -- All loading, reference and transform checks happen before this point.
         local current=linked(socket)
         if same(current,existing) and cylinder(existing,row.kind) and not same(existing,boat) and not same(existing,engine) then
-            local removed=pcall(function() persistent:DestroyActor(existing,0.0) end)
-            if not removed then
-                call(crafter,"K2_DestroyActor")
-                j.failed=j.failed+1;j.index=j.index+1;return
-            end
+            persistent:DestroyActor(existing,0.0)
+            assert(not core.isValid(existing) or call(existing,"IsActorBeingDestroyed")==true
+                or not same(linked(socket),existing),tr("Bootsausstattung: Alter Zylinder noch verbunden"))
         else
-            call(crafter,"K2_DestroyActor")
             j.skipped=j.skipped+1;j.index=j.index+1;return
         end
     end
-    j.old=old;j.waitUntil=os.clock()+8
+    -- Same item data and settings as SetBoatEnginesLevel. No inventory, helper
+    -- actor, rigid attachment, global scan, or modification of recipe assets.
+    local spawned=array(misc:SpawnActorForItem(world,soft,transform,
+        {ItemCount=1,Timestamp=os.time(),Flags=0,Version=30},
+        {LinearVelocity=core.vec(0,0,0),AngularVelocity=core.vec(0,0,0),AutoCollectRadius=500,
+         bForceAutoCollect=false,bResolveOverlaps=true,bAwake=true,bSimulatePhysics=true,
+         BoxHalfExtents=core.vec(0,0,0)}))
+    assert(#spawned==1 and cylinder(spawned[1],row.kind),tr("Bootsausstattung: Kein passender Zylinder erzeugt"))
+    j.spawned=ident(spawned[1])
+    assert(j.spawned,tr("Bootsausstattung: Erzeugter Zylinder nicht auffindbar"))
+    j.waitUntil=now+8
+    core.log(tr("Bootsausstattung: Zylinder erzeugt; warte auf Motoranschluss"))
 end
 function M.tick()
     local ok,err=pcall(tick)

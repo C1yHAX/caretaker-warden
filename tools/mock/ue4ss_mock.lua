@@ -30,6 +30,24 @@ local function itemMock(n, cat)
     })
 end
 
+local weatherActors = {}
+local function weatherGameplayStatics()
+    return newMock("GameplayStatics", {
+        BeginDeferredActorSpawnFromClass = function(_, _, cls)
+            local actor = newMock("SpawnedActor" .. nextAddr)
+            if rawget(cls, "__name"):match("BP_WeatherVolumeActor_C$") then
+                actor.VoyageWeatherVolume = newMock("Volume", {GetOwner=function() return actor end})
+                local path = actor:GetFullName():match("^%S+%s+(.+)$")
+                weatherActors[path] = actor
+                actor.IsActorBeingDestroyed = function() return weatherActors[path] ~= actor end
+                actor.K2_DestroyActor = function() weatherActors[path] = nil end
+            end
+            return actor
+        end,
+        FinishSpawningActor = function(_, actor) return actor end,
+    })
+end
+
 local RETURNS = {
     GetDerivedClassAssetData = function() return {} end,
     -- This is a fatal memory overwrite in the target UE4SS, not a catchable fallback.
@@ -149,7 +167,13 @@ Mock.__tostring = function(self) return "Mock<" .. tostring(rawget(self, "__name
 _G.print = function(s) M.log[#M.log + 1] = (tostring(s):gsub("\n$", "")) end
 _G.FName = function(s) return newMock("FName", { ToString = function() return s end }) end
 _G.FText = function(s) return newMock("FText", { ToString = function() return s end }) end
-_G.StaticFindObject = function(path) return newMock(path) end
+_G.StaticFindObject = function(path)
+    if path == "/Script/Engine.Default__GameplayStatics" then return weatherGameplayStatics() end
+    if path:match("^/Game/Data/Weather/WeatherPresets/") then
+        return newMock(path, {IsA=function(_, cls) return cls == "/Script/Voyage.VoyageWeatherPreset" end})
+    end
+    return weatherActors[path] or newMock(path)
+end
 _G.StaticConstructObject = function(cls, outer, name)
     local n = name and name:ToString() or "obj"
     return newMock(n)
@@ -204,7 +228,9 @@ end
 
 package.preload["UEHelpers"] = function()
     local cmc = newMock("CMC", { MaxWalkSpeed = 600.0, JumpZVelocity = 420.0, MaxFlySpeed = 600.0, MovementMode = 1 })
-    local pawn = newMock("Pawn", { CharacterMovement = cmc })
+    local level = newMock("Level", {OwningWorld=newMock("World")})
+    local pawn = newMock("Pawn", { CharacterMovement = cmc, GetLevel=function() return level end,
+        HasAuthority=function() return true end })
     local pc = newMock("PC", { Pawn = pawn })
     return { GetPlayerController = function() return pc end }
 end

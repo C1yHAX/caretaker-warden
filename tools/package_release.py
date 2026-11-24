@@ -6,7 +6,7 @@ import re
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-ARCHIVE = 'Warden-1.0.0.zip'
+ARCHIVE = 'Warden-1.0.4.zip'
 PREFIX = 'Voyage/Binaries/Win64/ue4ss/Mods/Warden/'
 DEFAULT_CONFIG = ROOT / 'config/settings.ini'
 DEFAULTS = dict(language='auto', toggleKey='F1', position='left',

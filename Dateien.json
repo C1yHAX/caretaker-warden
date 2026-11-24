@@ -1,8 +1,8 @@
 [
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/core.lua",
-    "bytes": 18450,
-    "sha256": "ab0088d82df4b1f9b42da4c4d9676231118aafff301e41cbdaf173627746688d"
+    "bytes": 18877,
+    "sha256": "94c81ce3618618ad2f3994ed440ceb7925df7e8728e576e4b4e3e9a39ec3beb0"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/data/item_paths.lua",
@@ -16,13 +16,13 @@
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/boat.lua",
-    "bytes": 30031,
-    "sha256": "e31b16ba190e26c23b0551527eacd1ce8fd38480b7ded28d7f2cd3dd1985838b"
+    "bytes": 32497,
+    "sha256": "4b0690efe63c2d4d84b74de60725f8f3233e9d04a81cda3a7a72f0ee99fe7c66"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/boat_outfit.lua",
-    "bytes": 10607,
-    "sha256": "0e148879e4021b68c1048c8a3b761426257f638eeab10b981efa2f43886b5ff8"
+    "bytes": 13476,
+    "sha256": "656aa5245c4bc827f98cb326bf7934b6b1b50c868ae77215fb054b9f20775fb7"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/building.lua",
@@ -36,8 +36,8 @@
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/catalog.lua",
-    "bytes": 5067,
-    "sha256": "1153140885f82d66b50cfb146d9c7de184c584a824d394c4b52a50e2ae631999"
+    "bytes": 5824,
+    "sha256": "10f092f93fef81d9cab9bf62cc8e0b474468727c130f81d7dba8f03bd1bd92cc"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/crafting.lua",
@@ -61,8 +61,8 @@
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/packages.lua",
-    "bytes": 8816,
-    "sha256": "e5791143a687a9460f1c463a7b68da9cdb500cad02d7a180f0547d2408d76894"
+    "bytes": 10037,
+    "sha256": "81a7c39ae69ab57ed6443bc863da04d2af5f56062e96285550f7fd3bf4b8d8a3"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/player.lua",
@@ -70,9 +70,14 @@
     "sha256": "993e2104e542efae8794b451c86cf9a8791d9d66c31562e281cb1faa299db7c1"
   },
   {
+    "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/repair.lua",
+    "bytes": 12532,
+    "sha256": "de74e573614ffa37e64266e5dbe680f9987a765e2c59f9f3cb2a02607bbd9f97"
+  },
+  {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/spawn.lua",
-    "bytes": 22523,
-    "sha256": "1c0edc7948367e0357e6ebc2b6bb22cd3bd5e3b0f1c5df4cb35eb721b4aba14a"
+    "bytes": 22725,
+    "sha256": "d9eac4fc8a987508110c0f6acfd994545cc89adf8c9cdf9347011c173be3c235"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/storage.lua",
@@ -110,9 +115,14 @@
     "sha256": "9c460f437209212feeffeff61391c8f98302688ee88772abd4b437c30b36d236"
   },
   {
+    "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/weather.lua",
+    "bytes": 5116,
+    "sha256": "45e205025ebd0e436aeb3688a15581fc3b5b5a79490cb741028ec19477bdc400"
+  },
+  {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/features/world.lua",
-    "bytes": 8320,
-    "sha256": "ca6a88195dc622cd375e1819a4bcf647fdb564e2b0c6a432d2abbf6e58cfd9f0"
+    "bytes": 8562,
+    "sha256": "36c600ac0ba47043a38fdda4994d7d0b806f66bd832871ec214ef6087512df3c"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/i18n.lua",
@@ -136,8 +146,8 @@
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/locales/en.lua",
-    "bytes": 34858,
-    "sha256": "8103dc8a6dc15403ebb16ea32e5afec17dc4a017a8c73b980113d34dc7ae1b04"
+    "bytes": 38860,
+    "sha256": "3ad161e5dd774704357a589d9af19b9e078b3c4b201aff7777bad89e259625e0"
   },
   {
     "path": "Voyage/Binaries/Win64/ue4ss/Mods/Warden/Scripts/main.lua",

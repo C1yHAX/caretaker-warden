@@ -10,12 +10,26 @@ local known,lastDiscovery={},-math.huge
 local revision,ready,unloaded=0,false,0
 local state=tr("Noch nicht geladen")
 local languageRefresh=nil
+local lazarus,lazarusSeen={},{}
 local function read(o,k) local ok,v=pcall(function() return o[k] end);if ok then return v end end
 local function path(o) return core.fullName(o):match("^%S+%s+(/.+)$") end
+local function markLazarus(item,depth)
+    local p=path(item)
+    if not p or lazarusSeen[p] or depth>16 then return end
+    lazarusSeen[p],lazarus[p]=true,true
+    local map=read(item,"Components")
+    if map then pcall(function() map:ForEach(function(k) markLazarus(core.unwrap(k),depth+1) end) end) end
+end
 local function visit(item,seen,depth)
     local p=path(item)
     if not p or seen[p] or depth>16 then return end
     seen[p]=true
+    -- Food, nutrients and memory objects accepted by Lazarus, plus the human
+    -- seed. Follow their actual recipe dependencies, including modded recipes.
+    local category=read(item,"Category")
+    if category==6 or category==24 or category==25 or p=="/Game/Data/Assets/Consumables/DA_HumanSeed.DA_HumanSeed" then
+        markLazarus(item,0)
+    end
     local packages=require("features.packages")
     local player,vault=packages.eligible(item,1),packages.eligible(item,2)
     if player or vault then
@@ -47,7 +61,7 @@ function M.start(force,retryMissing,discoverNew)
         -- Explicit package requests retry missing entries without discarding the
         -- successful catalog. Ordinary UI refreshes never restart asset loading.
     else
-        rows,components,seen,known={},{},{},{}
+        rows,components,seen,known,lazarus,lazarusSeen={},{},{},{},{},{}
         paths=require("features.packages").paths()
         for _,p in ipairs(paths) do known[p]=true end
         lastDiscovery=os.clock()
@@ -103,7 +117,7 @@ function M.tick()
     state=string.format(tr("Katalog: %d / %d, %d Arten"),scan.index-1,#scan.paths,#rows)
     revision=revision+1
 end
-function M.snapshot() return rows,components,ready,revision,state,unloaded end
+function M.snapshot() return rows,components,ready,revision,state,unloaded,lazarus end
 function M.onLanguageChanged() languageRefresh=1 end
-function M.reset() scan=nil;rows={};components={};missing={};seen={};known={};lastDiscovery=-math.huge;ready=false;unloaded=0;revision=revision+1;state=tr("Noch nicht geladen") end
+function M.reset() scan=nil;rows={};components={};missing={};seen={};known={};lazarus={};lazarusSeen={};lastDiscovery=-math.huge;ready=false;unloaded=0;revision=revision+1;state=tr("Noch nicht geladen") end
 return M

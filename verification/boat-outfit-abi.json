@@ -1,0 +1,290 @@
+{
+  "game": "The Last Caretaker 0.10.0.653173",
+  "source": "UE4SS reflection dump; BP_VoyageCheatWiget.SetBoatEnginesLevel",
+  "functions": {
+    "/Script/Voyage.VoyageMiscBlueprintFunctionLibrary:SpawnActorForItem": {
+      "properties_size": 360,
+      "properties": [
+        {
+          "name": "World",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ItemClass",
+          "offset": 8,
+          "array_dim": 1,
+          "size": 40,
+          "type": "SoftObjectProperty",
+          "flags": "CPF_Parm | CPF_UObjectWrapper | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "Transform",
+          "offset": 48,
+          "array_dim": 1,
+          "size": 96,
+          "type": "StructProperty",
+          "flags": "CPF_ConstParm | CPF_Parm | CPF_OutParm | CPF_ReferenceParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "InData",
+          "offset": 144,
+          "array_dim": 1,
+          "size": 120,
+          "type": "StructProperty",
+          "flags": "CPF_ConstParm | CPF_Parm | CPF_OutParm | CPF_ReferenceParm | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "Settings",
+          "offset": 264,
+          "array_dim": 1,
+          "size": 80,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_NoDestructor | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 344,
+          "array_dim": 1,
+          "size": 16,
+          "type": "ArrayProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.KismetSystemLibrary:Conv_ObjectToSoftObjectReference": {
+      "properties_size": 48,
+      "properties": [
+        {
+          "name": "Object",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 8,
+          "array_dim": 1,
+          "size": 40,
+          "type": "SoftObjectProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_UObjectWrapper | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Voyage.VoyageMiscBlueprintFunctionLibrary:GetActorWorld": {
+      "properties_size": 16,
+      "properties": [
+        {
+          "name": "Actor",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 8,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.GameplayStatics:GetWorldDeltaSeconds": {
+      "properties_size": 16,
+      "properties": [
+        {
+          "name": "WorldContextObject",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_ConstParm | CPF_Parm | CPF_ZeroConstructor | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 8,
+          "array_dim": 1,
+          "size": 8,
+          "type": "DoubleProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.GameplayStatics:GetRealTimeSeconds": {
+      "properties_size": 16,
+      "properties": [
+        {
+          "name": "WorldContextObject",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_ConstParm | CPF_Parm | CPF_ZeroConstructor | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 8,
+          "array_dim": 1,
+          "size": 8,
+          "type": "DoubleProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.Actor:GetVelocity": {
+      "properties_size": 24,
+      "properties": [
+        {
+          "name": "ReturnValue",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.KismetSystemLibrary:LoadAsset_Blocking": {
+      "properties_size": 48,
+      "properties": [
+        {
+          "name": "Asset",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 40,
+          "type": "SoftObjectProperty",
+          "flags": "CPF_Parm | CPF_UObjectWrapper | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 40,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.KismetMathLibrary:GreaterGreater_VectorRotator": {
+      "properties_size": 72,
+      "properties": [
+        {
+          "name": "A",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "B",
+          "offset": 24,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_IsPlainOldData | CPF_NoDestructor | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 48,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.KismetMathLibrary:MakeTransform": {
+      "properties_size": 176,
+      "properties": [
+        {
+          "name": "Location",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "Rotation",
+          "offset": 24,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_IsPlainOldData | CPF_NoDestructor | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "Scale",
+          "offset": 48,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "ReturnValue",
+          "offset": 80,
+          "array_dim": 1,
+          "size": 96,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.SceneComponent:K2_GetComponentRotation": {
+      "properties_size": 24,
+      "properties": [
+        {
+          "name": "ReturnValue",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Engine.SceneComponent:K2_GetComponentLocation": {
+      "properties_size": 24,
+      "properties": [
+        {
+          "name": "ReturnValue",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 24,
+          "type": "StructProperty",
+          "flags": "CPF_Parm | CPF_OutParm | CPF_ZeroConstructor | CPF_ReturnParm | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    },
+    "/Script/Voyage.VoyagePersistentSubsystem:DestroyActor": {
+      "properties_size": 16,
+      "properties": [
+        {
+          "name": "Actor",
+          "offset": 0,
+          "array_dim": 1,
+          "size": 8,
+          "type": "ObjectProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        },
+        {
+          "name": "Delay",
+          "offset": 8,
+          "array_dim": 1,
+          "size": 4,
+          "type": "FloatProperty",
+          "flags": "CPF_Parm | CPF_ZeroConstructor | CPF_IsPlainOldData | CPF_NoDestructor | CPF_HasGetValueTypeHash | CPF_NativeAccessSpecifierPublic"
+        }
+      ]
+    }
+  }
+}
